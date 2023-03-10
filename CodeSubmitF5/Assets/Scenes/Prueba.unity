@@ -454,6 +454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RowPrefab: {fileID: 2110024552731381821, guid: 26f4f5ec7dd72514d8275051f7ca44db, type: 3}
+  MaxRows: 6
 --- !u!1 &1733747154
 GameObject:
   m_ObjectHideFlags: 0
