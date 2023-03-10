@@ -2,7 +2,7 @@ using Mono.Cecil;
 using System;
 using System.Collections.Generic;
 
-String[] names = {"Las tres hermanas", "Tuberías por doquier"};
+//String[] names = {"Las tres hermanas", "Tuberías por doquier"};
 
 public struct Instruction
 {
@@ -111,7 +111,7 @@ public class ProblemConstructor { //Genera un problema aleatorio
     private List<Language> languages = new List<Language>();
     private List<Algorythm> algorythms = new List<Algorythm>();
     private List<Structure> structures = new List<Structure>();
-    private float tMaximo = 10000000; //Por ejemplo por ahora
+    private float tMaximo = 100; //Por ejemplo por ahora
     private Random rnd;
 
     public ProblemConstructor(){
