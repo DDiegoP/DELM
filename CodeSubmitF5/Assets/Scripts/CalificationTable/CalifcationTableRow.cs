@@ -4,13 +4,16 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum Calification
+{
+    Correct,
+    Wrong_Answer,
+    Pending
+}
 public class CalifcationTableRow : MonoBehaviour
 {
 
-    public enum Calification{
-        Correct,
-        Wrong_Answer
-    }
+   
     [SerializeField]
     TMP_Text ProffesorText;
 
@@ -23,19 +26,6 @@ public class CalifcationTableRow : MonoBehaviour
     Calification _calif;
     string _proffessor;
     string _task;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void SetParameters(string task, string proffessor, Calification calif)
     {
@@ -50,9 +40,11 @@ public class CalifcationTableRow : MonoBehaviour
 
             case Calification.Correct:
                 CalifText.text = "CORRECT";
+                CalifText.color = new Color(0, 100, 0);
                 break;
             case Calification.Wrong_Answer:
                 CalifText.text = "WRONG ANSWER";
+                CalifText.color = new Color(100, 0, 0);
                 break;
             default:
                 break;
