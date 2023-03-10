@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class Code : MonoBehaviour
 {
-    private char[] commands = new char[8];
+    private string name;
+    private char[] commands;
 
-    public Code()
+    public Code(string n, char[] comms)
+    {
+        name = n;
+        commands = comms;
+    }
+    public virtual void Submit(Problem p)
     {
 
     }
-    public virtual void use(Problem p)
+    public void AddCommand(char c)
     {
-
+        //instructions.Add(inst);
     }
-    //public void addInstruction(Instruction inst)
-    //{
-    //    instructions.Add(inst);
-    //}
     // Start is called before the first frame update
     void Start()
     {
@@ -28,5 +30,14 @@ public class Code : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public static bool operator ==(Code c1, Code c2)
+    {
+        return c1.name == c2.name;
+    }
+    public static bool operator !=(Code c1, Code c2)
+    {
+        return !(c1.name == c2.name);
     }
 }

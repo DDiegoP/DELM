@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Language : Code
 {
-    public string language;
-    public Language(string l)
+    public Language(string l) : base(l, new char[0])
     {
-        language = l;
+
     }
 
-    public override void use(Problem p)
+    public override void Submit(Problem p)
     {
-        p.applyLang(this);
+        p.SubmitLanguage(this);
     }
     // Start is called before the first frame update
     void Start()
