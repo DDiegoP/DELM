@@ -1,15 +1,50 @@
-class Event
-{
-    private char key;
-    
+using System;
 
-    public Event(char k) 
+class Code
+{
+    private tuple<char, string> instruction;
+
+    public Code(char k) 
     { 
-        this.key = k;
+ 
     }
     public void use(Problem p)
     {
         
+    }
+}
+
+class Algorythm : Code {
+    public string algorythm;
+    public Algorythm(string a, char k) {
+        this.key = k;
+        algorythm = a;
+    }
+
+    public override void use(Problem p)  {
+        p.applyAlg(algorythm);
+    }
+}
+class Language : Code {
+    public string language;
+    public Language(string l, char k) {
+        this.key = k;
+        language = l;
+    }
+
+    public override void use(Problem p)  {
+        p.applyLang(language);
+    }
+}
+class Structure : Code {
+    public string structure;
+    public Structure(string s, char k) {
+        this.key = k;
+        structure = s;
+    }
+
+    public override void use(Problem p)  {
+        p.applyStruct(structure);
     }
 }
 
@@ -18,16 +53,23 @@ class Event
 class Tab
 {
     private char key;
-    private Event[] events;
+    private Code[] codes = new Code[7];
     public Tab(char k)
     {
         this.key = k;
     }
     public void open()
     {
-        
+
     }
 }
+
+class AlgTab : Tab {
+    AlgTab() {
+        codes[i] = new Algorythm("Backtracking", 'b');
+    }
+}
+
 
 class Problem
 {
