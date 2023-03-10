@@ -31,12 +31,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (Problem p in this.problems)
-        {
-            //Actualizar el tiempo restante y quitar vida si procede.
-        }
         if(Time.time - ultimaTarea >= TIEMPO_ENTRE_TAREAS && problems.Count < MAX_PROBLEMAS){
             problems.Add(this.pconstructor.generateProblem(Time.time));
         }
     }
+    
 }
