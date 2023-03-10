@@ -13,11 +13,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject HealthBar;
     [SerializeField]
-    private ProblemHolder problemHolder;
-
-    [SerializeField]
     TextAsset ProffessorJSON;
     Proffessor[] ProfsList;
+
+    private ProblemConstructor problemConstructor;
 
     // private ProblemConstructor pconstructor;
     /*[SerializeField]
@@ -35,15 +34,12 @@ public class GameManager : MonoBehaviour
 
         LoadProffessors();
         ProfsList[0].LoadSprite();
-        
+        problemConstructor = new ProblemConstructor();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        ProblemSlot slot = problemHolder.GetFirstAvailableSlot();
-        slot.gameObject.SetActive(true);
-        slot.SetTask(ProfsList[0], ProfsList[0].GetAvailableTasks()[0], "C++", "Back", "BinTree");
     }
 
     // Update is called once per frame
@@ -68,5 +64,8 @@ public class GameManager : MonoBehaviour
         ProfsList = JsonUtility.FromJson<ProffessorHolder>(ProffessorJSON.text).array;    
     }
 
-
+    public Problem GenerateRandomProblem()
+    {
+        return problemConstructor.generateProblem(Time.time);
+    }
 }

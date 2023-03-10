@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class ProblemHolder : MonoBehaviour
 {
+    [SerializeField]
+    private GameManager GM;
     ProblemSlot[] slots;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         slots = GetComponentsInChildren<ProblemSlot>(true);
     }
@@ -28,5 +31,12 @@ public class ProblemHolder : MonoBehaviour
             ++i;
         }
         return slot;
+    }
+
+    private void GenerateNewProblem(ProblemSlot slot, Problem p)
+    {
+        slot.gameObject.SetActive(true);
+
+        slot.SetTask(GM.GenerateRandomProblem());
     }
 }
