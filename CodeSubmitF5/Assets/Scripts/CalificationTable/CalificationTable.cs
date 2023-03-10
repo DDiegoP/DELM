@@ -8,8 +8,7 @@ public class CalificationTable : MonoBehaviour
     GameObject RowPrefab;
 
     [SerializeField]
-    [Range(0, 10)]
-    int MaxRows = 10;
+    int MaxRows = 15;
 
     List<GameObject> Rows = new List<GameObject>();
 
@@ -22,7 +21,7 @@ public class CalificationTable : MonoBehaviour
     {
         if(timer >= 0.5f)
         {
-            CreateEntry("Cleon", "HITO " + id, Calification.Correct);
+            CreateEntry("Cleon", "HITO " + id, Calification.Wrong_Answer);
             timer = 0.0f;
             ++id;
         }
