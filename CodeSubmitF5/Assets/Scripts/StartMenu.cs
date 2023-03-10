@@ -15,7 +15,7 @@ public class StartMenu : MonoBehaviour
     public void StartGacha()
     {
         //GameManager.SetActive(true);
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("ProfePon");
     }
 
     //Cierra el juego
