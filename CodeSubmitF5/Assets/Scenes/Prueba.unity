@@ -321,7 +321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f839b0674198155b0fa69d5122c77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProblemPrefab: {fileID: 0}
+  score: {fileID: 0}
+  HealthBar: {fileID: 0}
 --- !u!4 &371663049
 Transform:
   m_ObjectHideFlags: 0
@@ -747,8 +748,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -182.11923, y: -60.53}
-  m_SizeDelta: {x: 420.3617, y: 310.86}
+  m_AnchoredPosition: {x: -233.20305, y: -58.9178}
+  m_SizeDelta: {x: 311.5883, y: 298.7181}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &891511771
 MonoBehaviour:
