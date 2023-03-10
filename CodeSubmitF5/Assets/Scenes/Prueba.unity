@@ -283,7 +283,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8213519352684079229}
+  - {fileID: 546812649}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -292,6 +292,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!224 &546812649 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 631858279863340809, guid: 26f4f5ec7dd72514d8275051f7ca44db, type: 3}
+  m_PrefabInstance: {fileID: 1726421361}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1454424340
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,7 +381,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &8213519352684079228
+--- !u!1001 &1726421361
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -413,11 +418,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 631858279863340809, guid: 26f4f5ec7dd72514d8275051f7ca44db, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 237.0189
       objectReference: {fileID: 0}
     - target: {fileID: 631858279863340809, guid: 26f4f5ec7dd72514d8275051f7ca44db, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 24.65
       objectReference: {fileID: 0}
     - target: {fileID: 631858279863340809, guid: 26f4f5ec7dd72514d8275051f7ca44db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -449,11 +454,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 631858279863340809, guid: 26f4f5ec7dd72514d8275051f7ca44db, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -333
+      value: 20.988495
       objectReference: {fileID: 0}
     - target: {fileID: 631858279863340809, guid: 26f4f5ec7dd72514d8275051f7ca44db, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -198.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 631858279863340809, guid: 26f4f5ec7dd72514d8275051f7ca44db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -469,20 +474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2110024552731381821, guid: 26f4f5ec7dd72514d8275051f7ca44db, type: 3}
       propertyPath: m_Name
-      value: Image
+      value: DomJudgeTableRow (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 9180960894413801969, guid: 26f4f5ec7dd72514d8275051f7ca44db, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 9180960894413801969, guid: 26f4f5ec7dd72514d8275051f7ca44db, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26f4f5ec7dd72514d8275051f7ca44db, type: 3}
---- !u!224 &8213519352684079229 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 631858279863340809, guid: 26f4f5ec7dd72514d8275051f7ca44db, type: 3}
-  m_PrefabInstance: {fileID: 8213519352684079228}
-  m_PrefabAsset: {fileID: 0}
