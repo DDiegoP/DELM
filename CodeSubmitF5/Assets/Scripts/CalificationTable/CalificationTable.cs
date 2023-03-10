@@ -7,15 +7,24 @@ public class CalificationTable : MonoBehaviour
     [SerializeField]
     GameObject RowPrefab;
 
-    float timer = 3.0f;
+    [SerializeField]
+    [Range(0, 10)]
+    int MaxRows = 10;
+
+    List<GameObject> Rows = new List<GameObject>();
+
+    static int id = 0;
+
+    float timer = 0.5f;
 
 
     private void Update()
     {
-        if(timer >= 3.0f)
+        if(timer >= 0.5f)
         {
-            CreateEntry("Cleon", "HITO 1", Calification.Correct);
+            CreateEntry("Cleon", "HITO " + id, Calification.Correct);
             timer = 0.0f;
+            ++id;
         }
         else
         {
@@ -27,6 +36,14 @@ public class CalificationTable : MonoBehaviour
     {
         GameObject row = Instantiate(RowPrefab, this.transform);
         row.GetComponent<CalifcationTableRow>().SetParameters(taskId, proffessoName, calif);
+        Rows.Add(row);
+
+        if(Rows.Count > MaxRows)
+        {
+            GameObject firstRow = Rows[0];
+            Destroy(firstRow);
+            Rows.Remove(firstRow);
+        }
     }
 
     

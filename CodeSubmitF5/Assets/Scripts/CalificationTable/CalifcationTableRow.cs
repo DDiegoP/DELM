@@ -8,8 +8,10 @@ public enum Calification
 {
     Correct,
     Wrong_Answer,
-    Pending
+    Pending,
+    Time_Limit
 }
+
 public class CalifcationTableRow : MonoBehaviour
 {
 
@@ -49,6 +51,6 @@ public class CalifcationTableRow : MonoBehaviour
             default:
                 break;
 
-        }       
+        }
     }
 }
