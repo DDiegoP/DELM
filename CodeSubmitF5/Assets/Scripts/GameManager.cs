@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,8 +12,12 @@ public class GameManager : MonoBehaviour
     private TMP_Text score;
     [SerializeField]
     private GameObject HealthBar;
+    [SerializeField]
+    private ProblemHolder problemHolder;
 
-    
+    [SerializeField]
+    TextAsset ProffessorJSON;
+    Proffessor[] ProfsList;
 
     // private ProblemConstructor pconstructor;
     /*[SerializeField]
@@ -27,11 +32,18 @@ public class GameManager : MonoBehaviour
         }else{
             Destroy(this.gameObject);
         }
+
+        LoadProffessors();
+        ProfsList[0].LoadSprite();
+        
     }
+
     // Start is called before the first frame update
     void Start()
     {
-
+        ProblemSlot slot = problemHolder.GetFirstAvailableSlot();
+        slot.gameObject.SetActive(true);
+        slot.SetTask(ProfsList[0], ProfsList[0].GetAvailableTasks()[0], "C++", "Back", "BinTree");
     }
 
     // Update is called once per frame
@@ -52,7 +64,9 @@ public class GameManager : MonoBehaviour
     }
 
 
-
+    void LoadProffessors() {
+        ProfsList = JsonUtility.FromJson<ProffessorHolder>(ProffessorJSON.text).array;    
+    }
 
 
 }
