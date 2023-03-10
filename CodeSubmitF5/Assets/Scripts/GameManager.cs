@@ -17,7 +17,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     TextAsset ProffessorJSON;
+
     Proffessor[] ProfsList;
+   
 
     // private ProblemConstructor pconstructor;
     /*[SerializeField]

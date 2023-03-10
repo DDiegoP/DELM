@@ -9,6 +9,7 @@ public class ProblemSlot : MonoBehaviour
 {
 
     [SerializeField] private Image ProffesorPortrait;
+    [SerializeField] private TMP_Text ProffesorName;
     [SerializeField] private TMP_Text ProblemTitle;
     [SerializeField] private TMP_Text ProblemLang;
     [SerializeField] private TMP_Text ProblemAlgorithm;
@@ -17,6 +18,7 @@ public class ProblemSlot : MonoBehaviour
     public void SetTask(Proffessor prof, string title, string lang, string alg, string struc)
     {
         ProffesorPortrait.sprite = prof.portrait;
+        ProffesorName.text = prof.name;
         ProblemTitle.text = title;
         ProblemLang.text = lang;
         ProblemAlgorithm.text = alg;

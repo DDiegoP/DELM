@@ -4,11 +4,16 @@
         {
             "name": "Cleon",
             "portraitPath": "Textures/CleonPlaceHolder",
-            "AllTasks": [
+            "allTasks": [
                 {
                     "title": "HITO 1",
                     "unlocked": true
                 }
+            ],
+            "languages": [
+                "C++",
+                "C#",
+                "JavaScript"
             ]
 
         }
