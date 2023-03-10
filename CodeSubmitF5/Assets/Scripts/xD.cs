@@ -1,14 +1,15 @@
 using System;
+using System.Collections.Generic;
 
 class Code
 {
-    private tuple<char, string> instruction;
+    private Tuple<char, string> instruction;
 
     public Code(char k) 
     { 
  
     }
-    public void use(Problem p)
+    public virtual void use(Problem p)
     {
         
     }
@@ -16,8 +17,7 @@ class Code
 
 class Algorythm : Code {
     public string algorythm;
-    public Algorythm(string a, char k) {
-        this.key = k;
+    public Algorythm(string a, char k) : base(k){
         algorythm = a;
     }
 
@@ -27,8 +27,8 @@ class Algorythm : Code {
 }
 class Language : Code {
     public string language;
-    public Language(string l, char k) {
-        this.key = k;
+    public Language(string l, char k) : base(k)
+    {
         language = l;
     }
 
@@ -38,8 +38,8 @@ class Language : Code {
 }
 class Structure : Code {
     public string structure;
-    public Structure(string s, char k) {
-        this.key = k;
+    public Structure(string s, char k) : base(k)
+    {
         structure = s;
     }
 
@@ -53,7 +53,7 @@ class Structure : Code {
 class Tab
 {
     private char key;
-    private Code[] codes = new Code[7];
+    protected List<Code> codes;
     public Tab(char k)
     {
         this.key = k;
@@ -65,11 +65,32 @@ class Tab
 }
 
 class AlgTab : Tab {
-    AlgTab() {
-        codes[i] = new Algorythm("Backtracking", 'b');
+    AlgTab() : base('a') {
+        codes.Add(new Algorythm("Backtracking", 'b'));
+        codes.Add(new Algorythm("Divide y vencerás", 'd'));
+        codes.Add(new Algorythm("Sort", 's'));
     }
 }
 
+class LangTab : Tab
+{
+    LangTab() : base('l')
+    {
+        codes.Add(new Language("C++", 'c'));
+        codes.Add(new Language("JS", 'j'));
+        codes.Add(new Language("C#", 's'));
+    }
+}
+
+class StructTab : Tab
+{
+    StructTab() : base('s')
+    {
+        codes.Add(new Structure("Set", 's'));
+        codes.Add(new Structure("Unordered_Map", 'u'));
+        codes.Add(new Structure("List", 'l'));
+    }
+}
 
 class Problem
 {
