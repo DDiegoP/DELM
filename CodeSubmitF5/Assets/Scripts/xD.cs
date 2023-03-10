@@ -1,37 +1,60 @@
-using System.Collections
+using Mono.Cecil;
+using System;
+using System.Collections.Generic;
 
-public enum language
+struct Instruction
 {
-    CS,
-    CPP,
-    Java,
-    Python
+    char key;
+    string action;
 }
-
-public enum algorythm{
-    Voraz,
-    Vuelta_atras
-}
-
-public enum eda{
-    Arbol,
-    Heap,
-    Queue,
-    Map
-}
-
-class Event
+class Code
 {
-    private char key;
-    
+    private List<Instruction> instructions;
 
-    public Event(char k) 
+    public Code() 
     { 
-        this.key = k;
+ 
     }
-    public void use(Problem p)
+    public virtual void use(Problem p)
     {
         
+    }
+    public void addInstruction(Instruction inst)
+    {
+        instructions.Add(inst);
+    }
+}
+
+class Algorythm : Code {
+    public string algorythm;
+    public Algorythm(string a) : base(){
+        algorythm = a;
+    }
+
+    public override void use(Problem p)  {
+        p.applyAlg(algorythm);
+    }
+}
+class Language : Code {
+    public string language;
+    public Language(string l) 
+    {
+        language = l;
+    }
+
+    public override void use(Problem p)  {
+        p.applyLang(language);
+    }
+}
+class Structure : Code {
+    public string structure;
+    public Structure(string s)
+    {
+        structure = s;
+    }
+
+    public override void use(Problem p)  {
+        p.applyStruct(structure);
     }
 }
 
@@ -40,14 +63,44 @@ class Event
 class Tab
 {
     private char key;
-    private Event[] events;
+    protected List<Code> codes;
     public Tab(char k)
     {
         this.key = k;
     }
     public void open()
     {
-        
+
+    }
+}
+
+class AlgTab : Tab {
+    AlgTab() : base('a') {
+        Algorythm a = new Algorythm("Backtracking");
+        //a.addInstruction();
+        codes.Add(a);
+        codes.Add(new Algorythm("Divide y vencer�s"));
+        codes.Add(new Algorythm("Sort"));
+    }
+}
+
+class LangTab : Tab
+{
+    LangTab() : base('l')
+    {
+        codes.Add(new Language("C++"));
+        codes.Add(new Language("JS"));
+        codes.Add(new Language("C#"));
+    }
+}
+
+class StructTab : Tab
+{
+    StructTab() : base('s')
+    {
+        codes.Add(new Structure("Set"));
+        codes.Add(new Structure("Unordered_Map"));
+        codes.Add(new Structure("List"));
     }
 }
 
