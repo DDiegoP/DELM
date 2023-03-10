@@ -55,25 +55,39 @@ public class Problem : MonoBehaviour
         }
     }
 
-     // Comprueba si los datos introducidos son correctos
-    private void checkCorrect()
+    // Comprueba si los datos introducidos son correctos
+    private void CheckCorrect()
     {
-        correct = askedLanguage == submittedLanguage &&
-                  askedAlgorythm == submittedAlgorythm &&
-                  askedStructure == submittedStructure;
+        CheckCorrect(askedAlgCommands, submittedAlgCommands);
+        CheckCorrect(askedLangCommands, submittedLangCommands);
+        CheckCorrect(askedStructCommands, submittedStructCommands);
+        if (correct)
+        {
+            correct = askedLanguage == submittedLanguage &&
+                      askedAlgorythm == submittedAlgorythm &&
+                      askedStructure == submittedStructure;
+        }
     }
+    // Comprueba si los arrays de comandos introducidos son coincidentes y asigna correct
+    private void CheckCorrect(char[] asked, char[] submitted) {
+        for (int i = 0; i < asked.Length && correct; ++i)
+        {
+            if (asked[i] == submitted[i]) correct = false;
+        }
+    }
+
     // Marca el lenguaje pasada como la usada
-    public void applyLang(Language l)
+    public void SubmitLanguage(Language l)
     {
         submittedLanguage = l;
     }
     // Marca el algoritmo pasada como la usada
-    public void applyAlg(Algorythm a)
+    public void SubmitAlgorythm(Algorythm a)
     {
         submittedAlgorythm = a;
     }
     // Marca la estructura pasada como la usada
-    public void applyStruct(Structure s)
+    public void SubmitStructure(Structure s)
     {
         submittedStructure = s;
     }

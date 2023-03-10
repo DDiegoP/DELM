@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Structure : Code
 {
-    public string structure;
-    public Structure(string s)
+    public Structure(string s) : base(s, new char[0])
     {
-        structure = s;
+        
     }
 
-    public override void use(Problem p)
+    public override void Submit(Problem p)
     {
-        p.applyStruct(this);
+        p.SubmitStructure(this);
     }
     // Start is called before the first frame update
     void Start()
