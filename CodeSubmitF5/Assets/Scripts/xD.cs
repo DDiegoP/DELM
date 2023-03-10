@@ -1,11 +1,17 @@
+using Mono.Cecil;
 using System;
 using System.Collections.Generic;
 
+struct Instruction
+{
+    char key;
+    string action;
+}
 class Code
 {
-    private Tuple<char, string> instruction;
+    private List<Instruction> instructions;
 
-    public Code(char k) 
+    public Code() 
     { 
  
     }
@@ -13,11 +19,15 @@ class Code
     {
         
     }
+    public void addInstruction(Instruction inst)
+    {
+        instructions.Add(inst);
+    }
 }
 
 class Algorythm : Code {
     public string algorythm;
-    public Algorythm(string a, char k) : base(k){
+    public Algorythm(string a) : base(){
         algorythm = a;
     }
 
@@ -27,7 +37,7 @@ class Algorythm : Code {
 }
 class Language : Code {
     public string language;
-    public Language(string l, char k) : base(k)
+    public Language(string l) 
     {
         language = l;
     }
@@ -38,7 +48,7 @@ class Language : Code {
 }
 class Structure : Code {
     public string structure;
-    public Structure(string s, char k) : base(k)
+    public Structure(string s)
     {
         structure = s;
     }
@@ -66,9 +76,11 @@ class Tab
 
 class AlgTab : Tab {
     AlgTab() : base('a') {
-        codes.Add(new Algorythm("Backtracking", 'b'));
-        codes.Add(new Algorythm("Divide y vencerás", 'd'));
-        codes.Add(new Algorythm("Sort", 's'));
+        Algorythm a = new Algorythm("Backtracking");
+        //a.addInstruction();
+        codes.Add(a);
+        codes.Add(new Algorythm("Divide y vencerás"));
+        codes.Add(new Algorythm("Sort"));
     }
 }
 
@@ -76,9 +88,9 @@ class LangTab : Tab
 {
     LangTab() : base('l')
     {
-        codes.Add(new Language("C++", 'c'));
-        codes.Add(new Language("JS", 'j'));
-        codes.Add(new Language("C#", 's'));
+        codes.Add(new Language("C++"));
+        codes.Add(new Language("JS"));
+        codes.Add(new Language("C#"));
     }
 }
 
@@ -86,9 +98,9 @@ class StructTab : Tab
 {
     StructTab() : base('s')
     {
-        codes.Add(new Structure("Set", 's'));
-        codes.Add(new Structure("Unordered_Map", 'u'));
-        codes.Add(new Structure("List", 'l'));
+        codes.Add(new Structure("Set"));
+        codes.Add(new Structure("Unordered_Map"));
+        codes.Add(new Structure("List"));
     }
 }
 
