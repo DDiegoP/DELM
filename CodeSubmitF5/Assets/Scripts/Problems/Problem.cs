@@ -1,29 +1,38 @@
+using Mono.Cecil;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//String[] names = {"Las tres hermanas", "Tuberías por doquier"};
+
 public class Problem : MonoBehaviour
 {
 
-    [SerializeField]
-    private Language language;
-    private Algorythm algorythm;
-    private Structure structure;
+    [SerializeField] private Language askedLanguage;
+    [SerializeField] private char[] askedLangCommands;
+    [SerializeField] private Algorythm askedAlgorythm;
+    [SerializeField] private char[] askedAlgCommands;
+    [SerializeField] private Structure askedStructure;
+    [SerializeField] private char[] askedStructCommands;
+
     private float tIni;
     private float tMaximo;
 
     private Language submittedLanguage;
+    private char[] submittedLangCommands;
     private Algorythm submittedAlgorythm;
+    private char[] submittedAlgCommands;
     private Structure submittedStructure;
+    private char[] submittedStructCommands;
 
     private bool correct;
 
     // Constructora que recibe el lenguaje, algorimo y estructura de datos necesarios para resolverlo
     public Problem(Language l, Algorythm a, Structure s, float tIni,float tMaximo)
     {
-        this.language = l;
-        this.algorythm = a;
-        this.structure = s;
+        this.askedLanguage = l;
+        this.askedAlgorythm = a;
+        this.askedStructure = s;
         this.submittedLanguage = null;
         this.submittedAlgorythm = null;
         this.submittedStructure = null;
@@ -49,9 +58,9 @@ public class Problem : MonoBehaviour
      // Comprueba si los datos introducidos son correctos
     private void checkCorrect()
     {
-        correct = language == submittedLanguage &&
-                  algorythm == submittedAlgorythm &&
-                  structure == submittedStructure;
+        correct = askedLanguage == submittedLanguage &&
+                  askedAlgorythm == submittedAlgorythm &&
+                  askedStructure == submittedStructure;
     }
     // Marca el lenguaje pasada como la usada
     public void applyLang(Language l)
