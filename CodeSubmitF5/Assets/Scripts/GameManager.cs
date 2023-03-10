@@ -40,6 +40,17 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void TakeDamage(int damage){
+        this.HealthBar.GetComponent<HealthScript>().TakeDamage(damage);
+        if(this.HealthBar.GetComponent<HealthScript>().curHealth <= 0){
+            //Game over
+        }
+    }
+
+    public void AddScore(int score){
+        this.score.GetComponent<ScoreScript>().AddScore(score);
+    }
+
 
 
 
