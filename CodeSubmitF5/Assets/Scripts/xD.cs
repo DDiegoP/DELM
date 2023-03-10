@@ -2,12 +2,14 @@ using Mono.Cecil;
 using System;
 using System.Collections.Generic;
 
-struct Instruction
+String[] names = {"Las tres hermanas", "Tuberías por doquier"};
+
+public struct Instruction
 {
     char key;
     string action;
 }
-class Code
+public class Code
 {
     private List<Instruction> instructions;
 
@@ -25,17 +27,17 @@ class Code
     }
 }
 
-class Algorythm : Code {
+public class Algorythm : Code {
     public string algorythm;
     public Algorythm(string a) : base(){
         algorythm = a;
     }
 
     public override void use(Problem p)  {
-        p.applyAlg(algorythm);
+        p.applyAlg(this);
     }
 }
-class Language : Code {
+public class Language : Code {
     public string language;
     public Language(string l) 
     {
@@ -43,10 +45,10 @@ class Language : Code {
     }
 
     public override void use(Problem p)  {
-        p.applyLang(language);
+        p.applyLang(this);
     }
 }
-class Structure : Code {
+public class Structure : Code {
     public string structure;
     public Structure(string s)
     {
@@ -54,13 +56,13 @@ class Structure : Code {
     }
 
     public override void use(Problem p)  {
-        p.applyStruct(structure);
+        p.applyStruct(this);
     }
 }
 
 
 
-class Tab
+public class Tab
 {
     private char key;
     protected List<Code> codes;
@@ -74,7 +76,7 @@ class Tab
     }
 }
 
-class AlgTab : Tab {
+public class AlgTab : Tab {
     AlgTab() : base('a') {
         Algorythm a = new Algorythm("Backtracking");
         //a.addInstruction();
@@ -84,7 +86,7 @@ class AlgTab : Tab {
     }
 }
 
-class LangTab : Tab
+public class LangTab : Tab
 {
     LangTab() : base('l')
     {
@@ -94,7 +96,7 @@ class LangTab : Tab
     }
 }
 
-class StructTab : Tab
+public class StructTab : Tab
 {
     StructTab() : base('s')
     {
@@ -104,91 +106,45 @@ class StructTab : Tab
     }
 }
 
-class Problem
-{
-    private string language;
-    private string algorythm;
-    private string structure;
 
-    private string submittedLanguage;
-    private string submittedAlgorythm;
-    private string submittedStructure;
-
-    private bool correct;
-
-    // Constructora que recibe el lenguaje, algorimo y estructura de datos necesarios para resolverlo
-    public Problem(language l, algorythm a, eda s)
-    {
-        this.language = l;
-        this.algorythm = a;
-        this.structure = s;
-        this.submittedLanguage = "";
-        this.submittedAlgorythm = "";
-        this.submittedStructure = "";
-        this.correct = true;
-    }
-    // Comprueba si los datos introducidos son correctos
-    private void checkCorrect()
-    {
-        correct = language == submittedLanguage &&
-                  algorythm == submittedAlgorythm &&
-                  structure == submittedStructure;
-    }
-    // Marca el lenguaje pasada como la usada
-    public void applyLang(string l)
-    {
-        submittedLanguage = l;
-    }
-    // Marca el algoritmo pasada como la usada
-    public void applyAlg(string a)
-    {
-        submittedAlgorythm = a;
-    }
-    // Marca la estructura pasada como la usada
-    public void applyStruct(string s)
-    {
-        submittedStructure = s;
-    }
-}
-
-
-class ProblemConstructor { //Genera un problema aleatorio
-    
-    private List<language> languages = new List<language>();
-    private List<algorythm> algorythms = new List<algorythm>();
-    private List<eda> edas = new List<eda>();
+public class ProblemConstructor { //Genera un problema aleatorio
+    private List<Language> languages = new List<Language>();
+    private List<Algorythm> algorythms = new List<Algorythm>();
+    private List<Structure> structures = new List<Structure>();
+    private float tMaximo = 10000000; //Por ejemplo por ahora
+    private Random rnd;
 
     public ProblemConstructor(){
-        rnd = new Random()
+        rnd = new Random();
     }
     public ProblemConstructor(int seed){
         rnd = new Random(seed);
     }
 
-    public void AddLanguage(language l){
+    public void AddLanguage(Language l){
         this.languages.Add(l);
     }
-    public void AddAlgorythm(algorythm l){
+    public void AddAlgorythm(Algorythm l){
         this.algorythms.Add(l);
     }
-    public void AddEda(eda l){
-        this.edas.Add(l);
+    public void AddStructure(Structure l){
+        this.structures.Add(l);
     }
-    public List<language> GetLanguages(){
+    public List<Language> GetLanguages(){
         return this.languages;
     }
-    public List<algorythm> GetAlgorythms(){
+    public List<Algorythm> GetAlgorythms(){
         return this.algorythms;
     }
-    public List<eda> GetEda(){
-        return this.edas;
+    public List<Structure> GetStructure(){
+        return this.structures;
     }
     
 
-    public Problem generateProblem(){
-        language l = this.languages[this.rnd(0,this.languages.count)];
-        algorythm a = this.algorythm[this.rnd(0,this.algorythms.count)];
-        eda e = this.edas[this.rnd(0, this.edas.count)];
-        return new Problem(l, a, e);
+    public Problem generateProblem(float tIni){
+        Language l = this.languages[this.rnd.Next(this.languages.Count)];
+        Algorythm a = this.algorythms[this.rnd.Next(this.algorythms.Count)];
+        Structure e = this.structures[this.rnd.Next(this.structures.Count)];
+        return new Problem(l, a, e, tIni, tMaximo);
     }
 }
