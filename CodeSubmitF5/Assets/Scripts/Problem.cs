@@ -5,6 +5,7 @@ using UnityEngine;
 public class Problem : MonoBehaviour
 {
 
+    [SerializeField]
     private Language language;
     private Algorythm algorythm;
     private Structure structure;
@@ -41,8 +42,7 @@ public class Problem : MonoBehaviour
     void Update()
     {
         if(Time.time > (this.tIni + this.tMaximo)){
-            //La tarea se elimina
-
+            //transform.parent.gameObject.GetComponent<ProblemHolder>().timeOutProblem(this);
         }
     }
 
