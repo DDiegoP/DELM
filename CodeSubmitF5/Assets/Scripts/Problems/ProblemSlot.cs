@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
 public class ProblemSlot : MonoBehaviour
 {
 
@@ -13,15 +14,12 @@ public class ProblemSlot : MonoBehaviour
     [SerializeField] private TMP_Text ProblemAlgorithm;
     [SerializeField] private TMP_Text ProblemDataStructure;
 
-    // Start is called before the first frame update
-    void Start()
+    public void SetTask(Proffessor prof, string title, string lang, string alg, string struc)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ProffesorPortrait.sprite = prof.portrait;
+        ProblemTitle.text = title;
+        ProblemLang.text = lang;
+        ProblemAlgorithm.text = alg;
+        ProblemDataStructure.text = struc;
     }
 }
