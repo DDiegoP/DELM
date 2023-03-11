@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuScene.unity
     guid: 30da40286321d034e9308bd1de9a72da
   - enabled: 1
-    path: Assets/Scenes/Prueba.unity
+    path: Assets/Scenes/MainScene.unity
     guid: e78233dcaa09ab94994d159dbbe9e1c2
   - enabled: 1
     path: Assets/Scenes/ProfePon.unity

@@ -9,7 +9,7 @@ public class StartMenu : MonoBehaviour
     public void StartGame()
     {
         //GameManager.SetActive(true);
-        SceneManager.LoadScene("Prueba");
+        SceneManager.LoadScene("MainScene");
     }
 
     public void StartGacha()
