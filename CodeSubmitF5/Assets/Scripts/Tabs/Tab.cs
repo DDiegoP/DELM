@@ -12,8 +12,10 @@ public class KeyEvent : UnityEvent
 public class Tab : MonoBehaviour
 {
     [SerializeField] private KeyCode key;
-    [SerializeField] private string tabName; 
-    [SerializeField] private KeyEvent onKeyPressed;
+    [SerializeField] private string tabName;
+    [SerializeField] private KeyEvent onKeyPressedEvent = null;
+    public delegate void CallBack();
+    private CallBack onKeyPressedCallBack;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +31,23 @@ public class Tab : MonoBehaviour
     {
         if (Input.GetKeyDown(key))
         {
-            onKeyPressed.Invoke();
+            if (onKeyPressedCallBack != null) onKeyPressedCallBack.Invoke();
+            else onKeyPressedEvent.Invoke();
         }
+    }
+
+    public void SetOnKeyPressed(CallBack e)
+    {
+        onKeyPressedCallBack = e;
+    }
+
+    public void SetKey(KeyCode k)
+    {
+        this.key = k;
+    }
+
+    public void SetTabName(string name)
+    {
+        this.tabName = name;
     }
 }

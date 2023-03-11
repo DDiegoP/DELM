@@ -8,14 +8,17 @@ public class Code
     
     [SerializeField]
     protected string codeName;
-    
+
+    protected KeyCode key;
+
     [SerializeField]
     protected List<char> commands;
 
-    public Code(string n)
+    public Code(string n, KeyCode k)
     {
         codeName = n;
         commands = new List<char>();
+        key = k;
     }
     public virtual void Submit(Problem p)
     {
@@ -36,6 +39,10 @@ public class Code
         return commands.ToArray();
     }
     
+    public KeyCode GetKey()
+    {
+        return key;
+    }
 
     public static bool operator ==(Code c1, Code c2)
     {
