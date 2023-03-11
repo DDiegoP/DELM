@@ -4,6 +4,7 @@
         {
             "name": "Cleon",
             "portraitPath": "Textures/cleon",
+            "Unlocked": true,
             "AllTasks": [
                 {
                     "title": "HITO 1",
@@ -16,16 +17,17 @@
             ]
 
         },
-        {
-            "name":"Pedro Pablo",
+      {
+            "name": "Pedro Pablo",
             "portraitPath": "Textures/pedroPablo",
+            "Unlocked": false,
             "AllTasks": [
-                {
-                    "title": "Resource Manager",
-                    "unlocked": true
-                }
+              {
+                "title": "Resource Manager",
+                "unlocked": true
+              }
             ]
-
-        }
+            
+      }
     ]
 }
