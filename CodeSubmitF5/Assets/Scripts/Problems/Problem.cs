@@ -1,19 +1,21 @@
 using Mono.Cecil;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 //String[] names = {"Las tres hermanas", "Tuberías por doquier"};
 
 public class Problem : MonoBehaviour
 {
-
-    [SerializeField] private Language askedLanguage;
-    [SerializeField] private char[] askedLangCommands;
-    [SerializeField] private Algorythm askedAlgorythm;
-    [SerializeField] private char[] askedAlgCommands;
-    [SerializeField] private Structure askedStructure;
-    [SerializeField] private char[] askedStructCommands;
+    private ProblemSlot slot;
+    
+    private Language askedLanguage;
+    private char[] askedLangCommands;
+    private Algorythm askedAlgorythm;
+    private char[] askedAlgCommands;
+    private Structure askedStructure;
+    private char[] askedStructCommands;
     private Proffessor proffessor;
     private float tMaximo;
 
@@ -26,9 +28,14 @@ public class Problem : MonoBehaviour
 
     private bool correct;
 
+    private float timeLimit = 0;
+
     // Constructora que recibe el lenguaje, algorimo y estructura de datos necesarios para resolverlo
-    public Problem(Language l, Algorythm a, Structure s, float tMaximo) : base()
+    public void Set(Proffessor p, Language l, Algorythm a, Structure s, float tMaximo)
     {
+        this.proffessor= p;
+        List<string> tasks = this.proffessor.GetAvailableTasks();
+        this.name = tasks[Random.Range(0, tasks.Count)];
         this.askedLanguage = l;
         this.askedAlgorythm = a;
         this.askedStructure = s;
@@ -43,6 +50,8 @@ public class Problem : MonoBehaviour
 
     }
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,8 +61,9 @@ public class Problem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.time >  this.tMaximo){
-            //transform.parent.gameObject.GetComponent<ProblemHolder>().timeOutProblem(this);
+        if(timeLimit < tMaximo)
+        {
+            timeLimit += Time.deltaTime;
         }
     }
 
@@ -100,5 +110,23 @@ public class Problem : MonoBehaviour
     //public float TiempoRestante(float tActual){
     //    return (tIni + tMaximo) - tActual;
     //}
+    public ProblemSlot GetSlot()
+    {
+        return slot;
+    }
 
+    public void SetSlot(ProblemSlot slot)
+    {
+        this.slot = slot;
+    }
+
+    public bool IsTimedOut()
+    {
+        return timeLimit >= tMaximo;
+    }
+
+    public Proffessor GetProffessor()
+    {
+        return proffessor;
+    }
 }

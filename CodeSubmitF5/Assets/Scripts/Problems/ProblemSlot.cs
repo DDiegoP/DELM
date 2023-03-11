@@ -18,7 +18,7 @@ public class ProblemSlot : MonoBehaviour
     [SerializeField] private KeyCode key;
 
     private KeyCode keyCode;
-
+    private int id;
     private void Update()
     {
         if (Input.GetKeyDown(key))
@@ -28,6 +28,15 @@ public class ProblemSlot : MonoBehaviour
         }
     }
 
+    public void SetID(int id)
+    {
+        this.id = id;
+    }
+
+    public int GetId()
+    {
+        return id;
+    }
     public void SetTask(Problem p)
     {
         //ProffesorPortrait.sprite = prof.portrait;

@@ -5,66 +5,27 @@ using UnityEngine;
 
 public class ProblemHolder : MonoBehaviour
 {
-    [SerializeField]
+   
     private GameManager GM;
+
     ProblemSlot[] slots;
     int maxSlots;
     int slotsActive = 0;
-    int actualSlot = 0;
-    List<Problem> problems;
+    
 
     // Start is called before the first frame update
     void Awake()
     {
-        slots = GetComponentsInChildren<ProblemSlot>(true);    
+        slots = GetComponentsInChildren<ProblemSlot>(true);
+        for(int i = 0; i < slots.Length; i++)
+        {
+            slots[i].SetID(i);
+        }
         maxSlots = slots.Length;
     }
 
-    private void Start()
-    {
-        GM = GameManager.GetInstance();
-        problems = GM.GetProblems();
-       // AssignProblems();
-    }
-
-    private void AssignProblems()
-    {
-        int i = 0; 
-        ProblemSlot slot = GetFirstAvailableSlot();
-        while(i < problems.Count && slot != null)
-        {
-            slots[i].SetTask(problems[i]);
-            slots[i].gameObject.SetActive(true);
-            slotsActive++;
-            ++i;
-        }
-
-        actualSlot = i % slots.Length;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (slotsActive >= maxSlots) return;
-
-        ProblemSlot slot = GetFirstAvailableSlot();
-        if (slot != null)
-        {
-            slot.gameObject.SetActive(true);
-            Proffessor[] profs = GM.GetProfessors();
-            slot.SetTask(profs[actualSlot % profs.Length], profs[actualSlot % profs.Length].GetAvailableTasks()[0], GM.GetLanguages()[0].GetName(),
-                GM.GetAlgorythms()[0].GetName(), GM.GetStructures()[0].GetName());
-            problems.Add(GenerateNewProblem(slot));
-            slotsActive++;
-        }
-    }
-
-    private void OnDestroy()
-    {
-        GM.SetProblems(problems.ToArray());
-    }
-
-    public ProblemSlot GetFirstAvailableSlot()
+    
+    public ProblemSlot SetFirstAvailableSlot(Problem p)
     {
         ProblemSlot slot = slots[0];
         int i = 0;
@@ -74,18 +35,31 @@ public class ProblemHolder : MonoBehaviour
             slot = slots[i];
         }
 
-        actualSlot = i;
-
         if (slot.gameObject.activeInHierarchy) return null;
+
+        slot.gameObject.SetActive(true);
+        slot.SetTask(p);
+        slotsActive++;
         return slot;
     }
 
-    private Problem GenerateNewProblem(ProblemSlot slot)
+    public  Problem SetProblem(ProblemSlot slot)
     {
         slot.gameObject.SetActive(true);
 
         Problem p = GM.GenerateRandomProblem();
         slot.SetTask(p);
         return p;
+    }
+
+   public bool SlotsAvailable()
+    {
+        return slotsActive < maxSlots;
+    }
+
+    public void DeactivateSlot(ProblemSlot s)
+    {
+        slots[s.GetId()].gameObject.SetActive(false);
+        slotsActive--;
     }
 }
