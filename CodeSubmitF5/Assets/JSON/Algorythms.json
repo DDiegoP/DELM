@@ -1,9 +1,10 @@
 {
     "algorythms": [
         {
-          "name": "BackTracking",
+            "name": "BackTracking",
             "unlocked": false,
-            "commands": "qe"
+            "commands": "qe",
+            "key": "B"
         }
     ]   
 }

@@ -14,8 +14,7 @@ public class Problem : MonoBehaviour
     [SerializeField] private char[] askedAlgCommands;
     [SerializeField] private Structure askedStructure;
     [SerializeField] private char[] askedStructCommands;
-
-    private float tIni;
+    private Proffessor proffessor;
     private float tMaximo;
 
     private Language submittedLanguage;
@@ -28,16 +27,18 @@ public class Problem : MonoBehaviour
     private bool correct;
 
     // Constructora que recibe el lenguaje, algorimo y estructura de datos necesarios para resolverlo
-    public Problem(Language l, Algorythm a, Structure s, float tIni,float tMaximo) : base()
+    public Problem(Language l, Algorythm a, Structure s, float tMaximo) : base()
     {
         this.askedLanguage = l;
         this.askedAlgorythm = a;
         this.askedStructure = s;
+        this.askedLangCommands = l.GetCommands();
+        this.askedStructCommands = s.GetCommands();
+        this.askedAlgCommands = a.GetCommands();
         this.submittedLanguage = null;
         this.submittedAlgorythm = null;
         this.submittedStructure = null;
         this.correct = true;
-        this.tIni = tIni;
         this.tMaximo = tMaximo;
 
     }
@@ -51,7 +52,7 @@ public class Problem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.time > (this.tIni + this.tMaximo)){
+        if(Time.time >  this.tMaximo){
             //transform.parent.gameObject.GetComponent<ProblemHolder>().timeOutProblem(this);
         }
     }
@@ -96,8 +97,8 @@ public class Problem : MonoBehaviour
     {
 
     }
-    public float TiempoRestante(float tActual){
-        return (tIni + tMaximo) - tActual;
-    }
+    //public float TiempoRestante(float tActual){
+    //    return (tIni + tMaximo) - tActual;
+    //}
 
 }

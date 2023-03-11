@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -12,10 +13,15 @@ public class Code
     [SerializeField]
     protected List<char> commands;
 
-    public Code(string n)
+    public bool unlocked;
+
+    protected KeyCode key;
+
+    public Code(string n, string k)
     {
         codeName = n;
         commands = new List<char>();
+        key = (KeyCode)System.Enum.Parse(typeof(KeyCode), k);
     }
     public virtual void Submit(Problem p)
     {

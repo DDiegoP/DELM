@@ -2,7 +2,9 @@
     "structures": [
         {
             "name": "BinTree",
-            "commands": "cd"
+            "commands": "cd",
+            "unlocked": true,
+            "key": "B"
         }
     ]
 }

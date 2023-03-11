@@ -3,17 +3,20 @@
       {
         "name": "C++",
         "unlocked": true,
-        "commands": "cd"
+        "commands": "cd",
+        "key": "C"
       },
       {
         "name": "Java",
         "unlocked": true,
-        "commands": "pf"
+        "commands": "pf",
+        "key": "J"
       },
       {
         "name": "MATLAB",
         "unlocked": false, 
-        "commands": "pf"
+        "commands": "pf",
+        "key": "M"
       }
     ]   
 }

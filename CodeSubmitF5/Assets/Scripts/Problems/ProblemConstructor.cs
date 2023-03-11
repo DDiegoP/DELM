@@ -47,12 +47,11 @@ public class ProblemConstructor
         return this.structures;
     }
 
-
-    public Problem GenerateProblem(float tIni)
+    public Problem GenerateProblem()
     {
         Language l = this.languages[this.rnd.Next(this.languages.Count)];
         Algorythm a = this.algorythms[this.rnd.Next(this.algorythms.Count)];
         Structure e = this.structures[this.rnd.Next(this.structures.Count)];
-        return new Problem(l, a, e, tIni, tMaximo);
+        return new Problem(l, a, e, tMaximo);
     }
 }

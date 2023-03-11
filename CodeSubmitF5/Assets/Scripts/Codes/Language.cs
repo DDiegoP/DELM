@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Language : Code
 {
-    public Language(string l) : base(l)
+    public Language(string l,string k) : base(l, k)
     {
 
     }

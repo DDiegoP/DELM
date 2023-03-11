@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
         LoadJSON();
         problems = new List<Problem>();
         problemConstructor= new ProblemConstructor();
+        
     }
     public void TakeDamage(int damage){
         if(HealthBar == null) return;

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Structure : Code
 {
-    public Structure(string s) : base(s)
+    public Structure(string s,string k) : base(s,k)
     {
         
     }
