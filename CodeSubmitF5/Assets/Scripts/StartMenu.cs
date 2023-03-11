@@ -11,7 +11,7 @@ public class StartMenu : MonoBehaviour
     {
         DontDestroyOnLoad(transform.gameObject);
         //GameManager.SetActive(true);
-        SceneManager.LoadScene("Prueba");
+        SceneManager.LoadScene("MainScene");
         audioData.Play(0);
     }
 
