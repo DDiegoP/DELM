@@ -31,13 +31,14 @@ public class CalifcationTableRow : MonoBehaviour
     Calification _calif;
     string _proffessor;
     string _task;
-
+    
     public void SetParameters(string task, string proffessor, Calification calif)
     {
         _task = task;
         _proffessor = proffessor;
         _calif = calif;
 
+       
         ProffesorText.text = _proffessor;
         TaskText.text = _task;
         switch (_calif)

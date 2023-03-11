@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [System.Serializable]
@@ -14,6 +15,18 @@ public class ProblemSlot : MonoBehaviour
     [SerializeField] private TMP_Text ProblemLang;
     [SerializeField] private TMP_Text ProblemAlgorithm;
     [SerializeField] private TMP_Text ProblemDataStructure;
+    [SerializeField] private KeyCode key;
+
+    private KeyCode keyCode;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(key))
+        {
+            Debug.Log("AAAAAAAAAAA");
+            
+        }
+    }
 
     public void SetTask(Problem p)
     {

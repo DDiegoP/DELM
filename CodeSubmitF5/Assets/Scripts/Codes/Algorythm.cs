@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Algorythm : Code
 {
-    public Algorythm(string a) : base(a)
+    public Algorythm(string a) : base(a, KeyCode.D)
     {
 
     }

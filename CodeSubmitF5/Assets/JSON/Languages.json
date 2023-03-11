@@ -1,12 +1,19 @@
 {
     "languages": [
-        {
-            "name": "C++",
-            "commands": "cd"
-        },
-        {
-            "name": "Java",
-            "commands": "pf"
-        }
+      {
+        "name": "C++",
+        "unlocked": true,
+        "commands": "cd"
+      },
+      {
+        "name": "Java",
+        "unlocked": true,
+        "commands": "pf"
+      },
+      {
+        "name": "MATLAB",
+        "unlocked": false, 
+        "commands": "pf"
+      }
     ]   
 }
