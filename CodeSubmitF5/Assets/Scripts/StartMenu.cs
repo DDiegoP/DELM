@@ -20,7 +20,7 @@ public class StartMenu : MonoBehaviour
         DontDestroyOnLoad(transform.gameObject);
         
         //GameManager.SetActive(true);
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Profepon");
         audioData.Play(0);
     }
 

@@ -154,4 +154,5 @@ public class GameManager : MonoBehaviour
         Debug.Log(s);
         //currentProblem.SubmitStructure(s);
     }
+
 }

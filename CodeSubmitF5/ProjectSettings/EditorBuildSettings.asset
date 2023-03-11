@@ -8,13 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: e78233dcaa09ab94994d159dbbe9e1c2
   - enabled: 1
     path: Assets/Scenes/MainMenuScene.unity
-    guid: 5c95d7a2c863ba746a7f61e6f475b17b
+    guid: 30da40286321d034e9308bd1de9a72da
+  - enabled: 1
+    path: Assets/Scenes/Profepon.unity
+    guid: f6b9257891e9d774db5dd7f41bca953e
   m_configObjects: {}

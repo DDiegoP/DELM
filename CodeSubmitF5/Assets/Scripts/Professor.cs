@@ -10,7 +10,7 @@ public class Proffessor
     public string portraitPath;
     public Task[] AllTasks;
     public Sprite portrait;
-
+    public bool unlocked;
     public List<string> GetAvailableTasks() {
         List<string> tasks = new List<string>();
         foreach(Task task in AllTasks)
