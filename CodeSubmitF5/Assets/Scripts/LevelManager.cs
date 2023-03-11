@@ -13,10 +13,11 @@ public class LevelManager : MonoBehaviour
     Problem[] Problems = new Problem[4];
 
     [SerializeField]
-    float MinGenerationTime;
+    CalificationTable cTable;
 
     [SerializeField]
-    CalificationTable cTable;
+    float MinGenerationTime;
+
 
     [SerializeField]
     float MaxGenerationTime;

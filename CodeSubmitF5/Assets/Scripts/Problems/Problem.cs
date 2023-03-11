@@ -40,8 +40,8 @@ public class Problem : MonoBehaviour
         this.askedAlgorythm = a;
         this.askedStructure = s;
         this.askedLangCommands = l.GetCommands();
-        this.askedStructCommands = s.GetCommands();
         this.askedAlgCommands = a.GetCommands();
+        this.askedStructCommands = s.GetCommands();
         this.submittedLanguage = null;
         this.submittedAlgorythm = null;
         this.submittedStructure = null;

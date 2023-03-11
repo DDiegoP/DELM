@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
     List<Algorythm> unlockedAlgorythms;
     List<Language> unlockedLanguages;
     List<Structure> unlockedStructures;
+    List<Proffessor> unlockedProffessors;
 
     private ProblemConstructor problemConstructor;
 
@@ -73,7 +74,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        unlockedAlgorythms = new List<Algorythm>();
+        InitializeUnlocked();
         unlockedAlgorythms.Add(AlgorythmList[0]);
         unlockedLanguages = new List<Language>();
         unlockedLanguages.Add(LangList[0]);
@@ -82,6 +83,29 @@ public class GameManager : MonoBehaviour
         unlockedStructures.Add(StructureList[0]);
     }
 
+    private void InitializeUnlocked()
+    {
+        foreach(Proffessor p in ProfsList)
+        {
+            if(p.unlocked) unlockedProffessors.Add(p);
+        }
+        foreach (Algorythm a in AlgorythmList)
+        {
+            if (a.unlocked) unlockedAlgorythms.Add(a);
+        }
+        foreach (Structure s in StructureList)
+        {
+            if (s.unlocked) unlockedStructures.Add(s);
+        }
+        foreach (Language l in LangList)
+        {
+            if (l.unlocked) unlockedLanguages.Add(l);
+        }
+
+       
+        
+    }
+    
     public void TakeDamage(int damage){
         if(HealthBar == null) return;
         HealthBar.GetComponent<HealthScript>().TakeDamage(damage);
@@ -148,7 +172,10 @@ public class GameManager : MonoBehaviour
     {
         return unlockedStructures;
     }
-
+    public List<Proffessor> GetUnlockedProfessors()
+    {
+        return unlockedProffessors;
+    }
     public void SubmitAlgorythm(Algorythm a)
     {
         Debug.Log(a);
