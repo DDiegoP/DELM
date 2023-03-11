@@ -31,10 +31,15 @@ public class GameManager : MonoBehaviour
     Structure[] StructureList;
     Algorythm[] AlgorythmList;
 
+    List<Algorythm> unlockedAlgorythms;
+    List<Language> unlockedLanguages;
+    List<Structure> unlockedStructures;
+
     private ProblemConstructor problemConstructor;
 
 
     List<Problem> problems;
+    Problem currentProblem;
     // private ProblemConstructor pconstructor;
     /*[SerializeField]
     private ProblemHolder holder;
@@ -55,6 +60,18 @@ public class GameManager : MonoBehaviour
         problemConstructor= new ProblemConstructor();
         
     }
+
+    void Start()
+    {
+        unlockedAlgorythms = new List<Algorythm>();
+        unlockedAlgorythms.Add(AlgorythmList[0]);
+        unlockedLanguages = new List<Language>();
+        unlockedLanguages.Add(LangList[0]);
+        unlockedLanguages.Add(LangList[1]);
+        unlockedStructures = new List<Structure>();
+        unlockedStructures.Add(StructureList[0]);
+    }
+
     public void TakeDamage(int damage){
         if(HealthBar == null) return;
         HealthBar.GetComponent<HealthScript>().TakeDamage(damage);
@@ -107,5 +124,34 @@ public class GameManager : MonoBehaviour
     public List<Problem> GetProblems()
     {
         return problems;
+    }
+
+    public List<Algorythm> GetUnlockedAlgorythms()
+    {
+        return unlockedAlgorythms;
+    }
+    public List<Language> GetUnlockedLanguages()
+    {
+        return unlockedLanguages;
+    }
+    public List<Structure> GetUnlockedStructures()
+    {
+        return unlockedStructures;
+    }
+
+    public void SubmitAlgorythm(Algorythm a)
+    {
+        Debug.Log(a);
+        //currentProblem.SubmitAlgorythm(a);
+    }
+    public void SubmitLanguage(Language l)
+    {
+        Debug.Log(l);
+        //currentProblem.SubmitLanguage(l);
+    }
+    public void SubmitStructure(Structure s)
+    {
+        Debug.Log(s);
+        //currentProblem.SubmitStructure(s);
     }
 }

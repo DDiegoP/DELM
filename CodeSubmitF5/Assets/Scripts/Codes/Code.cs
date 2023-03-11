@@ -9,7 +9,9 @@ public class Code
     
     [SerializeField]
     protected string codeName;
-    
+
+    protected KeyCode key;
+
     [SerializeField]
     protected List<char> commands;
 
@@ -42,6 +44,10 @@ public class Code
         return commands.ToArray();
     }
     
+    public KeyCode GetKey()
+    {
+        return key;
+    }
 
     public static bool operator ==(Code c1, Code c2)
     {
