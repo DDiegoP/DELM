@@ -10,13 +10,36 @@ public class ProblemHolder : MonoBehaviour
     ProblemSlot[] slots;
     int maxSlots;
     int slotsActive = 0;
-    int i = 0;
+    int actualSlot = 0;
+    List<Problem> problems;
 
     // Start is called before the first frame update
     void Awake()
     {
-        slots = GetComponentsInChildren<ProblemSlot>(true);
+        slots = GetComponentsInChildren<ProblemSlot>(true);    
         maxSlots = slots.Length;
+    }
+
+    private void Start()
+    {
+        GM = GameManager.GetInstance();
+        problems = GM.GetProblems();
+       // AssignProblems();
+    }
+
+    private void AssignProblems()
+    {
+        int i = 0; 
+        ProblemSlot slot = GetFirstAvailableSlot();
+        while(i < problems.Count && slot != null)
+        {
+            slots[i].SetTask(problems[i]);
+            slots[i].gameObject.SetActive(true);
+            slotsActive++;
+            ++i;
+        }
+
+        actualSlot = i % slots.Length;
     }
 
     // Update is called once per frame
@@ -29,29 +52,40 @@ public class ProblemHolder : MonoBehaviour
         {
             slot.gameObject.SetActive(true);
             Proffessor[] profs = GM.GetProfessors();
-            slot.SetTask(profs[i % profs.Length], profs[i % profs.Length].GetAvailableTasks()[0], GM.GetLanguages()[0].GetName(),
+            slot.SetTask(profs[actualSlot % profs.Length], profs[actualSlot % profs.Length].GetAvailableTasks()[0], GM.GetLanguages()[0].GetName(),
                 GM.GetAlgorythms()[0].GetName(), GM.GetStructures()[0].GetName());
+            problems.Add(GenerateNewProblem(slot));
             slotsActive++;
-            i++;
         }
+    }
+
+    private void OnDestroy()
+    {
+        GM.SetProblems(problems.ToArray());
     }
 
     public ProblemSlot GetFirstAvailableSlot()
     {
         ProblemSlot slot = slots[0];
         int i = 0;
-        while (slot.gameObject.activeInHierarchy && i < slots.Length)
+        while (i < slots.Length - 1 && slot.gameObject.activeInHierarchy)
         {
-            slot = slots[i];
             ++i;
+            slot = slots[i];
         }
+
+        actualSlot = i;
+
+        if (slot.gameObject.activeInHierarchy) return null;
         return slot;
     }
 
-    private void GenerateNewProblem(ProblemSlot slot)
+    private Problem GenerateNewProblem(ProblemSlot slot)
     {
         slot.gameObject.SetActive(true);
 
-        slot.SetTask(GM.GenerateRandomProblem());
+        Problem p = GM.GenerateRandomProblem();
+        slot.SetTask(p);
+        return p;
     }
 }

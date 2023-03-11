@@ -33,11 +33,14 @@ public class GameManager : MonoBehaviour
 
     private ProblemConstructor problemConstructor;
 
+
+    List<Problem> problems;
     // private ProblemConstructor pconstructor;
     /*[SerializeField]
     private ProblemHolder holder;
     [SerializeField]
     private CalificationTable table;*/
+    public static GameManager GetInstance() { return instance; }
 
     void Awake(){
         if(instance == null){
@@ -48,15 +51,19 @@ public class GameManager : MonoBehaviour
         }
 
         LoadJSON();
+        problems = new List<Problem>();
+        problemConstructor= new ProblemConstructor();
     }
     public void TakeDamage(int damage){
-        this.HealthBar.GetComponent<HealthScript>().TakeDamage(damage);
-        if(this.HealthBar.GetComponent<HealthScript>().curHealth <= 0){
+        if(HealthBar == null) return;
+        HealthBar.GetComponent<HealthScript>().TakeDamage(damage);
+        if(HealthBar.GetComponent<HealthScript>().curHealth <= 0){
             //Game over
         }
     }
 
     public void AddScore(int score){
+        if (this.score == null) return;
         this.score.GetComponent<ScoreScript>().AddScore(score);
     }
 
@@ -73,9 +80,10 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void SetProblems(Problem[] problems) => this.problems.AddRange(problems);
     public Problem GenerateRandomProblem()
     {
-        return problemConstructor.GenerateProblem(Time.time);
+        return null;
     }
 
     public Proffessor[] GetProfessors()
@@ -93,5 +101,10 @@ public class GameManager : MonoBehaviour
     public Language[] GetLanguages()
     {
         return LangList;
+    }
+
+    public List<Problem> GetProblems()
+    {
+        return problems;
     }
 }
