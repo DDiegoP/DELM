@@ -3,6 +3,10 @@
         {
             "name": "C++",
             "commands": "cd"
+        },
+        {
+            "name": "Java",
+            "commands": "pf"
         }
     ]   
 }

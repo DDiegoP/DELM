@@ -3,10 +3,25 @@
     [ 
         {
             "name": "Cleon",
-            "portraitPath": "Textures/CleonPlaceHolder",
+            "portraitPath": "Textures/cleon",
             "AllTasks": [
                 {
                     "title": "HITO 1",
+                    "unlocked": true
+                },
+                {
+                    "title": "Trabaja",
+                    "unlocked": false
+                }
+            ]
+
+        },
+        {
+            "name":"Pedro Pablo",
+            "portraitPath": "Textures/pedroPablo",
+            "AllTasks": [
+                {
+                    "title": "Resource Manager",
                     "unlocked": true
                 }
             ]

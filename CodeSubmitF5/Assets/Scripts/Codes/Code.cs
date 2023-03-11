@@ -23,7 +23,6 @@ public class Code
     }
     public void AddCommand(char c)
     {
-        //instructions.Add(inst)
         commands.Add(c);
     }
 
