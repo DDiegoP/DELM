@@ -11,7 +11,7 @@ public class CodeSerializable
     public string commands;
 }
 [System.Serializable]
-public class LanguageHolder
+public class LanguageSerializer
 {
     public CodeSerializable[] languages;
 
@@ -33,7 +33,7 @@ public class LanguageHolder
 
 
 [System.Serializable]
-public class AlgorythmHolder
+public class AlgorythmSerializer
 {
     public CodeSerializable[] algorythms;
 
@@ -54,7 +54,7 @@ public class AlgorythmHolder
 
 
 [System.Serializable]
-public class StructureHolder
+public class StructureSerializer
 {
     public CodeSerializable[] structures;
 
