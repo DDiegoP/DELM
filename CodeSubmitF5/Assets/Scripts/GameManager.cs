@@ -7,6 +7,16 @@ using System;
 public class GameManager : MonoBehaviour
 {
     static GameManager instance = null;
+
+    private int credits = 0;
+    public int Credits{
+        get{
+            return credits;
+        }
+        set{
+            credits = value;
+        }
+    }
     
     [SerializeField]
     private TMP_Text score;
