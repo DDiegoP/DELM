@@ -16,7 +16,8 @@ public enum Calification
 
 public class CalifcationTableRow : MonoBehaviour
 {
-
+    [SerializeField]
+    GameObject correctSound, wrongSound;
    
     [SerializeField]
     TMP_Text ProffesorText;
@@ -45,10 +46,12 @@ public class CalifcationTableRow : MonoBehaviour
             case Calification.Correct:
                 CalifText.text = "CORRECT";
                 CalifText.color = new Color(0, 100, 0);
+                correctSound.SetActive(true);
                 break;
             case Calification.Wrong_Answer:
                 CalifText.text = "WRONG ANSWER";
                 CalifText.color = new Color(100, 0, 0);
+                wrongSound.SetActive(true);
                 break;
             default:
                 break;
