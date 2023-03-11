@@ -146,6 +146,38 @@ PrefabInstance:
       propertyPath: tabsToOpen
       value: 
       objectReference: {fileID: 2124770998}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1551083958}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeTab
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TabManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2124770998}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6955592754921189320, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
       propertyPath: m_fontSize
       value: 20
@@ -1418,6 +1450,38 @@ PrefabInstance:
       propertyPath: tabsToOpen
       value: 
       objectReference: {fileID: 1343248587}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1551083958}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeTab
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TabManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1343248587}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6955592754921189320, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
       propertyPath: m_fontSize
       value: 20
@@ -1875,6 +1939,70 @@ PrefabInstance:
       propertyPath: tabsToOpen
       value: 
       objectReference: {fileID: 1198059035}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1551083958}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1551083958}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeTab
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeTab
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TabManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TabManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1198059035}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1198059035}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083176408231612305, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+      propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6955592754921189321, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

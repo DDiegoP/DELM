@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+
+[System.Serializable]
+public class KeyEvent : UnityEvent
+{
+}
 
 public class Tab : MonoBehaviour
 {
     [SerializeField] private KeyCode key;
-    [SerializeField] private string tabName;
-    [SerializeField] GameObject tabsToOpen;
+    [SerializeField] private string tabName; 
+    [SerializeField] private KeyEvent onKeyPressed;
 
-    public void Use()
-    {
-        TabManager.GetInstance().ChangeTab(tabsToOpen);
-    }
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,7 @@ public class Tab : MonoBehaviour
     {
         if (Input.GetKeyDown(key))
         {
-            Use();
+            onKeyPressed.Invoke();
         }
     }
 }
