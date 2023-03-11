@@ -12,6 +12,8 @@ public class Code
     [SerializeField]
     protected List<char> commands;
 
+    public bool unlocked;
+
     public Code(string n)
     {
         codeName = n;

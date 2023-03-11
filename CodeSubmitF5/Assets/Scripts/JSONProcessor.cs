@@ -25,8 +25,10 @@ public class JSONProcessor : MonoBehaviour
     List<Language> lockedLangs;
     List<Structure> lockedStructs;
     List<Algorythm> lockedAlgs;
+    
+    
 
-    Random rnd = new Random();
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -37,15 +39,15 @@ public class JSONProcessor : MonoBehaviour
         }
         foreach(Language l in LangList){
             if(!l.unlocked)
-            lockedProfs.Add(l);
+            lockedLangs.Add(l);
         }
         foreach(Structure s in StructureList){
             if(!s.unlocked)
-            lockedProfs.Add(s);
+            lockedStructs.Add(s);
         }
         foreach(Algorythm a in AlgorythmList){
             if(!a.unlocked)
-            lockedProfs.Add(a);
+            lockedAlgs.Add(a);
         }
         Debug.Log(getRandElem());
     }
@@ -69,40 +71,42 @@ public class JSONProcessor : MonoBehaviour
 
         bool elemPicked=false;
         while(!elemPicked){
-            int choice= rnd.Next(4);
+            int choice= Random.Range(0,4);
 
             switch (choice)
             {
                 case 0:
                 if(lockedProfs.Count!=0){
-                    int index=rnd.Next(lockedProfs.Count);
-                    lockedProfs[index].unlocked=true;
-                    return lockedProfs[index].getName();
+                    int index= Random.Range(0, lockedProfs.Count);
+                        lockedProfs[index].unlocked=true;
+                    return lockedProfs[index].GetName();
                 }
                 break;
                 case 1:
                 if(lockedLangs.Count!=0){
-                    int index=rnd.Next(lockedLangs.Count);
+                    int index=Random.Range(0, lockedLangs.Count);
                     lockedLangs[index].unlocked=true;
-                    return lockedLangs[index].getName();
+                    return lockedLangs[index].GetName();
                 }
                 break;
                 case 2:
                 if(lockedStructs.Count!=0){
-                    int index=rnd.Next(lockedStructs.Count);
+                    int index=Random.Range(0, lockedStructs.Count);
                     lockedStructs[index].unlocked=true;
-                    return lockedStructs[index].getName();
+                    return lockedStructs[index].GetName();
                 }
                 break;
                 case 3:
                 if(lockedAlgs.Count!=0){
-                    int index=rnd.Next(lockedAlgs.Count);
+                    int index=Random.Range(0, lockedAlgs.Count);
                     lockedAlgs[index].unlocked=true;
-                    return lockedAlgs[index].getName();
+                    return lockedAlgs[index].GetName();
                 }
                 break;
             }
+
         }
+        return "";
     }
 
     public Proffessor[] GetProfessors()
