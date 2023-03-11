@@ -1,0 +1,13 @@
+{
+    "languages": [
+        {
+            
+            "name": "C++",
+            "commands": [
+            "c",
+            "d"
+            ]
+            
+        }
+    ]   
+}

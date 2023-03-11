@@ -323,8 +323,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: {fileID: 0}
   HealthBar: {fileID: 0}
-  problemHolder: {fileID: 891511771}
   ProffessorJSON: {fileID: 4900000, guid: 87b1996ac80ea414ca0d3d066d45b888, type: 3}
+  LangJSON: {fileID: 4900000, guid: dcaecb781754a1542ab45d92bc83fd43, type: 3}
 --- !u!4 &371663049
 Transform:
   m_ObjectHideFlags: 0
@@ -573,6 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c4db0e9f205fd46904d84f298158d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 371663048}
 --- !u!1 &1454424340
 GameObject:
   m_ObjectHideFlags: 0

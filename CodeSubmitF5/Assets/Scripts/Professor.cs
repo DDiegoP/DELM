@@ -5,7 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class Proffessor
 {
-    public string name;
+    [SerializeField]
+    private string name;
     public string portraitPath;
     public Task[] AllTasks;
     public Sprite portrait;
@@ -24,6 +25,11 @@ public class Proffessor
     public void LoadSprite()
     {
          portrait = Resources.Load<Sprite>(portraitPath);
+    }
+
+    public string GetName()
+    {
+        return name;
     }
 }
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Structure : Code
 {
     public Structure(string s) : base(s, new char[0])

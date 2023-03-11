@@ -48,7 +48,7 @@ public class ProblemConstructor
     }
 
 
-    public Problem generateProblem(float tIni)
+    public Problem GenerateProblem(float tIni)
     {
         Language l = this.languages[this.rnd.Next(this.languages.Count)];
         Algorythm a = this.algorythms[this.rnd.Next(this.algorythms.Count)];

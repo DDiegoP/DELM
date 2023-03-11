@@ -14,7 +14,11 @@ public class GameManager : MonoBehaviour
     private GameObject HealthBar;
     [SerializeField]
     TextAsset ProffessorJSON;
+
+    [SerializeField]
+    TextAsset LangJSON;
     Proffessor[] ProfsList;
+    Language[] LangList;
 
     private ProblemConstructor problemConstructor;
 
@@ -33,8 +37,14 @@ public class GameManager : MonoBehaviour
         }
 
         LoadProffessors();
+        LoadLanguages();
         ProfsList[0].LoadSprite();
         problemConstructor = new ProblemConstructor();
+        Debug.Log(LangList[0].GetName());
+        foreach(char c in LangList[0].GetCommands())
+        {
+            Debug.Log(c);
+        }
     }
 
     // Start is called before the first frame update
@@ -64,8 +74,13 @@ public class GameManager : MonoBehaviour
         ProfsList = JsonUtility.FromJson<ProffessorHolder>(ProffessorJSON.text).array;    
     }
 
+    void LoadLanguages()
+    {
+        LangList = JsonUtility.FromJson<LanguageHolder>(LangJSON.text).GetLanguages();
+    }
+
     public Problem GenerateRandomProblem()
     {
-        return problemConstructor.generateProblem(Time.time);
+        return problemConstructor.GenerateProblem(Time.time);
     }
 }

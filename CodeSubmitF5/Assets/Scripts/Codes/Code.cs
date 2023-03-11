@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Code : MonoBehaviour
 {
-    private string name;
-    private char[] commands;
+    
+    [SerializeField]
+    protected string codeName;
+    
+    [SerializeField]
+    protected char[] commands;
 
     public Code(string n, char[] comms)
     {
-        name = n;
+        codeName = n;
         commands = comms;
     }
     public virtual void Submit(Problem p)
@@ -19,6 +24,16 @@ public class Code : MonoBehaviour
     public void AddCommand(char c)
     {
         //instructions.Add(inst);
+    }
+
+    public string GetName()
+    {
+        return codeName;
+    }
+
+    public char[] GetCommands()
+    {
+        return commands;
     }
     // Start is called before the first frame update
     void Start()

@@ -28,7 +28,7 @@ public class Problem : MonoBehaviour
     private bool correct;
 
     // Constructora que recibe el lenguaje, algorimo y estructura de datos necesarios para resolverlo
-    public Problem(Language l, Algorythm a, Structure s, float tIni,float tMaximo)
+    public Problem(Language l, Algorythm a, Structure s, float tIni,float tMaximo) : base()
     {
         this.askedLanguage = l;
         this.askedAlgorythm = a;
@@ -39,6 +39,7 @@ public class Problem : MonoBehaviour
         this.correct = true;
         this.tIni = tIni;
         this.tMaximo = tMaximo;
+
     }
 
     // Start is called before the first frame update
