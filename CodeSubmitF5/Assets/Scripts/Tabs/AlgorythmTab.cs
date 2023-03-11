@@ -4,18 +4,7 @@ using UnityEngine;
 
 public class AlgorythmTab : Tab
 {
-    AlgorythmTab() : base('a')
-    {
-        
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
+    AlgorythmTab() : base(KeyCode.Alpha2)
     {
         
     }

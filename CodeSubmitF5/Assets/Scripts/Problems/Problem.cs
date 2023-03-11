@@ -92,6 +92,10 @@ public class Problem : MonoBehaviour
     {
         submittedStructure = s;
     }
+    public void SubmitCommand(char c)
+    {
+
+    }
     public float TiempoRestante(float tActual){
         return (tIni + tMaximo) - tActual;
     }

@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Tab : MonoBehaviour
 {
-    private char key;
+    [SerializeField] private KeyCode key;
     protected List<Code> codes;
-    public Tab(char k)
+
+    public Tab(KeyCode k)
     {
         this.key = k;
     }
-    public void open()
-    {
 
+    public void Open()
+    {
+        Debug.Log("Open");
     }
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,9 @@ public class Tab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(key))
+        {
+            Open();
+        }
     }
 }
