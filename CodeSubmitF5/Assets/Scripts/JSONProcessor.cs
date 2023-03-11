@@ -21,33 +21,37 @@ public class JSONProcessor : MonoBehaviour
     Structure[] StructureList;
     Algorythm[] AlgorythmList;
 
-    List<Proffessor> lockedProfs;
-    List<Language> lockedLangs;
-    List<Structure> lockedStructs;
-    List<Algorythm> lockedAlgs;
-    
-    
+    List<Proffessor> lockedProfs = new List<Proffessor>();
+    List<Language> lockedLangs = new List<Language>();
+    List<Structure> lockedStructs = new List<Structure>();
+    List<Algorythm> lockedAlgs = new List<Algorythm>();
 
-    
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         LoadJSON();
-        foreach(Proffessor p in ProfsList){
-            if(!p.unlocked)
-            lockedProfs.Add(p);
+        foreach (Proffessor p in ProfsList)
+        {
+            if (!p.unlocked)
+                lockedProfs.Add(p);
         }
-        foreach(Language l in LangList){
-            if(!l.unlocked)
-            lockedLangs.Add(l);
+        foreach (Language l in LangList)
+        {
+            if (!l.unlocked)
+                lockedLangs.Add(l);
         }
-        foreach(Structure s in StructureList){
-            if(!s.unlocked)
-            lockedStructs.Add(s);
+        foreach (Structure s in StructureList)
+        {
+            if (!s.unlocked)
+                lockedStructs.Add(s);
         }
-        foreach(Algorythm a in AlgorythmList){
-            if(!a.unlocked)
-            lockedAlgs.Add(a);
+        foreach (Algorythm a in AlgorythmList)
+        {
+            if (!a.unlocked)
+                lockedAlgs.Add(a);
         }
         Debug.Log(getRandElem());
     }
@@ -55,58 +59,73 @@ public class JSONProcessor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void LoadJSON()
     {
-        ProfsList = JsonUtility.FromJson<ProffessorHolder>(ProffessorJSON.text).array;  
+        ProfsList = JsonUtility.FromJson<ProffessorHolder>(ProffessorJSON.text).array;
         LangList = JsonUtility.FromJson<LanguageSerializer>(LangJSON.text).GetLanguages();
         StructureList = JsonUtility.FromJson<StructureSerializer>(StructJSON.text).GetStructures();
         AlgorythmList = JsonUtility.FromJson<AlgorythmSerializer>(AlgJSON.text).GetAlgorytms();
 
     }
 
-    public string getRandElem(){
+    public string getRandElem()
+    {
 
-        bool elemPicked=false;
-        while(!elemPicked){
-            int choice= Random.Range(0,4);
+        bool elemPicked = false;
+        string name = "";
+        while (!elemPicked)
+        {
+            int choice = Random.Range(0, 4);
 
             switch (choice)
             {
                 case 0:
-                if(lockedProfs.Count!=0){
-                    int index= Random.Range(0, lockedProfs.Count);
-                        lockedProfs[index].unlocked=true;
-                    return lockedProfs[index].GetName();
-                }
-                break;
+                    if (lockedProfs.Count != 0)
+                    {
+                        int index = Random.Range(0, lockedProfs.Count);
+                        lockedProfs[index].unlocked = true;
+                        name = lockedProfs[index].GetName();
+                        lockedProfs.RemoveAt(index);
+                        elemPicked = true;
+                    }
+                    break;
                 case 1:
-                if(lockedLangs.Count!=0){
-                    int index=Random.Range(0, lockedLangs.Count);
-                    lockedLangs[index].unlocked=true;
-                    return lockedLangs[index].GetName();
-                }
-                break;
+                    if (lockedLangs.Count != 0)
+                    {
+                        int index = Random.Range(0, lockedLangs.Count);
+                        lockedLangs[index].unlocked = true;
+                        name = lockedLangs[index].GetName();
+                        lockedLangs.RemoveAt(index);
+                        elemPicked = true;
+                    }
+                    break;
                 case 2:
-                if(lockedStructs.Count!=0){
-                    int index=Random.Range(0, lockedStructs.Count);
-                    lockedStructs[index].unlocked=true;
-                    return lockedStructs[index].GetName();
-                }
-                break;
+                    if (lockedStructs.Count != 0)
+                    {
+                        int index = Random.Range(0, lockedStructs.Count);
+                        lockedStructs[index].unlocked = true;
+                        name = lockedStructs[index].GetName();
+                        lockedStructs.RemoveAt(index);
+                        elemPicked = true;
+                    }
+                    break;
                 case 3:
-                if(lockedAlgs.Count!=0){
-                    int index=Random.Range(0, lockedAlgs.Count);
-                    lockedAlgs[index].unlocked=true;
-                    return lockedAlgs[index].GetName();
-                }
-                break;
+                    if (lockedAlgs.Count != 0)
+                    {
+                        int index = Random.Range(0, lockedAlgs.Count);
+                        lockedAlgs[index].unlocked = true;
+                        name = lockedAlgs[index].GetName();
+                        lockedAlgs.RemoveAt(index);
+                        elemPicked = true;
+                    }
+                    break;
             }
 
         }
-        return "";
+        return name;
     }
 
     public Proffessor[] GetProfessors()
