@@ -75,35 +75,39 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         InitializeUnlocked();
-        unlockedAlgorythms.Add(AlgorythmList[0]);
-        unlockedLanguages = new List<Language>();
-        unlockedLanguages.Add(LangList[0]);
-        unlockedLanguages.Add(LangList[1]);
-        unlockedStructures = new List<Structure>();
-        unlockedStructures.Add(StructureList[0]);
+        //unlockedAlgorythms.Add(AlgorythmList[0]);
+        //unlockedLanguages = new List<Language>();
+        //unlockedLanguages.Add(LangList[0]);
+        //unlockedLanguages.Add(LangList[1]);
+        //unlockedStructures = new List<Structure>();
+        //unlockedStructures.Add(StructureList[0]);
     }
 
     private void InitializeUnlocked()
     {
+        unlockedProffessors = new List<Proffessor>();
         foreach(Proffessor p in ProfsList)
         {
             if(p.unlocked) unlockedProffessors.Add(p);
         }
+
+        unlockedAlgorythms = new List<Algorythm>();
         foreach (Algorythm a in AlgorythmList)
         {
             if (a.unlocked) unlockedAlgorythms.Add(a);
         }
+
+        unlockedStructures = new List<Structure>();
         foreach (Structure s in StructureList)
         {
             if (s.unlocked) unlockedStructures.Add(s);
         }
+
+        unlockedLanguages = new List<Language>();
         foreach (Language l in LangList)
         {
             if (l.unlocked) unlockedLanguages.Add(l);
         }
-
-       
-        
     }
     
     public void TakeDamage(int damage){

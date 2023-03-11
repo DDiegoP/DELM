@@ -4,18 +4,32 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-//String[] names = {"Las tres hermanas", "Tuberías por doquier"};
+//String[] names = {"Las tres hermanas", "Tuberï¿½as por doquier"};
 
 public class Problem : MonoBehaviour
 {
     private ProblemSlot slot;
     
     private Language askedLanguage;
+    public Language AskedLanguage
+    {
+        get { return askedLanguage; }
+    }
     private char[] askedLangCommands;
+    
     private Algorythm askedAlgorythm;
+    public Algorythm AskedAlgorythm { 
+        get => askedAlgorythm;
+    }
     private char[] askedAlgCommands;
+    
     private Structure askedStructure;
+    public Structure AskedStructure
+    {
+        get { return askedStructure; }
+    }
     private char[] askedStructCommands;
+    
     private Proffessor proffessor;
     private float tMaximo;
 
@@ -26,6 +40,7 @@ public class Problem : MonoBehaviour
     private Structure submittedStructure;
     private char[] submittedStructCommands;
 
+    private CountdownController cdCntrl;
     private bool correct;
 
     private float timeLimit = 0;
@@ -55,16 +70,23 @@ public class Problem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        cdCntrl = slot.gameObject.GetComponent<CountdownController>();
+
+        cdCntrl.setMaxValue(tMaximo);
     }
 
     // Update is called once per frame
     void Update()
     {
         if(timeLimit < tMaximo)
-        {
             timeLimit += Time.deltaTime;
-        }
+
+        float t = timeLimit / tMaximo;
+        float r = Mathf.Lerp(0, 1, t);
+        float g = Mathf.Lerp(1, 0, t);
+        cdCntrl.setColor(new Color(r, g, 0, 1));
+        cdCntrl.setValue(tMaximo - timeLimit);
+        
     }
 
     // Comprueba si los datos introducidos son correctos
@@ -76,7 +98,7 @@ public class Problem : MonoBehaviour
         if (correct)
         {
             correct = askedLanguage == submittedLanguage &&
-                      askedAlgorythm == submittedAlgorythm &&
+                      AskedAlgorythm == submittedAlgorythm &&
                       askedStructure == submittedStructure;
         }
     }

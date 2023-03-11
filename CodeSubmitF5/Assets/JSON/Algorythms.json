@@ -2,7 +2,7 @@
     "algorythms": [
         {
             "name": "BackTracking",
-            "unlocked": false,
+            "unlocked": true,
             "commands": "qe",
             "key": "B"
         }

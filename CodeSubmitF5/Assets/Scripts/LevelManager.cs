@@ -39,7 +39,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         gm = GameManager.GetInstance();
-        //proffessors gm.GetProfessors();
+        proffessors = gm.GetUnlockedProfessors();
         algorithms = gm.GetUnlockedAlgorythms();
         structures = gm.GetUnlockedStructures();
         languages = gm.GetUnlockedLanguages();
@@ -50,13 +50,13 @@ public class LevelManager : MonoBehaviour
     {
         foreach(Problem p in Problems)
         {
-            if (p.IsTimedOut())
+            if (p.gameObject.activeInHierarchy && p.IsTimedOut())
             {
                 SolveProblem(p, Calification.Time_Limit);
             }
         }
         if (activePrograms >= Problems.Length) return;
-        if(GenerationTimer == NextGeneration)
+        if(GenerationTimer >= NextGeneration)
         {
             GenerateProblem(GetFirstAvailableProblem());
             GenerationTimer = 0;
@@ -87,7 +87,7 @@ public class LevelManager : MonoBehaviour
     {
         int i = 1;
         Problem p = Problems[0];
-        while(i < Problems.Length && !p.gameObject.activeInHierarchy)
+        while(i < Problems.Length && p.gameObject.activeInHierarchy)
         {
             p = Problems[i];
             i++;

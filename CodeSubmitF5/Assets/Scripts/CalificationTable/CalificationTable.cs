@@ -21,7 +21,7 @@ public class CalificationTable : MonoBehaviour
     {
         if(timer >= 0.5f)
         {
-            CreateEntry("Cleon", "HITO " + id, Calification.Wrong_Answer);
+            //CreateEntry("Cleon", "HITO " + id, Calification.Wrong_Answer);
             timer = 0.0f;
             ++id;
         }

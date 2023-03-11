@@ -39,12 +39,12 @@ public class ProblemSlot : MonoBehaviour
     }
     public void SetTask(Problem p)
     {
-        //ProffesorPortrait.sprite = prof.portrait;
-        //ProffessorName.text = prof.name;
-        //ProblemTitle.text = title;
-        //ProblemLang.text = lang;
-        //ProblemAlgorithm.text = alg;
-        //ProblemDataStructure.text = struc;
+        ProffesorPortrait.sprite = p.GetProffessor().portrait;
+        ProffessorName.text = p.GetProffessor().GetName();
+        ProblemTitle.text = p.name;
+        ProblemLang.text = p.AskedLanguage.GetName();
+        ProblemAlgorithm.text = p.AskedAlgorythm.GetName();
+        ProblemDataStructure.text = p.AskedStructure.GetName();
     }
 
     public void SetTask(Proffessor prof, string title, string lang, string alg, string struc)
