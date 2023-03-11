@@ -6,9 +6,7 @@ public class StructureTab : Tab
 {
     StructureTab() : base('s')
     {
-        codes.Add(new Structure("Set"));
-        codes.Add(new Structure("Unordered_Map"));
-        codes.Add(new Structure("List"));
+        
     }
     // Start is called before the first frame update
     void Start()

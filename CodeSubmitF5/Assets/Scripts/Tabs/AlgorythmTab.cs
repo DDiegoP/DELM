@@ -6,11 +6,7 @@ public class AlgorythmTab : Tab
 {
     AlgorythmTab() : base('a')
     {
-        Algorythm a = new Algorythm("Backtracking");
-        //a.addInstruction();
-        codes.Add(a);
-        codes.Add(new Algorythm("Divide y vencer�s"));
-        codes.Add(new Algorythm("Sort"));
+        
     }
     // Start is called before the first frame update
     void Start()

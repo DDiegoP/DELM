@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Algorythm : Code
 {
-    public Algorythm(string a) : base(a, new char[0])
+    public Algorythm(string a) : base(a)
     {
 
     }
@@ -14,15 +14,5 @@ public class Algorythm : Code
     {
         p.SubmitAlgorythm(this);
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

@@ -325,6 +325,8 @@ MonoBehaviour:
   HealthBar: {fileID: 0}
   ProffessorJSON: {fileID: 4900000, guid: 87b1996ac80ea414ca0d3d066d45b888, type: 3}
   LangJSON: {fileID: 4900000, guid: dcaecb781754a1542ab45d92bc83fd43, type: 3}
+  StructJSON: {fileID: 4900000, guid: 240dbff837cbd2a4e8b01dec2ec75df1, type: 3}
+  AlgJSON: {fileID: 4900000, guid: f463eef6255cea449ab4af221f0390f0, type: 3}
 --- !u!4 &371663049
 Transform:
   m_ObjectHideFlags: 0

@@ -6,9 +6,7 @@ public class LanguageTab : Tab
 {
     LanguageTab() : base('l')
     {
-        codes.Add(new Language("C++"));
-        codes.Add(new Language("JS"));
-        codes.Add(new Language("C#"));
+        
     }
     // Start is called before the first frame update
     void Start()

@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Code : MonoBehaviour
+public class Code 
 {
     
     [SerializeField]
     protected string codeName;
     
     [SerializeField]
-    protected char[] commands;
+    protected List<char> commands;
 
-    public Code(string n, char[] comms)
+    public Code(string n)
     {
         codeName = n;
-        commands = comms;
+        commands = new List<char>();
     }
     public virtual void Submit(Problem p)
     {
@@ -23,7 +23,8 @@ public class Code : MonoBehaviour
     }
     public void AddCommand(char c)
     {
-        //instructions.Add(inst);
+        //instructions.Add(inst)
+        commands.Add(c);
     }
 
     public string GetName()
@@ -33,26 +34,16 @@ public class Code : MonoBehaviour
 
     public char[] GetCommands()
     {
-        return commands;
+        return commands.ToArray();
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public static bool operator ==(Code c1, Code c2)
     {
-        return c1.name == c2.name;
+        return c1.codeName == c2.codeName;
     }
     public static bool operator !=(Code c1, Code c2)
     {
-        return !(c1.name == c2.name);
+        return !(c1.codeName == c2.codeName);
     }
 }

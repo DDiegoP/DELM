@@ -1,0 +1,8 @@
+{
+    "algorythms": [
+        {
+            "name": "BackTracking",
+            "commands": "qe"
+        }
+    ]   
+}

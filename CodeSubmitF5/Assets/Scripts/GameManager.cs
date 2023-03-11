@@ -17,8 +17,17 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     TextAsset LangJSON;
+
+    [SerializeField]
+    TextAsset StructJSON;
+
+    [SerializeField]
+    TextAsset AlgJSON;
+
     Proffessor[] ProfsList;
     Language[] LangList;
+    Structure[] StructureList;
+    Algorythm[] AlgorythmList;
 
     private ProblemConstructor problemConstructor;
 
@@ -36,12 +45,11 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        LoadProffessors();
-        LoadLanguages();
+        LoadJSON();
         ProfsList[0].LoadSprite();
         problemConstructor = new ProblemConstructor();
-        Debug.Log(LangList[0].GetName());
-        foreach(char c in LangList[0].GetCommands())
+        Debug.Log(AlgorythmList[0].GetName());
+        foreach(char c in StructureList[0].GetCommands())
         {
             Debug.Log(c);
         }
@@ -69,14 +77,13 @@ public class GameManager : MonoBehaviour
         this.score.GetComponent<ScoreScript>().AddScore(score);
     }
 
-
-    void LoadProffessors() {
-        ProfsList = JsonUtility.FromJson<ProffessorHolder>(ProffessorJSON.text).array;    
-    }
-
-    void LoadLanguages()
+    void LoadJSON()
     {
+        ProfsList = JsonUtility.FromJson<ProffessorHolder>(ProffessorJSON.text).array;  
         LangList = JsonUtility.FromJson<LanguageHolder>(LangJSON.text).GetLanguages();
+        StructureList = JsonUtility.FromJson<StructureHolder>(StructJSON.text).GetStructures();
+        AlgorythmList = JsonUtility.FromJson<AlgorythmHolder>(AlgJSON.text).GetAlgorytms();
+
     }
 
     public Problem GenerateRandomProblem()
