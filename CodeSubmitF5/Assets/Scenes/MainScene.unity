@@ -2238,6 +2238,10 @@ MonoBehaviour:
   - {fileID: 1854239866}
   - {fileID: 1727741104}
   - {fileID: 188671004}
+  KeysTabs:
+  - {fileID: 366019285}
+  - {fileID: 651682179}
+  - {fileID: 551797125}
   VSCanvas: {fileID: 1101317674}
   ReturnCommands: {fileID: 237648653}
   SubmitCommad: {fileID: 1125826461}
