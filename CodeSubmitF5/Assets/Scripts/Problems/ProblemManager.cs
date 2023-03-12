@@ -57,7 +57,7 @@ public class ProblemManager : MonoBehaviour
     List<Structure> structures;
     List<Language> languages;
 
-    float GenerationTimer = -10;
+    float GenerationTimer = -2.5f;
     float NextGeneration = 0;
     float timeToPlay = 0;
 
