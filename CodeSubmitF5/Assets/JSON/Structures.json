@@ -3,113 +3,140 @@
         {
             "name": "BinTree",
             "puntos": 1,
-            "commands": 
-            [
-                {
-                    "name": "P1",
-                    "key": "c"
-                },
-                {
-                    "name": "P2",
-                    "key": "d"
-                }
-            ],
+          "commands": [
+            {
+              "name": "root",
+              "key": "s"
+            },
+            {
+              "name": "left",
+              "key": "a"
+            },
+            {
+              "name": "right",
+              "key": "d"
+            }
+          ],
             "unlocked": true,
             "key": "B"
         },
         {
             "name": "Queue",
             "puntos": 1,
-            "commands": [
-                {
-                    "name": "P1",
-                    "key": "h"
-                },
-                {
-                    "name": "P2",
-                    "key": "r"
-                }
-            ],
+          "commands": [
+            {
+              "name": "node",
+              "key": "h"
+            },
+            {
+              "name": "link",
+              "key": "r"
+            },
+            {
+              "name": "end",
+              "key": "h"
+            }
+          ],
             "unlocked": true,
             "key": "Q"
         },
         {
             "name": "Stack",
             "puntos": 3,
-            "commands": [
-                {
-                    "name": "P1",
-                    "key": "m"
-                },
-                {
-                    "name": "P2",
-                    "key": "e"
-                }
-            ],
+          "commands": [
+            {
+              "name": "top",
+              "key": "m"
+            },
+            {
+              "name": "pop",
+              "key": "e"
+            },
+            {
+              "name": "empty",
+              "key": "e"
+            }
+          ],
             "unlocked": false,
             "key": "S"
         },
         {
             "name": "List",
             "puntos": 2,
-            "commands": [
-                {
-                    "name": "P1",
-                    "key": "l"
-                },
-                {
-                    "name": "P2",
-                    "key": "r"
-                }
-            ],
+          "commands": [
+            {
+              "name": "begin",
+              "key": "l"
+            },
+            {
+              "name": "iterator",
+              "key": "r"
+            },
+            {
+              "name": "end",
+              "key": "r"
+            }
+          ],
             "unlocked": true,
             "key": "L"
         },
         {
             "name": "Map",
             "puntos": 4,
-            "commands": [
-                {
-                    "name": "P1",
-                    "key": "c"
-                },
-                {
-                    "name": "P2",
-                    "key": "p"
-                }
-            ],
+          "commands": [
+            {
+              "name": "ordered",
+              "key": "c"
+            },
+            {
+              "name": "key",
+              "key": "p"
+            },
+            {
+              "name": "value",
+              "key": "p"
+            }
+          ],
             "unlocked": false,
             "key": "M"
         },
         {
             "name": "Arbol_avl",
             "puntos": 5,
-            "commands": [
-                {
-                    "name": "P1",
-                    "key": "q"
-                },
-                {
-                    "name": "P2",
-                    "key": "w"
-                }
-            ],
+          "commands": [
+            {
+              "name": "insert",
+              "key": "q"
+            },
+            {
+              "name": "rr",
+              "key": "w"
+            },
+            {
+              "name": "ll",
+              "key": "g"
+            }
+          ],
             "unlocked": false,
             "key": "A"
         },
         {
             "name": "DiGraph",
             "puntos": 3,
-            "commands": [
-                {
-                    "name": "P1",
-                    "key": "m"
-                },
-                {
-                    "name": "P2",
-                    "key": "t"
-                }
-            ],
+          "commands": [
+            {
+              "name": "read",
+              "key": "m"
+            },
+            {
+              "name": "traverse graph",
+              "key": "t"
+            },
+            {
+              "name": "traverse inverse",
+              "key": "t"
+            }
+          ],
             "unlocked": false,
             "key": "D"
         }
