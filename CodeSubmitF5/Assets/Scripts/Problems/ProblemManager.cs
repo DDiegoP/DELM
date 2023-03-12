@@ -19,8 +19,7 @@ public class ProblemManager : MonoBehaviour
     [SerializeField]
     private GameObject canvas;
 
-    [SerializeField]
-    private GameObject commandsHolder;
+   
 
     [SerializeField]
     private TMP_Text score;
@@ -188,9 +187,4 @@ public class ProblemManager : MonoBehaviour
         this.score.GetComponent<ScoreScript>().AddScore(score);
     }
 
-    public void ShowComboTab(Code c)
-    {
-        commandsHolder.SetActive(true);
-        commandsHolder.GetComponent<CommandsHolder>().SetCode(c);
-    }
 }

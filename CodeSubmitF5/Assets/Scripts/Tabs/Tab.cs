@@ -26,15 +26,7 @@ public class Tab : MonoBehaviour
         this.gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = k;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(key))
-        {
-            if (onKeyPressedCallBack != null) onKeyPressedCallBack.Invoke();
-            else onKeyPressedEvent.Invoke();
-        }
-    }
+    
 
     public void SetOnKeyPressed(CallBack e)
     {
@@ -49,5 +41,16 @@ public class Tab : MonoBehaviour
     public void SetTabName(string name)
     {
         this.tabName = name;
+    }
+
+    public void HandleInput()
+    {
+        Debug.Log("Hola soy" + this.key);
+        if (Input.GetKeyDown(key))
+        {
+            if (onKeyPressedCallBack != null) onKeyPressedCallBack.Invoke();
+            else onKeyPressedEvent.Invoke();
+
+        }
     }
 }

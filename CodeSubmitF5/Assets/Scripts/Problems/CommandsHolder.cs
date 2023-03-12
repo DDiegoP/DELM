@@ -6,12 +6,19 @@ public class CommandsHolder : MonoBehaviour
 {
     [SerializeField]
     private GameObject commandPrefab;
-    Code c;
+    Code code;
     string commandString;
+    int actualKey = 0;
+    Command[] commands;
     public void SetCode(Code c)
     {
         commandString = "";
-        this.c = c;
+        int child = transform.childCount;
+        for(int i = 0; i < child;i++)
+        {
+            Destroy(transform.GetChild(i).gameObject);
+        }
+        this.code = c;
         foreach(Command cm in c.GetCommands())
         {
             GameObject GO = Instantiate(commandPrefab, this.transform);
@@ -19,16 +26,29 @@ public class CommandsHolder : MonoBehaviour
             commandString += cm.key;
         }
         Debug.Log(commandString);
+        actualKey = 0;
+        commands = code.GetCommands();
     }
-
-    private void Update()
+    public void HandleInput()
     {
         string input = Input.inputString;
-        Debug.Log(input);
-        int i = 0;
+        if(input!="") Debug.Log(input);
         foreach(char c in input)
         {
-            //ManageInput
+            if(c == commands[actualKey].key[0])
+            {
+                actualKey++;
+                if (actualKey >= commands.Length) return;
+            }
+            else
+            {
+                Debug.Log("Fallo");
+            }
         }
+       
+    }
+     public bool CommandCompleted()
+    {
+        return actualKey>=commands.Length;
     }
 }

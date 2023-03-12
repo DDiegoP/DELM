@@ -7,7 +7,7 @@ public class LanguageTabUpdater : MonoBehaviour
     private List<Language> unlockedLanguages;
     [SerializeField] private GameObject tabPrefab;
     [SerializeField]
-    private ProblemManager problemManager;
+    TabManager tabManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +17,7 @@ public class LanguageTabUpdater : MonoBehaviour
             GameObject go = Instantiate(tabPrefab);
             Tab tab = go.GetComponent<Tab>();
             tab.SetOnKeyPressed(() => {
-                problemManager.ShowComboTab(l);
+                tabManager.ShowComboTab(l);
             });
             tab.SetKey(l.GetKey());
             tab.SetTabName(l.GetName());
