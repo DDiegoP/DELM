@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     static GameManager instance = null;
 
-    private int credits = 0;
+    private int credits = 100;
     public int Credits{
         get{
             return credits;

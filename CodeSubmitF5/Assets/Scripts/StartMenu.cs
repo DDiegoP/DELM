@@ -10,7 +10,6 @@ public class StartMenu : MonoBehaviour
     AudioSource audioData;
     public void StartGame()
     {
-        DontDestroyOnLoad(transform.gameObject);
         //GameManager.SetActive(true);
         SceneManager.LoadScene("MainScene");
         audioData.Play(0);
@@ -18,8 +17,6 @@ public class StartMenu : MonoBehaviour
 
     public void StartGacha()
     {
-        DontDestroyOnLoad(transform.gameObject);
-        
         //GameManager.SetActive(true);
         SceneManager.LoadScene("Profepon");
         audioData.Play(0);
