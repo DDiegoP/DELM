@@ -30,6 +30,9 @@ public class TabManager : MonoBehaviour
 
     [SerializeField]
     private GameObject[] Tabs = new GameObject[3];
+
+    [SerializeField]
+    private GameObject[] KeysTabs;
     
 
     Language currentLanguage;
@@ -77,12 +80,18 @@ public class TabManager : MonoBehaviour
 
     public void ResetVisual(Problem p)
     {
+        
         foreach(GameObject t in Tabs)
         {
             t.SetActive(false);
         }
+        foreach(GameObject g in KeysTabs)
+        {
+            g.SetActive(false);
+        }
         commandsHolder.ResetCommands();
         Tabs[0].SetActive(true);
+        commandsHolder.gameObject.SetActive(false);
         currentTab = codeTypeTab;
         currentTab.SetActive(true);
         commandMode = false;
