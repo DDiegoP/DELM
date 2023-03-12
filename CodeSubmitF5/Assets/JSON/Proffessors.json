@@ -2,32 +2,84 @@
     "array" :
     [ 
       {
-          "name": "Cleon",
-          "portraitPath": "Textures/cleon",
-          "unlocked": true,
-          "AllTasks": [
-              {
-                  "title": "HITO 1",
-                  "unlocked": true
-              },
-              {
-                  "title": "Trabaja",
-                  "unlocked": false
-              }
-          ]
+        "name": "Pedro Pablo",
+        "portraitPath": "Textures/pedroPablo",
+        "unlocked": false,
+        "AllTasks": [
+          {
+            "title": "Resource Manager",
+            "unlocked": true
+          }
+        ]
 
       },
       {
-          "name": "Pedro Pablo",
-          "portraitPath": "Textures/pedroPablo",
-          "unlocked": false,
-          "AllTasks": [
-            {
-              "title": "Resource Manager",
-              "unlocked": true
-            }
-          ]
-          
+            "name": "Miki",
+            "portraitPath": "Textures/miki",
+            "unlocked": false,
+            "AllTasks": [
+              {
+                "title": "Practica Juez",
+                "unlocked": true
+              }
+            ]
+            
+      },
+      {
+            "name": "Guille",
+            "portraitPath": "Textures/guille",
+            "unlocked": false,
+            "AllTasks": [
+              {
+                "title": "Crecer",
+                "unlocked": true
+              }
+            ]
+            
+      },
+      {
+            "name": "Pedro Pablo",
+            "portraitPath": "Textures/pedroPablo",
+            "unlocked": false,
+            "AllTasks": [
+              {
+                "title": "Ogre",
+                "unlocked": true
+              }
+            ]
+            
+      },
+      {
+            "name": "CompuMan",
+            "portraitPath": "Textures/compuman",
+            "unlocked": false,
+            "AllTasks": [
+              {
+                "title": "Examen Parcial",
+                "unlocked": true
+              },
+              {
+                "title": "Examen Final",
+                "unlocked": true
+              }
+            ]
+            
+      },
+      {
+            "name": "Fede",
+            "portraitPath": "Textures/fede",
+            "unlocked": false,
+            "AllTasks": [
+              {
+                "title": "Hazme el Mario",
+                "unlocked": false
+              },
+              {
+                "title": "Aventura Gráfica",
+                "unlocked": false
+              }
+            ]
+            
       }
     ]
 }
