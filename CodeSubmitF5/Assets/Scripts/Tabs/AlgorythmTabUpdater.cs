@@ -6,6 +6,8 @@ public class AlgorythmTabUpdater : MonoBehaviour
 {
     private List<Algorythm> unlockedAlgorythms;
     [SerializeField] private GameObject tabPrefab;
+    [SerializeField]
+    TabManager tabManager;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +19,7 @@ public class AlgorythmTabUpdater : MonoBehaviour
             GameObject go = Instantiate(tabPrefab);
             Tab tab = go.GetComponent<Tab>();
             tab.SetOnKeyPressed(() => {
-                GameManager.GetInstance().SubmitAlgorythm(a);
+                tabManager.ShowComboTab(a);
             });
             tab.SetKey(a.GetKey());
             tab.SetTabName(a.GetName());

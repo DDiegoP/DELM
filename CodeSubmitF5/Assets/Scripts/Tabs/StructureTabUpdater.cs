@@ -6,7 +6,8 @@ public class StructureTabUpdater : MonoBehaviour
 {
     private List<Structure> unlockedStructures;
     [SerializeField] private GameObject tabPrefab;
-
+    [SerializeField]
+    TabManager tabManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class StructureTabUpdater : MonoBehaviour
             GameObject go = Instantiate(tabPrefab);
             Tab tab = go.GetComponent<Tab>();
             tab.SetOnKeyPressed(() => {
-                GameManager.GetInstance().SubmitStructure(s);
+                tabManager.ShowComboTab(s);
             });
             tab.SetKey(s.GetKey());
             tab.SetTabName(s.GetName());

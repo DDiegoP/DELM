@@ -45,7 +45,6 @@ public class Tab : MonoBehaviour
 
     public void HandleInput()
     {
-        Debug.Log("Hola soy" + this.key);
         if (Input.GetKeyDown(key))
         {
             if (onKeyPressedCallBack != null) onKeyPressedCallBack.Invoke();
