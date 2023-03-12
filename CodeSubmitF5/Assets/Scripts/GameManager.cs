@@ -34,10 +34,10 @@ public class GameManager : MonoBehaviour
     Structure[] StructureList;
     Algorythm[] AlgorythmList;
 
-    List<Algorythm> unlockedAlgorythms;
-    List<Language> unlockedLanguages;
-    List<Structure> unlockedStructures;
-    List<Proffessor> unlockedProffessors;
+    public List<Algorythm> unlockedAlgorythms;
+    public List<Language> unlockedLanguages;
+    public List<Structure> unlockedStructures;
+    public List<Proffessor> unlockedProffessors;
     public static GameManager GetInstance() { return instance; }
 
     void Awake(){

@@ -59,45 +59,49 @@ public class JSONProcessor : MonoBehaviour
 
     }
 
-    public string getRandElem()
-    {
+    private bool QuedanElementos(){
+        return !(lockedProfs.Count == 0 && lockedAlgs.Count == 0 && lockedStructs.Count == 0 && lockedLangs.Count == 0);
+    }
 
-        bool elemPicked = false;
-        string name = "";
-        while (!elemPicked)
+    public bool getRandElem() //Esto deja ya desbloqueado el componente que toca. Devuelve false si no quedan elementos.
+    {
+        if(!this.QuedanElementos()) return false;
+        while (true)
         {
             int choice = Random.Range(0, 4);
-
             switch (choice)
             {
                 case 0:
                     if (lockedProfs.Count != 0)
                     {
                         int index = Random.Range(0, lockedProfs.Count);
+                        Console.log(lockedProfs[index].name);
                         lockedProfs[index].unlocked = true;
-                        name = lockedProfs[index].GetName();
+                        gameManager.unlockedProffessors.Add(lockedProfs[index]);
                         lockedProfs.RemoveAt(index);
-                        elemPicked = true;
+                        return true;
                     }
                     break;
                 case 1:
                     if (lockedLangs.Count != 0)
                     {
                         int index = Random.Range(0, lockedLangs.Count);
+                        Console.log(lockedLangs[index].name);
                         lockedLangs[index].unlocked = true;
-                        name = lockedLangs[index].GetName();
+                        gameManager.unlockedLanguages.Add(lockedLangs[index]);                        
                         lockedLangs.RemoveAt(index);
-                        elemPicked = true;
+                        return true;
                     }
                     break;
                 case 2:
                     if (lockedStructs.Count != 0)
                     {
                         int index = Random.Range(0, lockedStructs.Count);
+                        Console.log(lockedStructs[index].name);
                         lockedStructs[index].unlocked = true;
-                        name = lockedStructs[index].GetName();
+                        gameManager.unlockedStructures.Add(lockedStructs[index]);
                         lockedStructs.RemoveAt(index);
-                        elemPicked = true;
+                        return true;
                     }
                     break;
                 case 3:
@@ -105,15 +109,15 @@ public class JSONProcessor : MonoBehaviour
                     {
                         int index = Random.Range(0, lockedAlgs.Count);
                         lockedAlgs[index].unlocked = true;
-                        name = lockedAlgs[index].GetName();
+                        Console.log(lockedAlgs[index].name);
+                        gameManager.unlockedAlgorythms.Add(lockedAlgs[index]);
                         lockedAlgs.RemoveAt(index);
-                        elemPicked = true;
+                        return true;
                     }
                     break;
             }
 
         }
-        return name;
     }
 
     public Proffessor[] GetProfessors()
