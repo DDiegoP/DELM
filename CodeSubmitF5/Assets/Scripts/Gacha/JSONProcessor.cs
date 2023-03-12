@@ -17,8 +17,7 @@ public class JSONProcessor : MonoBehaviour
     List<Structure> lockedStructs = new List<Structure>();
     List<Algorythm> lockedAlgs = new List<Algorythm>();
 
-
-
+    string justUnlockedElement;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +49,7 @@ public class JSONProcessor : MonoBehaviour
             if (!a.unlocked)
                 lockedAlgs.Add(a);
         }
-        Debug.Log(getRandElem());
+        //Debug.Log(getRandElem());
     }
 
     // Update is called once per frame
@@ -75,7 +74,8 @@ public class JSONProcessor : MonoBehaviour
                     if (lockedProfs.Count != 0)
                     {
                         int index = Random.Range(0, lockedProfs.Count);
-                        Debug.Log(lockedProfs[index].GetName());
+                        //Debug.Log(lockedProfs[index].GetName());
+                        justUnlockedElement = lockedProfs[index].GetName();
                         lockedProfs[index].unlocked = true;
                         gameManager.unlockedProffessors.Add(lockedProfs[index]);
                         lockedProfs.RemoveAt(index);
@@ -86,7 +86,8 @@ public class JSONProcessor : MonoBehaviour
                     if (lockedLangs.Count != 0)
                     {
                         int index = Random.Range(0, lockedLangs.Count);
-                        Debug.Log(lockedLangs[index].GetName());
+                        //Debug.Log(lockedLangs[index].GetName());
+                        justUnlockedElement = lockedLangs[index].GetName();
                         lockedLangs[index].unlocked = true;
                         gameManager.unlockedLanguages.Add(lockedLangs[index]);                        
                         lockedLangs.RemoveAt(index);
@@ -97,7 +98,8 @@ public class JSONProcessor : MonoBehaviour
                     if (lockedStructs.Count != 0)
                     {
                         int index = Random.Range(0, lockedStructs.Count);
-                        Debug.Log(lockedStructs[index].GetName());
+                        //Debug.Log(lockedStructs[index].GetName());
+                        justUnlockedElement = lockedStructs[index].GetName();
                         lockedStructs[index].unlocked = true;
                         gameManager.unlockedStructures.Add(lockedStructs[index]);
                         lockedStructs.RemoveAt(index);
@@ -109,7 +111,8 @@ public class JSONProcessor : MonoBehaviour
                     {
                         int index = Random.Range(0, lockedAlgs.Count);
                         lockedAlgs[index].unlocked = true;
-                        Debug.Log(lockedAlgs[index].GetName());
+                        //Debug.Log(lockedAlgs[index].GetName());
+                        justUnlockedElement = lockedAlgs[index].GetName();
                         gameManager.unlockedAlgorythms.Add(lockedAlgs[index]);
                         lockedAlgs.RemoveAt(index);
                         return true;
@@ -135,5 +138,9 @@ public class JSONProcessor : MonoBehaviour
     public Language[] GetLanguages()
     {
         return LangList;
+    }
+    public string GetUnlockedElement()
+    {
+        return justUnlockedElement;
     }
 }
