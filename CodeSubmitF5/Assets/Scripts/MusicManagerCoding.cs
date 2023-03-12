@@ -19,10 +19,10 @@ public class MusicManagerCoding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (visualUI.activeInHierarchy)
+        if (visualUI.activeInHierarchy&&!otherAudioSource.isPlaying)
         {
             audioSource.Stop();
-            //otherAudioSource.PlayDelayed(1);
+            otherAudioSource.PlayDelayed(1);
             
         }
         else if(!visualUI.activeInHierarchy&& !audioSource.isPlaying)
