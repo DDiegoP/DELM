@@ -24,6 +24,7 @@ public class CalificationTable : MonoBehaviour
             //CreateEntry("Cleon", "HITO " + id, Calification.Wrong_Answer);
             timer = 0.0f;
             ++id;
+            
         }
         else
         {
