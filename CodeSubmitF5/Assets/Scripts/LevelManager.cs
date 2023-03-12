@@ -53,7 +53,7 @@ public class LevelManager : MonoBehaviour
             if (p.gameObject.activeInHierarchy && p.IsTimedOut())
             {
                 SolveProblem(p, Calification.Time_Limit);
-                gm.TakeDamage(10);
+                gm.TakeDamage(50);
             }
         }
         if (activePrograms >= Problems.Length) return;

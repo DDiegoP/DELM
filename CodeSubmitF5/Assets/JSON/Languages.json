@@ -15,8 +15,32 @@
       {
         "name": "MATLAB",
         "unlocked": false, 
-        "commands": "pf",
+        "commands": "ho",
         "key": "M"
+      },
+      {
+        "name": "Brainfuck",
+        "unlocked": false,
+        "commands": "+-",
+        "key": "B"
+      },
+      {
+        "name": "HTML",
+        "unlocked": false,
+        "commands": "<bh",
+        "key": "H"
+      },
+      {
+        "name": "JavaScript",
+        "unlocked": false,
+        "commands": "js.",
+        "key": "S"
+      },
+      {
+        "name": "C#",
+        "unlocked": true,
+        "commands": "usq",
+        "key": "S"
       }
     ]   
 }
