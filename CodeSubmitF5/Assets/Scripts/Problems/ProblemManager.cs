@@ -184,6 +184,8 @@ public class ProblemManager : MonoBehaviour
     private void AddScore(int score)
     {
         if (this.score == null) return;
+        //Aqui actualizamos en general tambien
+        this.gm.Credits += score;
         this.score.GetComponent<ScoreScript>().AddScore(score);
     }
 
