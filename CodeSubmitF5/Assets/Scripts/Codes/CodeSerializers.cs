@@ -9,6 +9,7 @@ public class CodeSerializable
 {
     public string name;
     public string key;
+    public string id;
     public bool unlocked;
     public Command[] commands;
     public int puntos;
@@ -26,6 +27,7 @@ public class LanguageSerializer
             langs[i] = new Language(languages[i].name, languages[i].key, languages[i].puntos);
             langs[i].unlocked = languages[i].unlocked;
             langs[i].SetCommands(languages[i].commands);
+            langs[i].id = languages[i].id;
         }
         return langs;
     } 

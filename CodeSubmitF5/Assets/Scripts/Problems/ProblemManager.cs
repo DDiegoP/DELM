@@ -243,6 +243,6 @@ public class ProblemManager : MonoBehaviour
     public string GetSubmittedLanguageName()
     {
         if (activeProblem.GetSubmittedLanguage() == null) return "cpp";
-        return activeProblem.GetSubmittedLanguage().GetName();
+        return activeProblem.GetSubmittedLanguage().id;
     }
 }
