@@ -671,7 +671,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c65d6800b78fa4443ab995e972f1565d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1f5105407fc1c604fb1687624cfb518e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1865,6 +1865,7 @@ MonoBehaviour:
   LangJSON: {fileID: 4900000, guid: dcaecb781754a1542ab45d92bc83fd43, type: 3}
   StructJSON: {fileID: 4900000, guid: 240dbff837cbd2a4e8b01dec2ec75df1, type: 3}
   AlgJSON: {fileID: 4900000, guid: f463eef6255cea449ab4af221f0390f0, type: 3}
+  unlockedProffessors: []
 --- !u!4 &2137734473
 Transform:
   m_ObjectHideFlags: 0
