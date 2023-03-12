@@ -67,6 +67,13 @@ public class ProblemManager : MonoBehaviour
     List<float> submissionTimersExpire;
     List<CalifcationTableRow> submittedRows;
 
+    private void reduceTime(){
+        if(this.maxProblemTime <= 2) return;
+        this.maxProblemTime -= 2;
+        this.minProblemTime -= 1;
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -104,7 +111,7 @@ public class ProblemManager : MonoBehaviour
                 Problem p = problemsToSubmit[i]; //Aqui tendria que resolverlo
                 
                 Calification c = p.CheckCorrect() ? Calification.Correct : Calification.Wrong_Answer;
-                if (c == Calification.Correct) {this.AddScore(p.GetPoints()); Debug.Log(p.GetPoints());}
+                if (c == Calification.Correct) {this.AddScore(p.GetPoints()); this.reduceTime();}
                 else if(c == Calification.Wrong_Answer) this.TakeDamage(10); //Daño al equivocarse
                 submittedRows[i].SetParameters(p.name, p.GetProffessor().GetName(), c);
                 problemsToSubmit.RemoveAt(i);
