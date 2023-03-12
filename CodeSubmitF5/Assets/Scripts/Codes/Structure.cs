@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class Structure : Code
 {
-    public Structure(string s,string k) : base(s,k)
+
+    public int puntos;
+
+    public Structure(string s,string k, int puntos) : base(s,k)
     {
-        
+        this.puntos = puntos;
     }
 
     public override void Submit(Problem p)

@@ -188,7 +188,7 @@ public class ProblemManager : MonoBehaviour
         cTable.CreateEntry(p.GetProffessor().GetName(), p.name, cal);
         p.gameObject.SetActive(false);
         holder.DeactivateSlot(p.GetSlot());
-        if (cal == Calification.Correct) this.AddScore((int)cal);
+        if (cal == Calification.Correct) this.AddScore(p.GetPoints());
         activePrograms--;
     }
 

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-//String[] names = {"Las tres hermanas", "Tuber�as por doquier"};
 
 public class Problem : MonoBehaviour
 {
@@ -139,5 +138,9 @@ public class Problem : MonoBehaviour
     {
         this.gameObject.SetActive(false);
         slot.gameObject.SetActive(false);
+    }
+    public int GetPoints(){
+        float aux = this.askedAlgorythm.puntos + this.askedLanguage.puntos + this.AskedStructure.puntos;
+        return (int)(aux*this.proffessor.puntos);
     }
 }
