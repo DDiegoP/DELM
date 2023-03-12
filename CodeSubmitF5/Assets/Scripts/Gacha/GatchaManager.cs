@@ -10,6 +10,8 @@ public class GatchaManager : MonoBehaviour
     GameManager gm;
     [SerializeField]
     TMP_Text text;
+    [SerializeField]
+    CanvasManager cnvMngr;
 
     private JSONProcessor proc;
     
@@ -36,8 +38,11 @@ public class GatchaManager : MonoBehaviour
         if(text.GetComponent<CreditsGetter>().UseCredits(COST)){
             //Aqui ponemos la animación del gachapon y desbloqueamos.
             if(!proc.getRandElem()) return; //Si devuelve fales, no quedan.
-
-        }else{
+            cnvMngr.PlayVideo();
+            // cuando el video termine te sale lo conseguido
+        }
+        else
+        {
             //No tiene suficiente para tirar
         }
     }
@@ -46,6 +51,8 @@ public class GatchaManager : MonoBehaviour
         if(text.GetComponent<CreditsGetter>().UseCredits(COST10)){
             for(int i = 0; i < 10; i++){
                 if(!proc.getRandElem()) return; //Si devuelve false es que no quedan
+                cnvMngr.PlayVideo();
+                // cuando el video termine te sale lo conseguido
             }
         }else{
             //No tiene suficiente para tirar

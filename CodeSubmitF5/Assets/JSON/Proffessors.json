@@ -27,6 +27,17 @@
       ]
     },
     {
+      "name": "¿Pedro Pablo?",
+      "portraitPath": "Textures/Cabezos/pedroPablo",
+      "unlocked": false,
+      "AllTasks": [
+        {
+          "title": "Resource Manager",
+          "unlocked": true
+        }
+      ]
+    },
+    {
       "name": "Miki",
       "portraitPath": "Textures/Cabezos/miki",
       "unlocked": true,
