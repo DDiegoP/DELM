@@ -124,6 +124,7 @@ public class ProblemManager : MonoBehaviour
                 problemsToSubmit.RemoveAt(i);
                 submissionTimers.RemoveAt(i);
                 submissionTimersExpire.RemoveAt(i);
+                activePrograms--;
             }
             else
             {
