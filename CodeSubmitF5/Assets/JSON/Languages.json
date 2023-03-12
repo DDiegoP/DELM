@@ -3,7 +3,7 @@
       {
         "name": "C++",
         "id": "cpp",
-        "points": 1,
+        "puntos": 1,
         "unlocked": true,
         "commands": [
                 {
@@ -20,7 +20,7 @@
       {
         "name": "Java",
         "id": "J",
-        "points": 1,
+        "puntos": 1,
         "unlocked": true,
         "commands": [
           {
@@ -37,7 +37,7 @@
       {
         "name": "MATLAB",
         "id": "MatLab",
-        "points": 3,
+        "puntos": 3,
         "unlocked": false, 
         "commands": [
           {
@@ -54,7 +54,7 @@
       {
         "name": "Brainfuck",
         "id": "brainfuck",
-        "points": 5,
+        "puntos": 5,
         "unlocked": false,
         "commands": [
           {
@@ -71,7 +71,7 @@
       {
         "name": "HTML",
         "id": "HTML",
-        "points": 4,
+        "puntos": 4,
         "unlocked": false,
         "commands": [
           {
@@ -93,7 +93,7 @@
       {
         "name": "JavaScript",
         "id": "JS",
-        "points": 4,
+        "puntos": 4,
         "unlocked": false,
         "commands": [
           {
@@ -115,7 +115,7 @@
       {
         "name": "C#",
         "id": "CSharp",
-        "points": 2,
+        "puntos": 2,
         "unlocked": true,
         "commands": [
           {

@@ -2,7 +2,7 @@
     "algorythms": [
         {
             "name": "BackTracking",
-            "points": 2,
+            "puntos": 2,
             "unlocked": true,
             "commands": [
                 {
@@ -19,7 +19,7 @@
         {
             "name": "BubbleSort",
             "unlocked": true,
-            "points": 1,
+            "puntos": 1,
             "commands": [
                 {
                     "name": "P1",
@@ -35,7 +35,7 @@
         {
             "name": "DivideAndConquer",
             "unlocked": true,
-            "points": 1,
+            "puntos": 1,
             "commands": [
                 {
                     "name": "P1",
@@ -51,7 +51,7 @@
         {
             "name": "DynamicProgramming",
             "unlocked": false,
-            "points": 3,
+            "puntos": 3,
             "commands": [
                 {
                     "name": "P1",
@@ -67,7 +67,7 @@
         {
             "name": "GreedyAlgorythm",
             "unlocked": false,
-            "points": 3,
+            "puntos": 3,
             "commands": [
                 {
                     "name": "P1",
@@ -83,7 +83,7 @@
         {
             "name": "PancakeSort",
             "unlocked": false,
-            "points": 5,
+            "puntos": 5,
             "commands": [
                 {
                     "name": "P1",
@@ -99,7 +99,7 @@
         {
             "name": "RandomSort",
             "unlocked": false,
-            "points": 1,
+            "puntos": 1,
             "commands": [
                 {
                     "name": "P1",
