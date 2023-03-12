@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using TMPro;
-using UnityEditor.U2D.Path.GUIFramework;
+
 
 public class ProblemManager : MonoBehaviour
 {
@@ -57,8 +57,9 @@ public class ProblemManager : MonoBehaviour
     List<Structure> structures;
     List<Language> languages;
 
-    float GenerationTimer = 0;
+    float GenerationTimer = -10;
     float NextGeneration = 0;
+    float timeToPlay = 0;
 
     int activePrograms = 0;
 
@@ -67,7 +68,7 @@ public class ProblemManager : MonoBehaviour
     List<float> submissionTimersExpire;
     List<CalifcationTableRow> submittedRows;
 
-    private reduceTime(){
+    private void reduceTime(){
         if(this.maxProblemTime <= 2) return;
         this.maxProblemTime -= 2;
         this.minProblemTime -= 1;
@@ -101,10 +102,16 @@ public class ProblemManager : MonoBehaviour
             {
                 SolveProblem(p, Calification.Time_Limit);
                 this.TakeDamage(20); //Daño al TimeLimit
+               
             }
         }
 
-        for(int i = 0; i < problemsToSubmit.Count; i++)
+        if (activeProblem!=null && activeProblem.IsTimedOut())
+        {
+            VSCanvas.SetActive(false);
+        }
+
+        for (int i = 0; i < problemsToSubmit.Count; i++)
         {
             if (submissionTimers[i] > submissionTimersExpire[i])
             {
@@ -240,7 +247,7 @@ public class ProblemManager : MonoBehaviour
         activeProblem.Disable();
         holder.DeactivateSlot(activeProblem.GetSlot());
         submissionTimers.Add(0.0f);
-        submissionTimersExpire.Add(Random.Range(0,10));
+        submissionTimersExpire.Add(Random.Range(1,10));
         CalifcationTableRow r = cTable.CreateEntry(activeProblem.name, activeProblem.GetProffessor().GetName(), Calification.Pending);
         submittedRows.Add(r);
     }

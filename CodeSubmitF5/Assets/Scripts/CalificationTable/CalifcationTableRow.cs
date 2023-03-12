@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -62,7 +61,6 @@ public class CalifcationTableRow : MonoBehaviour
             case Calification.Pending:
                 CalifText.text = "PENDING";
                 CalifText.color = Color.blue;
-                wrongSound.SetActive(true);
                 break;
             default:
                 break;
