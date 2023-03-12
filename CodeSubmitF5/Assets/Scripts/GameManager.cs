@@ -46,16 +46,6 @@ public class GameManager : MonoBehaviour
     List<Structure> unlockedStructures;
     List<Proffessor> unlockedProffessors;
 
-    private ProblemConstructor problemConstructor;
-
-
-    List<Problem> problems;
-    Problem currentProblem;
-    // private ProblemConstructor pconstructor;
-    /*[SerializeField]
-    private ProblemHolder holder;
-    [SerializeField]
-    private CalificationTable table;*/
     public static GameManager GetInstance() { return instance; }
 
     void Awake(){
@@ -65,23 +55,8 @@ public class GameManager : MonoBehaviour
         }else{
             Destroy(this.gameObject);
         }
-        
         LoadJSON();
-        problems = new List<Problem>();
-        //problemConstructor = new ProblemConstructor();
         InitializeUnlocked();
-
-    }
-
-    void Start()
-    {
-        
-        //unlockedAlgorythms.Add(AlgorythmList[0]);
-        //unlockedLanguages = new List<Language>();
-        //unlockedLanguages.Add(LangList[0]);
-        //unlockedLanguages.Add(LangList[1]);
-        //unlockedStructures = new List<Structure>();
-        //unlockedStructures.Add(StructureList[0]);
     }
 
     private void InitializeUnlocked()
@@ -137,7 +112,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void SetProblems(Problem[] problems) => this.problems.AddRange(problems);
     public Problem GenerateRandomProblem()
     {
         return null;
@@ -158,11 +132,6 @@ public class GameManager : MonoBehaviour
     public Language[] GetLanguages()
     {
         return LangList;
-    }
-
-    public List<Problem> GetProblems()
-    {
-        return problems;
     }
 
     public List<Algorythm> GetUnlockedAlgorythms()

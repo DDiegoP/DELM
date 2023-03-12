@@ -568,7 +568,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000076294, y: -0.00094379974}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 800, y: 449.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &653634691
@@ -1114,9 +1114,11 @@ MonoBehaviour:
   - {fileID: 664834694}
   - {fileID: 1299953724}
   - {fileID: 469368079}
-  cTable: {fileID: 1544773107}
+  calficationsTable: {fileID: 1544773107}
   MinGenerationTime: 2
   MaxGenerationTime: 5
+  maxProblemDuration: 60
+  minProblemDuration: 35
 --- !u!1 &1299953722
 GameObject:
   m_ObjectHideFlags: 0

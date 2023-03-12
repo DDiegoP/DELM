@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 [System.Serializable]
@@ -11,17 +12,18 @@ public class Proffessor
     public Task[] AllTasks;
     public Sprite portrait;
     public bool unlocked;
-    public List<string> GetAvailableTasks() {
-        List<string> tasks = new List<string>();
+    List<Task> availableTasks = new List<Task>();
+    
+    public List<Task> GetAvailableTasks() {
+        availableTasks = new List<Task>();
         foreach(Task task in AllTasks)
         {
             if(task.unlocked) {
-                tasks.Add(task.title);
+                availableTasks.Add(task);
             }
         }
-        return tasks;
+        return availableTasks;
     }
-
     public void LoadSprite()
     {
          portrait = Resources.Load<Sprite>(portraitPath);
@@ -45,5 +47,26 @@ public class Task
 {
     public string title;
     public bool unlocked;
+    
+
+    public override bool Equals(object other){
+        return ReferenceEquals(this, other);
+    }
+
+
+    public bool Equals(Task other)
+    {
+        return this == other;
+    }
+
+    public static  bool operator ==(Task left, Task right)
+    {
+        return left.title == right.title;
+    }
+
+    public static bool operator !=(Task left, Task right)
+    {
+        return !(left == right);
+    }
 }
 
