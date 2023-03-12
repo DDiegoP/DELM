@@ -2,9 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using TMPro;
+
 
 public class ProblemManager : MonoBehaviour
 {
+
+
+
+    [SerializeField]
+    private GameObject gameOver;
+
+    [SerializeField]
+    private GameObject canvas;
+
+    [SerializeField]
+    private TMP_Text score;
+
+    [SerializeField]
+    private GameObject HealthBar;
 
     [SerializeField]
     private ProblemHolder holder;
@@ -60,7 +76,7 @@ public class ProblemManager : MonoBehaviour
             if (p.gameObject.activeInHierarchy && p.IsTimedOut())
             {
                 SolveProblem(p, Calification.Time_Limit);
-                gm.TakeDamage(50);
+                this.TakeDamage(50);
             }
         }
         if (activePrograms >= Problems.Length) return;
@@ -111,7 +127,22 @@ public class ProblemManager : MonoBehaviour
         cTable.CreateEntry(p.GetProffessor().GetName(), p.name, cal);
         p.gameObject.SetActive(false);
         holder.DeactivateSlot(p.GetSlot());
-        if(cal == Calification.Correct) gm.AddScore((int)cal);
+        if(cal == Calification.Correct) this.AddScore((int)cal);
         activePrograms--;
+    }
+
+
+    private void TakeDamage(int damage){
+        if(HealthBar == null) return;
+        HealthBar.GetComponent<HealthScript>().TakeDamage(damage);
+        if(HealthBar.GetComponent<HealthScript>().curHealth <= 0){
+            Instantiate(this.gameOver, this.canvas.transform);
+            Time.timeScale = 0;
+        }
+    }
+
+    private void AddScore(int score){
+        if (this.score == null) return;
+        this.score.GetComponent<ScoreScript>().AddScore(score);
     }
 }

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using System;
 
 public class GameManager : MonoBehaviour
@@ -17,18 +16,6 @@ public class GameManager : MonoBehaviour
             credits = value;
         }
     }
-    
-    [SerializeField]
-    private GameObject gameOver;
-
-    [SerializeField]
-    private GameObject canvas;
-
-    [SerializeField]
-    private TMP_Text score;
-
-    [SerializeField]
-    private GameObject HealthBar;
 
     [SerializeField]
     TextAsset ProffessorJSON;
@@ -95,19 +82,7 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    public void TakeDamage(int damage){
-        if(HealthBar == null) return;
-        HealthBar.GetComponent<HealthScript>().TakeDamage(damage);
-        if(HealthBar.GetComponent<HealthScript>().curHealth <= 0){
-            Instantiate(this.gameOver, this.canvas.transform);
-            Time.timeScale = 0;
-        }
-    }
-
-    public void AddScore(int score){
-        if (this.score == null) return;
-        this.score.GetComponent<ScoreScript>().AddScore(score);
-    }
+    
 
     void LoadJSON()
     {
