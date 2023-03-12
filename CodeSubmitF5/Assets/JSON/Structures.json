@@ -2,43 +2,107 @@
     "structures": [
         {
             "name": "BinTree",
-            "commands": "cd",
+            "commands": 
+            [
+                {
+                    "name": "P1",
+                    "key": "c"
+                },
+                {
+                    "name": "P2",
+                    "key": "d"
+                }
+            ],
             "unlocked": true,
             "key": "B"
         },
         {
             "name": "Queue",
-            "commands": "hr",
+            "commands": [
+                {
+                    "name": "P1",
+                    "key": "h"
+                },
+                {
+                    "name": "P2",
+                    "key": "r"
+                }
+            ],
             "unlocked": true,
             "key": "Q"
         },
         {
             "name": "Stack",
-            "commands": "me",
+            "commands": [
+                {
+                    "name": "P1",
+                    "key": "m"
+                },
+                {
+                    "name": "P2",
+                    "key": "e"
+                }
+            ],
             "unlocked": false,
             "key": "S"
         },
         {
             "name": "List",
-            "commands": "lr",
+            "commands": [
+                {
+                    "name": "P1",
+                    "key": "l"
+                },
+                {
+                    "name": "P2",
+                    "key": "r"
+                }
+            ],
             "unlocked": true,
             "key": "L"
         },
         {
             "name": "Map",
-            "commands": "cp",
+            "commands": [
+                {
+                    "name": "P1",
+                    "key": "c"
+                },
+                {
+                    "name": "P2",
+                    "key": "p"
+                }
+            ],
             "unlocked": false,
             "key": "M"
         },
         {
             "name": "Arbol_avl",
-            "commands": "qw",
+            "commands": [
+                {
+                    "name": "P1",
+                    "key": "q"
+                },
+                {
+                    "name": "P2",
+                    "key": "w"
+                }
+            ],
             "unlocked": false,
             "key": "A"
         },
         {
             "name": "DiGraph",
-            "commands": "mt",
+            "commands": [
+                {
+                    "name": "P1",
+                    "key": "m"
+                },
+                {
+                    "name": "P2",
+                    "key": "t"
+                }
+            ],
             "unlocked": false,
             "key": "D"
         }

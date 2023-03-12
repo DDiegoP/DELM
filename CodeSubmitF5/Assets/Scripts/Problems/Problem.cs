@@ -15,30 +15,30 @@ public class Problem : MonoBehaviour
     {
         get { return askedLanguage; }
     }
-    private char[] askedLangCommands;
+    private Command[] askedLangCommands;
     
     private Algorythm askedAlgorythm;
     public Algorythm AskedAlgorythm { 
         get => askedAlgorythm;
     }
-    private char[] askedAlgCommands;
+    private Command[] askedAlgCommands;
     
     private Structure askedStructure;
     public Structure AskedStructure
     {
         get { return askedStructure; }
     }
-    private char[] askedStructCommands;
+    private Command[] askedStructCommands;
     
     private Proffessor proffessor;
     private float tMaximo;
 
     private Language submittedLanguage;
-    private char[] submittedLangCommands;
+    private Command[] submittedLangCommands;
     private Algorythm submittedAlgorythm;
-    private char[] submittedAlgCommands;
+    private Command[] submittedAlgCommands;
     private Structure submittedStructure;
-    private char[] submittedStructCommands;
+    private Command[] submittedStructCommands;
 
     private CountdownController cdCntrl;
     private bool correct;
@@ -97,7 +97,7 @@ public class Problem : MonoBehaviour
         }
     }
     // Comprueba si los arrays de comandos introducidos son coincidentes y asigna correct
-    private void CheckCorrect(char[] asked, char[] submitted) {
+    private void CheckCorrect(Command[] asked, Command[] submitted) {
         for (int i = 0; i < asked.Length && correct; ++i)
         {
             if (asked[i] == submitted[i]) correct = false;

@@ -3,43 +3,106 @@
         {
             "name": "BackTracking",
             "unlocked": true,
-            "commands": "qe",
+            "commands": [
+                {
+                    "name": "P1",
+                    "key": "q"
+                },
+                {
+                    "name": "P2",
+                    "key": "e"
+                }
+            ],
             "key": "B"
         },
         {
             "name": "BubbleSort",
             "unlocked": true,
-            "commands": "ag",
+            "commands": [
+                {
+                    "name": "P1",
+                    "key": "q"
+                },
+                {
+                    "name": "P2",
+                    "key": "g"
+                }
+            ],
             "key": "S"
         },
         {
             "name": "DivideAndConquer",
             "unlocked": true,
-            "commands": "vr",
+            "commands": [
+                {
+                    "name": "P1",
+                    "key": "v"
+                },
+                {
+                    "name": "P2",
+                    "key": "r"
+                }
+            ],
             "key": "C"
         },
         {
             "name": "DynamicProgramming",
             "unlocked": false,
-            "commands": "nw",
+            "commands": [
+                {
+                    "name": "P1",
+                    "key": "n"
+                },
+                {
+                    "name": "P2",
+                    "key": "w"
+                }
+            ],
             "key": "D"
         },
         {
             "name": "GreedyAlgorythm",
             "unlocked": false,
-            "commands": "py",
+            "commands": [
+                {
+                    "name": "P1",
+                    "key": "p"
+                },
+                {
+                    "name": "P2",
+                    "key": "y"
+                }
+            ],
             "key": "G"
         },
         {
             "name": "PancakeSort",
             "unlocked": false,
-            "commands": "mu",
+            "commands": [
+                {
+                    "name": "P1",
+                    "key": "m"
+                },
+                {
+                    "name": "P2",
+                    "key": "u"
+                }
+            ],
             "key": "P"
         },
         {
             "name": "RandomSort",
             "unlocked": false,
-            "commands": "zl",
+            "commands": [
+                {
+                    "name": "P1",
+                    "key": "z"
+                },
+                {
+                    "name": "P2",
+                    "key": "l"
+                }
+            ],
             "key": "R"
         }
     ]   

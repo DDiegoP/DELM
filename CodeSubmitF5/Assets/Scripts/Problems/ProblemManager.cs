@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using TMPro;
-
+using UnityEditor.U2D.Path.GUIFramework;
 
 public class ProblemManager : MonoBehaviour
 {
@@ -18,6 +18,9 @@ public class ProblemManager : MonoBehaviour
 
     [SerializeField]
     private GameObject canvas;
+
+    [SerializeField]
+    private GameObject commandsHolder;
 
     [SerializeField]
     private TMP_Text score;
@@ -185,8 +188,9 @@ public class ProblemManager : MonoBehaviour
         this.score.GetComponent<ScoreScript>().AddScore(score);
     }
 
-    public void ShowComboTab(Language l)
+    public void ShowComboTab(Code c)
     {
-
+        commandsHolder.SetActive(true);
+        commandsHolder.GetComponent<CommandsHolder>().SetCode(c);
     }
 }

@@ -1,33 +1,33 @@
 {
     "array" :
     [ 
-        {
-            "name": "Cleon",
-            "portraitPath": "Textures/cleon",
-            "unlocked": true,
-            "AllTasks": [
-                {
-                    "title": "HITO 1",
-                    "unlocked": true
-                },
-                {
-                    "title": "Trabaja",
-                    "unlocked": false
-                }
-            ]
-
-        },
       {
-            "name": "Pedro Pablo",
-            "portraitPath": "Textures/pedroPablo",
-            "unlocked": false,
-            "AllTasks": [
+          "name": "Cleon",
+          "portraitPath": "Textures/cleon",
+          "unlocked": true,
+          "AllTasks": [
               {
-                "title": "Resource Manager",
-                "unlocked": true
+                  "title": "HITO 1",
+                  "unlocked": true
+              },
+              {
+                  "title": "Trabaja",
+                  "unlocked": false
               }
-            ]
-            
+          ]
+
+      },
+      {
+          "name": "Pedro Pablo",
+          "portraitPath": "Textures/pedroPablo",
+          "unlocked": false,
+          "AllTasks": [
+            {
+              "title": "Resource Manager",
+              "unlocked": true
+            }
+          ]
+          
       }
     ]
 }

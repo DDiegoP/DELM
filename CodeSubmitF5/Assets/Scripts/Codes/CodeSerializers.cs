@@ -8,9 +8,9 @@ using static UnityEditor.PlayerSettings.Switch;
 public class CodeSerializable
 {
     public string name;
-    public string commands;
     public string key;
     public bool unlocked;
+    public Command[] commands;
 }
 [System.Serializable]
 public class LanguageSerializer
@@ -24,10 +24,7 @@ public class LanguageSerializer
         {
             langs[i] = new Language(languages[i].name, languages[i].key);
             langs[i].unlocked = languages[i].unlocked;
-            foreach(char c in languages[i].commands)
-            {
-                langs[i].AddCommand(c);
-            }
+            langs[i].SetCommands(languages[i].commands);
         }
         return langs;
     } 
@@ -45,10 +42,7 @@ public class AlgorythmSerializer
         {
             algs[i] = new Algorythm(algorythms[i].name, algorythms[i].key);
             algs[i].unlocked = algorythms[i].unlocked;
-            foreach (char c in algorythms[i].commands)
-            {
-                algs[i].AddCommand(c);
-            }
+            algs[i].SetCommands(algorythms[i].commands);
         }
         return algs;
     }
@@ -68,10 +62,7 @@ public class StructureSerializer
         {
             sts[i] = new Structure(structures[i].name, structures[i].key);
             sts[i].unlocked = structures[i].unlocked;
-            foreach (char c in structures[i].commands)
-            {
-                sts[i].AddCommand(c);
-            }
+            sts[i].SetCommands(structures[i].commands);
         }
         return sts;
     }

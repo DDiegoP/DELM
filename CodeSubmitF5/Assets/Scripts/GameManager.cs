@@ -94,7 +94,6 @@ public class GameManager : MonoBehaviour
         LangList = JsonUtility.FromJson<LanguageSerializer>(LangJSON.text).GetLanguages();
         StructureList = JsonUtility.FromJson<StructureSerializer>(StructJSON.text).GetStructures();
         AlgorythmList = JsonUtility.FromJson<AlgorythmSerializer>(AlgJSON.text).GetAlgorytms();
-
     }
 
     public Problem GenerateRandomProblem()

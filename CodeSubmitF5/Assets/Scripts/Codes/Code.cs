@@ -3,7 +3,27 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[System.Serializable]
+public class Command
+{
+    public string key;
+    public string name;
 
+    public static bool operator ==(Command lhs, Command rhs)
+    {
+        return lhs.Equals(rhs);
+    } 
+
+    public static bool operator !=(Command lhs, Command rhs)
+    {
+        return !lhs.Equals(rhs);
+    }
+
+    public bool Equals(Command obj)
+    {
+        return obj.name == this.name;
+    }
+}
 public class Code 
 {
     
@@ -11,7 +31,7 @@ public class Code
     protected string codeName;
 
     [SerializeField]
-    protected List<char> commands;
+    protected Command[] commands;
 
     public bool unlocked;
 
@@ -20,26 +40,27 @@ public class Code
     public Code(string n, string k)
     {
         codeName = n;
-        commands = new List<char>();
         key = (KeyCode)System.Enum.Parse(typeof(KeyCode), k);
     }
     public virtual void Submit(Problem p)
     {
 
     }
-    public void AddCommand(char c)
-    {
-        commands.Add(c);
-    }
+   
 
     public string GetName()
     {
         return codeName;
     }
 
-    public char[] GetCommands()
+    public Command[] GetCommands()
     {
-        return commands.ToArray();
+        return commands;
+    }
+
+    public void SetCommands(Command[] commands)
+    {
+        this.commands = commands;
     }
     
     public KeyCode GetKey()

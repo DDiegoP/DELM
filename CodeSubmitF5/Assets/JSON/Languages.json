@@ -3,43 +3,121 @@
       {
         "name": "C++",
         "unlocked": true,
-        "commands": "cd",
+        "commands": [
+                {
+                    "name": "P1",
+                    "key": "c"
+                },
+                {
+                    "name": "P2",
+                    "key": "d"
+                }
+            ],
         "key": "C"
       },
       {
         "name": "Java",
         "unlocked": true,
-        "commands": "pf",
+        "commands": [
+          {
+              "name": "P1",
+              "key": "p"
+          },
+          {
+              "name": "P2",
+              "key": "f"
+          }
+      ],
         "key": "J"
       },
       {
         "name": "MATLAB",
         "unlocked": false, 
-        "commands": "ho",
+        "commands": [
+          {
+              "name": "P1",
+              "key": "h"
+          },
+          {
+              "name": "P2",
+              "key": "o"
+          }
+      ],
         "key": "M"
       },
       {
         "name": "Brainfuck",
         "unlocked": false,
-        "commands": "+-",
+        "commands": [
+          {
+              "name": "P1",
+              "key": "+"
+          },
+          {
+              "name": "P2",
+              "key": "-"
+          }
+      ],
         "key": "B"
       },
       {
         "name": "HTML",
         "unlocked": false,
-        "commands": "<bh",
+        "commands": [
+          {
+              "name": "P1",
+              "key": "<"
+          },
+          {
+              "name": "P2",
+              "key": "b"
+          },
+          {
+            "name": "P2",
+            "key": "h"
+          }
+
+      ],
         "key": "H"
       },
       {
         "name": "JavaScript",
         "unlocked": false,
-        "commands": "js.",
+        "commands": [
+          {
+              "name": "P1",
+              "key": "j"
+          },
+          {
+              "name": "P2",
+              "key": "s"
+          },
+          {
+            "name": "P2",
+            "key": "."
+          }
+
+      ],
         "key": "V"
       },
       {
         "name": "C#",
         "unlocked": true,
-        "commands": "usq",
+        "commands": [
+          {
+              "name": "P1",
+              "key": "u"
+          },
+          {
+              "name": "P2",
+              "key": "s"
+          },
+          {
+            "name": "P2",
+            "key": "q"
+          }
+
+      ],
         "key": "S"
       }
     ]   
