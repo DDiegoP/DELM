@@ -134,17 +134,6 @@ public class GameManager : MonoBehaviour
     {
         return unlockedProffessors;
     }
-    public void SubmitAlgorythm(Algorythm a)
-    {
-        Debug.Log(a);
-    }
-    public void SubmitLanguage(Language l)
-    {
-        Debug.Log(l);
-    }
-    public void SubmitStructure(Structure s)
-    {
-        Debug.Log(s);
-    }
+   
 
 }

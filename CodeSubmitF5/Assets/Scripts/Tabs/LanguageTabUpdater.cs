@@ -17,7 +17,9 @@ public class LanguageTabUpdater : MonoBehaviour
             GameObject go = Instantiate(tabPrefab);
             Tab tab = go.GetComponent<Tab>();
             tab.SetOnKeyPressed(() => {
+                
                 tabManager.ShowComboTab(l);
+                
             });
             tab.SetKey(l.GetKey());
             tab.SetTabName(l.GetName());

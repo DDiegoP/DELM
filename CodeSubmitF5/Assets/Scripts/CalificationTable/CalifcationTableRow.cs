@@ -59,6 +59,11 @@ public class CalifcationTableRow : MonoBehaviour
                 CalifText.color = new Color(100, 0, 0);
                 wrongSound.SetActive(true);
                 break;
+            case Calification.Pending:
+                CalifText.text = "PENDING";
+                CalifText.color = Color.blue;
+                wrongSound.SetActive(true);
+                break;
             default:
                 break;
         }

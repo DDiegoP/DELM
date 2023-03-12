@@ -70,10 +70,21 @@ public class Code
 
     public static bool operator ==(Code c1, Code c2)
     {
-        return c1.codeName == c2.codeName;
+        if ((object)c1 == null) return (object)c2 == null;
+        if ((object)c2 == null) return (object)c1 == null;
+        return c1.Equals(c2);
     }
     public static bool operator !=(Code c1, Code c2)
     {
-        return !(c1.codeName == c2.codeName);
+        return !c1.Equals(c2); ;
+    }
+
+    public override bool Equals(object obj) {
+        return ReferenceEquals(obj, this); 
+    }
+
+    public  bool Equals(Code obj)
+    {
+        return this.codeName == obj.codeName;
     }
 }

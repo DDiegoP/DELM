@@ -15,30 +15,30 @@ public class Problem : MonoBehaviour
     {
         get { return askedLanguage; }
     }
-    private Command[] askedLangCommands;
+  
     
     private Algorythm askedAlgorythm;
     public Algorythm AskedAlgorythm { 
         get => askedAlgorythm;
     }
-    private Command[] askedAlgCommands;
+   
     
     private Structure askedStructure;
     public Structure AskedStructure
     {
         get { return askedStructure; }
     }
-    private Command[] askedStructCommands;
+    
     
     private Proffessor proffessor;
     private float tMaximo;
 
     private Language submittedLanguage;
-    private Command[] submittedLangCommands;
+    
     private Algorythm submittedAlgorythm;
-    private Command[] submittedAlgCommands;
+  
     private Structure submittedStructure;
-    private Command[] submittedStructCommands;
+    
 
     private CountdownController cdCntrl;
     private bool correct;
@@ -54,9 +54,6 @@ public class Problem : MonoBehaviour
         this.askedLanguage = l;
         this.askedAlgorythm = a;
         this.askedStructure = s;
-        this.askedLangCommands = l.GetCommands();
-        this.askedAlgCommands = a.GetCommands();
-        this.askedStructCommands = s.GetCommands();
         this.submittedLanguage = null;
         this.submittedAlgorythm = null;
         this.submittedStructure = null;
@@ -84,26 +81,16 @@ public class Problem : MonoBehaviour
     }
 
     // Comprueba si los datos introducidos son correctos
-    private void CheckCorrect()
+    public bool CheckCorrect()
     {
-        CheckCorrect(askedAlgCommands, submittedAlgCommands);
-        CheckCorrect(askedLangCommands, submittedLangCommands);
-        CheckCorrect(askedStructCommands, submittedStructCommands);
         if (correct)
         {
             correct = askedLanguage == submittedLanguage &&
                       AskedAlgorythm == submittedAlgorythm &&
                       askedStructure == submittedStructure;
         }
+        return correct;
     }
-    // Comprueba si los arrays de comandos introducidos son coincidentes y asigna correct
-    private void CheckCorrect(Command[] asked, Command[] submitted) {
-        for (int i = 0; i < asked.Length && correct; ++i)
-        {
-            if (asked[i] == submitted[i]) correct = false;
-        }
-    }
-
     // Marca el lenguaje pasada como la usada
     public void SubmitLanguage(Language l)
     {
@@ -119,10 +106,7 @@ public class Problem : MonoBehaviour
     {
         submittedStructure = s;
     }
-    public void SubmitCommand(char c)
-    {
-
-    }
+  
     //public float TiempoRestante(float tActual){
     //    return (tIni + tMaximo) - tActual;
     //}
@@ -144,5 +128,16 @@ public class Problem : MonoBehaviour
     public Proffessor GetProffessor()
     {
         return proffessor;
+    }
+
+    public Language GetSubmittedLanguage()
+    {
+        return submittedLanguage;
+    }
+
+    public void Disable()
+    {
+        this.gameObject.SetActive(false);
+        slot.gameObject.SetActive(false);
     }
 }

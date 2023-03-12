@@ -31,7 +31,7 @@ public class CalificationTable : MonoBehaviour
         }
     }
 
-    public void CreateEntry(string proffessoName, string taskId, Calification calif)
+    public CalifcationTableRow CreateEntry(string proffessoName, string taskId, Calification calif)
     {
         GameObject row = Instantiate(RowPrefab, this.transform);
         row.GetComponent<CalifcationTableRow>().SetParameters(taskId, proffessoName, calif);
@@ -43,6 +43,7 @@ public class CalificationTable : MonoBehaviour
             Destroy(firstRow);
             Rows.Remove(firstRow);
         }
+        return row.GetComponent<CalifcationTableRow>();
     }
 
     

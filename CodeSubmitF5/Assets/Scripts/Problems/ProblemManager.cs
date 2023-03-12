@@ -62,6 +62,10 @@ public class ProblemManager : MonoBehaviour
 
     int activePrograms = 0;
 
+    List<Problem> problemsToSubmit;
+    List<float> submissionTimers;
+    List<float> submissionTimersExpire;
+    List<CalifcationTableRow> submittedRows;
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +75,10 @@ public class ProblemManager : MonoBehaviour
         algorithms = gm.GetUnlockedAlgorythms();
         structures = gm.GetUnlockedStructures();
         languages = gm.GetUnlockedLanguages();
+        problemsToSubmit = new List<Problem>();
+        submissionTimers = new List<float>();
+        submissionTimersExpire = new List<float>();
+        submittedRows= new List<CalifcationTableRow>();
     }
 
     // Update is called once per frame
@@ -79,16 +87,30 @@ public class ProblemManager : MonoBehaviour
 
         handleInput();
 
-
-
-
-
         foreach (Problem p in Problems)
         {
             if (p.gameObject.activeInHierarchy && p.IsTimedOut())
             {
                 SolveProblem(p, Calification.Time_Limit);
-                this.TakeDamage(50);
+                //this.TakeDamage(50);
+            }
+        }
+
+        for(int i = 0; i < problemsToSubmit.Count; i++)
+        {
+            if (submissionTimers[i] > submissionTimersExpire[i])
+            {
+                Problem p = problemsToSubmit[i];
+                
+                Calification c = p.CheckCorrect() ? Calification.Correct : Calification.Wrong_Answer;
+                submittedRows[i].SetParameters(p.name, p.GetProffessor().GetName(), c);
+                problemsToSubmit.RemoveAt(i);
+                submissionTimers.RemoveAt(i);
+                submissionTimersExpire.RemoveAt(i);
+            }
+            else
+            {
+                submissionTimers[i] += Time.deltaTime;
             }
         }
         if (activePrograms >= Problems.Length) return;
@@ -139,6 +161,7 @@ public class ProblemManager : MonoBehaviour
 
                         //abrir VSCode
                         VSCanvas.SetActive(true);
+                        TabManager.GetInstance().ResetVisual(activeProblem);  
                         break;
                     }
                 }
@@ -189,4 +212,37 @@ public class ProblemManager : MonoBehaviour
         this.score.GetComponent<ScoreScript>().AddScore(score);
     }
 
+    public void SubmitCode(Algorythm a)
+    {
+        activeProblem.SubmitAlgorythm(a);
+    }
+    public void SubmitCode(Language l)
+    {
+        activeProblem.SubmitLanguage(l);
+    }
+    public void SubmitCode(Structure s)
+    {
+        activeProblem.SubmitStructure(s);
+    }
+
+    public void SubmitProblem()
+    {
+        problemsToSubmit.Add(activeProblem);
+        activeProblem.Disable();
+        holder.DeactivateSlot(activeProblem.GetSlot());
+        submissionTimers.Add(0.0f);
+        submissionTimersExpire.Add(Random.Range(0,10));
+        CalifcationTableRow r = cTable.CreateEntry(activeProblem.name, activeProblem.GetProffessor().GetName(), Calification.Pending);
+        submittedRows.Add(r);
+    }
+
+    public void CloseVisual()
+    {
+        VSCanvas.SetActive(false);
+    }
+    public string GetSubmittedLanguageName()
+    {
+        if (activeProblem.GetSubmittedLanguage() == null) return "cpp";
+        return activeProblem.GetSubmittedLanguage().GetName();
+    }
 }
