@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class LevelManager : MonoBehaviour
+public class ProblemManager : MonoBehaviour
 {
 
     [SerializeField]
@@ -21,6 +21,13 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField]
     float MaxGenerationTime;
+
+    [SerializeField]
+    float minProblemTime = 30;
+
+
+    [SerializeField]
+    float maxProblemTime = 60;
 
     GameManager gm;
 
@@ -80,7 +87,7 @@ public class LevelManager : MonoBehaviour
         Structure s = this.structures[Random.Range(0, this.structures.Count)];
         Proffessor pr = this.proffessors[Random.Range(0,this.proffessors.Count)];
         p.SetSlot(holder.GetFirstAvailableSlot());
-        p.Set(pr, l, a, s, Random.Range(10, 20));
+        p.Set(pr, l, a, s, Random.Range(minProblemTime, maxProblemTime));
         p.gameObject.SetActive(true);
         ++activePrograms;
     }
