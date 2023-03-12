@@ -16,16 +16,21 @@ public class ProblemSlot : MonoBehaviour
     [SerializeField] private TMP_Text ProblemAlgorithm;
     [SerializeField] private TMP_Text ProblemDataStructure;
     [SerializeField] private KeyCode key;
+    public KeyCode Key
+    {
+        get { return key; }
+    }
 
-    private KeyCode keyCode;
     private int id;
+    public int Id
+    {
+        get { return id; }
+    }
+
+
     private void Update()
     {
-        if (Input.GetKeyDown(key))
-        {
-            Debug.Log("AAAAAAAAAAA");
-            
-        }
+      
     }
 
     public void SetID(int id)

@@ -9,6 +9,12 @@ public class ProblemHolder : MonoBehaviour
     private GameManager GM;
 
     ProblemSlot[] slots;
+
+    public ProblemSlot[] Slots
+    {
+        get { return slots; }
+    }
+
     int maxSlots;
     int slotsActive = 0;
     

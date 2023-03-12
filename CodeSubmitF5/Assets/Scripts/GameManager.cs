@@ -138,17 +138,14 @@ public class GameManager : MonoBehaviour
     public void SubmitAlgorythm(Algorythm a)
     {
         Debug.Log(a);
-        //currentProblem.SubmitAlgorythm(a);
     }
     public void SubmitLanguage(Language l)
     {
         Debug.Log(l);
-        //currentProblem.SubmitLanguage(l);
     }
     public void SubmitStructure(Structure s)
     {
         Debug.Log(s);
-        //currentProblem.SubmitStructure(s);
     }
 
 }

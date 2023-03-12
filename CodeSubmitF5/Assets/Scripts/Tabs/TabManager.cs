@@ -27,8 +27,8 @@ public class TabManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //currentTab = codeTypeTab;
-        //currentTab.SetActive(true);
+        currentTab = codeTypeTab;
+        currentTab.SetActive(true);
     }
 
     // Update is called once per frame

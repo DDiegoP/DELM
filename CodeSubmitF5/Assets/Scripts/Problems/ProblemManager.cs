@@ -8,7 +8,10 @@ using TMPro;
 public class ProblemManager : MonoBehaviour
 {
 
+    private Problem activeProblem;
 
+    [SerializeField]
+    private GameObject VSCanvas;
 
     [SerializeField]
     private GameObject gameOver;
@@ -71,7 +74,14 @@ public class ProblemManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach(Problem p in Problems)
+
+        handleInput();
+
+
+
+
+
+        foreach (Problem p in Problems)
         {
             if (p.gameObject.activeInHierarchy && p.IsTimedOut())
             {
@@ -80,9 +90,9 @@ public class ProblemManager : MonoBehaviour
             }
         }
         if (activePrograms >= Problems.Length) return;
-        if(GenerationTimer >= NextGeneration)
+        if (GenerationTimer >= NextGeneration)
         {
-            GenerateProblem(GetFirstAvailableProblem());
+            GenerateProblem();
             GenerationTimer = 0;
             NextGeneration = Random.Range(MinGenerationTime, MaxGenerationTime);
         }
@@ -92,27 +102,53 @@ public class ProblemManager : MonoBehaviour
         }
     }
 
-    private void GenerateProblem(Problem p)
+    private void GenerateProblem()
     {
         if (!holder.SlotsAvailable()) return;
-        if(p == null) return;
 
-        
-        Language l = this.languages[Random.Range(0,this.languages.Count)];
+        ProblemSlot slot = holder.GetFirstAvailableSlot();
+        Problem p = Problems[slot.Id];
+
+        Language l = this.languages[Random.Range(0, this.languages.Count)];
         Algorythm a = this.algorithms[Random.Range(0, this.algorithms.Count)];
         Structure s = this.structures[Random.Range(0, this.structures.Count)];
-        Proffessor pr = this.proffessors[Random.Range(0,this.proffessors.Count)];
-        p.SetSlot(holder.GetFirstAvailableSlot());
+        Proffessor pr = this.proffessors[Random.Range(0, this.proffessors.Count)];
+        p.SetSlot(slot);
         p.Set(pr, l, a, s, Random.Range(minProblemTime, maxProblemTime));
         p.gameObject.SetActive(true);
         ++activePrograms;
+    }
+
+
+    private void handleInput()
+    {
+        if (!VSCanvas.activeInHierarchy)
+        {
+            foreach (ProblemSlot pS in holder.Slots)
+            {
+                if (pS.gameObject.activeInHierarchy)
+                {
+                    if (Input.GetKeyDown(pS.Key))
+                    {
+                        Debug.Log("Seleccionas Problema " + pS.Id.ToString());
+
+                        //problema al problemHolder
+                        activeProblem = Problems[pS.Id];
+
+                        //abrir VSCode
+                        VSCanvas.SetActive(true);
+                        break;
+                    }
+                }
+            }
+        }
     }
 
     private Problem GetFirstAvailableProblem()
     {
         int i = 1;
         Problem p = Problems[0];
-        while(i < Problems.Length && p.gameObject.activeInHierarchy)
+        while (i < Problems.Length && p.gameObject.activeInHierarchy)
         {
             p = Problems[i];
             i++;
@@ -127,22 +163,30 @@ public class ProblemManager : MonoBehaviour
         cTable.CreateEntry(p.GetProffessor().GetName(), p.name, cal);
         p.gameObject.SetActive(false);
         holder.DeactivateSlot(p.GetSlot());
-        if(cal == Calification.Correct) this.AddScore((int)cal);
+        if (cal == Calification.Correct) this.AddScore((int)cal);
         activePrograms--;
     }
 
 
-    private void TakeDamage(int damage){
-        if(HealthBar == null) return;
+    private void TakeDamage(int damage)
+    {
+        if (HealthBar == null) return;
         HealthBar.GetComponent<HealthScript>().TakeDamage(damage);
-        if(HealthBar.GetComponent<HealthScript>().curHealth <= 0){
+        if (HealthBar.GetComponent<HealthScript>().curHealth <= 0)
+        {
             gameOver.SetActive(true);
             Time.timeScale = 0;
         }
     }
 
-    private void AddScore(int score){
+    private void AddScore(int score)
+    {
         if (this.score == null) return;
         this.score.GetComponent<ScoreScript>().AddScore(score);
+    }
+
+    private void ShowComboTab(Language l)
+    {
+        throw new System.NotImplementedException();
     }
 }
