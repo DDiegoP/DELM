@@ -75,7 +75,7 @@ public class JSONProcessor : MonoBehaviour
                     if (lockedProfs.Count != 0)
                     {
                         int index = Random.Range(0, lockedProfs.Count);
-                        Console.log(lockedProfs[index].name);
+                        Debug.Log(lockedProfs[index].GetName());
                         lockedProfs[index].unlocked = true;
                         gameManager.unlockedProffessors.Add(lockedProfs[index]);
                         lockedProfs.RemoveAt(index);
@@ -86,7 +86,7 @@ public class JSONProcessor : MonoBehaviour
                     if (lockedLangs.Count != 0)
                     {
                         int index = Random.Range(0, lockedLangs.Count);
-                        Console.log(lockedLangs[index].name);
+                        Debug.Log(lockedLangs[index].GetName());
                         lockedLangs[index].unlocked = true;
                         gameManager.unlockedLanguages.Add(lockedLangs[index]);                        
                         lockedLangs.RemoveAt(index);
@@ -97,7 +97,7 @@ public class JSONProcessor : MonoBehaviour
                     if (lockedStructs.Count != 0)
                     {
                         int index = Random.Range(0, lockedStructs.Count);
-                        Console.log(lockedStructs[index].name);
+                        Debug.Log(lockedStructs[index].GetName());
                         lockedStructs[index].unlocked = true;
                         gameManager.unlockedStructures.Add(lockedStructs[index]);
                         lockedStructs.RemoveAt(index);
@@ -109,7 +109,7 @@ public class JSONProcessor : MonoBehaviour
                     {
                         int index = Random.Range(0, lockedAlgs.Count);
                         lockedAlgs[index].unlocked = true;
-                        Console.log(lockedAlgs[index].name);
+                        Debug.Log(lockedAlgs[index].GetName());
                         gameManager.unlockedAlgorythms.Add(lockedAlgs[index]);
                         lockedAlgs.RemoveAt(index);
                         return true;
