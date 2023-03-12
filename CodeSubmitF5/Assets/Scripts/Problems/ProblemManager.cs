@@ -81,6 +81,7 @@ public class ProblemManager : MonoBehaviour
         submittedRows= new List<CalifcationTableRow>();
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -92,7 +93,7 @@ public class ProblemManager : MonoBehaviour
             if (p.gameObject.activeInHierarchy && p.IsTimedOut())
             {
                 SolveProblem(p, Calification.Time_Limit);
-                //this.TakeDamage(50);
+                this.TakeDamage(20); //Daño al TimeLimit
             }
         }
 
@@ -100,9 +101,11 @@ public class ProblemManager : MonoBehaviour
         {
             if (submissionTimers[i] > submissionTimersExpire[i])
             {
-                Problem p = problemsToSubmit[i];
+                Problem p = problemsToSubmit[i]; //Aqui tendria que resolverlo
                 
                 Calification c = p.CheckCorrect() ? Calification.Correct : Calification.Wrong_Answer;
+                if (c == Calification.Correct) {this.AddScore(p.GetPoints()); Debug.Log(p.GetPoints());}
+                else if(c == Calification.Wrong_Answer) this.TakeDamage(10); //Daño al equivocarse
                 submittedRows[i].SetParameters(p.name, p.GetProffessor().GetName(), c);
                 problemsToSubmit.RemoveAt(i);
                 submissionTimers.RemoveAt(i);
@@ -188,7 +191,6 @@ public class ProblemManager : MonoBehaviour
         cTable.CreateEntry(p.GetProffessor().GetName(), p.name, cal);
         p.gameObject.SetActive(false);
         holder.DeactivateSlot(p.GetSlot());
-        if (cal == Calification.Correct) this.AddScore(p.GetPoints());
         activePrograms--;
     }
 

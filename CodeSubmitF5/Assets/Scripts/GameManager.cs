@@ -86,12 +86,14 @@ public class GameManager : MonoBehaviour
 
     void LoadJSON()
     {
-        ProfsList = JsonUtility.FromJson<ProffessorHolder>(ProffessorJSON.text).array;  
+        ProfsList = JsonUtility.FromJson<ProffessorHolder>(ProffessorJSON.text).array;
+        Debug.Log(ProfsList[0].puntos);
         foreach(Proffessor p in ProfsList)
         {
             p.LoadSprite();
         }
         LangList = JsonUtility.FromJson<LanguageSerializer>(LangJSON.text).GetLanguages();
+        Debug.Log(LangList[0].puntos);
         StructureList = JsonUtility.FromJson<StructureSerializer>(StructJSON.text).GetStructures();
         AlgorythmList = JsonUtility.FromJson<AlgorythmSerializer>(AlgJSON.text).GetAlgorytms();
     }
