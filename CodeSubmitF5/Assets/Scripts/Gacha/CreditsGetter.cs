@@ -16,6 +16,11 @@ public class CreditsGetter : MonoBehaviour
     void Start()
     {
         this.gm = GameManager.GetInstance();
+        UpdateCountUI();
+    }
+
+    public void UpdateCountUI()
+    {
         creditsText.text = gm.Credits.ToString();
     }
 
@@ -29,7 +34,7 @@ public class CreditsGetter : MonoBehaviour
     public bool UseCredits(int c){
         if(c > gm.Credits) return false; //Si no tengo suficientes creditos
         this.gm.Credits -= c;
-        creditsText.text = gm.Credits.ToString();
+        UpdateCountUI();
         return true;
     }
 }
