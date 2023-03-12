@@ -136,7 +136,7 @@ public class ProblemManager : MonoBehaviour
         if(HealthBar == null) return;
         HealthBar.GetComponent<HealthScript>().TakeDamage(damage);
         if(HealthBar.GetComponent<HealthScript>().curHealth <= 0){
-            Instantiate(this.gameOver, this.canvas.transform);
+            gameOver.SetActive(true);
             Time.timeScale = 0;
         }
     }

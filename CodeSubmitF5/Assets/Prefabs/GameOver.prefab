@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Menu principal
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4fa1b680bc4d2bf41a16ffd9c00c4ede, type: 2}
+  m_sharedMaterial: {fileID: 2686553814696037588, guid: 4fa1b680bc4d2bf41a16ffd9c00c4ede, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -338,8 +338,8 @@ MonoBehaviour:
   m_text: "Debido a la falta de entregas, entendemos que ha decidido dejar la asignatura,
     por lo que se considerara suspensa.\n\nEsperamos verle el a\xF1o que viene"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4fa1b680bc4d2bf41a16ffd9c00c4ede, type: 2}
+  m_sharedMaterial: {fileID: 2686553814696037588, guid: 4fa1b680bc4d2bf41a16ffd9c00c4ede, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -423,7 +423,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9090136034636110197
 RectTransform:
   m_ObjectHideFlags: 0
@@ -701,8 +701,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4fa1b680bc4d2bf41a16ffd9c00c4ede, type: 2}
+  m_sharedMaterial: {fileID: 2686553814696037588, guid: 4fa1b680bc4d2bf41a16ffd9c00c4ede, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
