@@ -104,7 +104,7 @@ public class LevelManager : MonoBehaviour
         cTable.CreateEntry(p.GetProffessor().GetName(), p.name, cal);
         p.gameObject.SetActive(false);
         holder.DeactivateSlot(p.GetSlot());
-        gm.AddScore((int)cal);
+        if(cal == Calification.Correct) gm.AddScore((int)cal);
         activePrograms--;
     }
 }
