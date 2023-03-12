@@ -2,6 +2,7 @@
     "structures": [
         {
             "name": "BinTree",
+            "points": 1,
             "commands": 
             [
                 {
@@ -18,6 +19,7 @@
         },
         {
             "name": "Queue",
+            "points": 1,
             "commands": [
                 {
                     "name": "P1",
@@ -33,6 +35,7 @@
         },
         {
             "name": "Stack",
+            "points": 3,
             "commands": [
                 {
                     "name": "P1",
@@ -48,6 +51,7 @@
         },
         {
             "name": "List",
+            "points": 2,
             "commands": [
                 {
                     "name": "P1",
@@ -63,6 +67,7 @@
         },
         {
             "name": "Map",
+            "points": 4,
             "commands": [
                 {
                     "name": "P1",
@@ -78,6 +83,7 @@
         },
         {
             "name": "Arbol_avl",
+            "points": 5,
             "commands": [
                 {
                     "name": "P1",
@@ -93,6 +99,7 @@
         },
         {
             "name": "DiGraph",
+            "points": 3,
             "commands": [
                 {
                     "name": "P1",

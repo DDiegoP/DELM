@@ -11,6 +11,8 @@ public class Proffessor
     public Task[] AllTasks;
     public Sprite portrait;
     public bool unlocked;
+    public float puntos;
+    public string id;
     public List<string> GetAvailableTasks() {
         List<string> tasks = new List<string>();
         foreach(Task task in AllTasks)

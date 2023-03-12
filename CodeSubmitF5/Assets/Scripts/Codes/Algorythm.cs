@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class Algorythm : Code
 {
-    public Algorythm(string a, string k) : base(a,k)
+    public int puntos;
+    public Algorythm(string a, string k, int puntos) : base(a,k)
     {
-
+        this.puntos = puntos;
     }
 
     public override void Submit(Problem p)

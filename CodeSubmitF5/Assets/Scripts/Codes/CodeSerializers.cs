@@ -11,6 +11,7 @@ public class CodeSerializable
     public string key;
     public bool unlocked;
     public Command[] commands;
+    public int puntos;
 }
 [System.Serializable]
 public class LanguageSerializer
@@ -22,7 +23,7 @@ public class LanguageSerializer
         Language[] langs= new Language[languages.Length];
         for(int i = 0; i < languages.Length; i++)
         {
-            langs[i] = new Language(languages[i].name, languages[i].key);
+            langs[i] = new Language(languages[i].name, languages[i].key, languages[i].puntos);
             langs[i].unlocked = languages[i].unlocked;
             langs[i].SetCommands(languages[i].commands);
         }
@@ -40,7 +41,7 @@ public class AlgorythmSerializer
         Algorythm[] algs = new Algorythm[algorythms.Length];
         for (int i = 0; i < algorythms.Length; i++)
         {
-            algs[i] = new Algorythm(algorythms[i].name, algorythms[i].key);
+            algs[i] = new Algorythm(algorythms[i].name, algorythms[i].key, algorythms[i].puntos);
             algs[i].unlocked = algorythms[i].unlocked;
             algs[i].SetCommands(algorythms[i].commands);
         }
@@ -60,7 +61,7 @@ public class StructureSerializer
 
         for (int i = 0; i < structures.Length; i++)
         {
-            sts[i] = new Structure(structures[i].name, structures[i].key);
+            sts[i] = new Structure(structures[i].name, structures[i].key, structures[i].puntos);
             sts[i].unlocked = structures[i].unlocked;
             sts[i].SetCommands(structures[i].commands);
         }

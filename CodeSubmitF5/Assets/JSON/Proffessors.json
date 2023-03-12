@@ -4,6 +4,7 @@
       "name": "Cleon",
       "portraitPath": "Textures/Cabezos/cleon",
       "unlocked": true,
+      "points": 1,
       "AllTasks": [
         {
           "title": "HITO 1",
@@ -19,6 +20,7 @@
       "name": "Pedro Pablo",
       "portraitPath": "Textures/Cabezos/pedroPablo",
       "unlocked": false,
+      "points": 2.5,
       "AllTasks": [
         {
           "title": "Resource Manager",
@@ -41,6 +43,7 @@
       "name": "Miki",
       "portraitPath": "Textures/Cabezos/miki",
       "unlocked": true,
+      "points": 1.5,
       "AllTasks": [
         {
           "title": "Practica Juez",
@@ -52,6 +55,7 @@
       "name": "Guille",
       "portraitPath": "Textures/Cabezos/guille",
       "unlocked": false,
+      "points": 2,
       "AllTasks": [
         {
           "title": "Crecer",
@@ -63,6 +67,7 @@
       "name": "Compuman",
       "portraitPath": "Textures/Cabezos/compuman",
       "unlocked": false,
+      "points": 3,
       "AllTasks": [
         {
           "title": "Ogre",
@@ -74,6 +79,7 @@
       "name": "Fede",
       "portraitPath": "Textures/Cabezos/fede",
       "unlocked": false,
+      "points": 2.5,
       "AllTasks": [
         {
           "title": "Mario",
