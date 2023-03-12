@@ -18,12 +18,48 @@
 
         },
       {
+        "name": "Pedro Pablo",
+        "portraitPath": "Textures/pedroPablo",
+        "unlocked": false,
+        "AllTasks": [
+          {
+            "title": "Resource Manager",
+            "unlocked": true
+          }
+        ]
+
+      },
+      {
+            "name": "Miki",
+            "portraitPath": "Textures/miki",
+            "unlocked": false,
+            "AllTasks": [
+              {
+                "title": "Practica Juez",
+                "unlocked": true
+              }
+            ]
+            
+      },
+      {
+            "name": "Guille",
+            "portraitPath": "Textures/guille",
+            "unlocked": false,
+            "AllTasks": [
+              {
+                "title": "Crecer",
+                "unlocked": true
+              }
+            ]
+            
+      },
+      {
             "name": "Pedro Pablo",
             "portraitPath": "Textures/pedroPablo",
             "unlocked": false,
             "AllTasks": [
               {
-                "title": "Resource Manager",
+                "title": "Ogre",
                 "unlocked": true
               }
             ]
