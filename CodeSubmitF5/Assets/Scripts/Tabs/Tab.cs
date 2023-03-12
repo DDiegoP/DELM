@@ -16,10 +16,12 @@ public class Tab : MonoBehaviour
     [SerializeField] private KeyEvent onKeyPressedEvent = null;
     public delegate void CallBack();
     private CallBack onKeyPressedCallBack;
+    AudioSource keyPressed;
 
     // Start is called before the first frame update
     void Start()
     {
+        keyPressed = GetComponent<AudioSource>();
         this.gameObject.transform.GetChild(1).gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = this.tabName;
         string k = this.key.ToString();
         if (k != "F5" && k[k.Length - 1] >= '0' && k[k.Length - 1] <= '9') k = k.Substring(k.Length - 1);
@@ -47,9 +49,10 @@ public class Tab : MonoBehaviour
     {
         if (Input.GetKeyDown(key))
         {
+            keyPressed.Play();
             if (onKeyPressedCallBack != null) onKeyPressedCallBack.Invoke();
             else onKeyPressedEvent.Invoke();
-
+            
         }
     }
 }

@@ -59,6 +59,7 @@ public class ProblemManager : MonoBehaviour
 
     float GenerationTimer = 0;
     float NextGeneration = 0;
+    float timeToPlay = 0;
 
     int activePrograms = 0;
 
@@ -240,7 +241,7 @@ public class ProblemManager : MonoBehaviour
         activeProblem.Disable();
         holder.DeactivateSlot(activeProblem.GetSlot());
         submissionTimers.Add(0.0f);
-        submissionTimersExpire.Add(Random.Range(0,10));
+        submissionTimersExpire.Add(Random.Range(1,10));
         CalifcationTableRow r = cTable.CreateEntry(activeProblem.name, activeProblem.GetProffessor().GetName(), Calification.Pending);
         submittedRows.Add(r);
     }
