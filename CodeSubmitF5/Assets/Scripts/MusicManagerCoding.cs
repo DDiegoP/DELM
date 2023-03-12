@@ -22,7 +22,7 @@ public class MusicManagerCoding : MonoBehaviour
         if (visualUI.activeInHierarchy)
         {
             audioSource.Stop();
-            otherAudioSource.PlayDelayed(1);
+            //otherAudioSource.PlayDelayed(1);
             
         }
         else if(!visualUI.activeInHierarchy&& !audioSource.isPlaying)
