@@ -6,15 +6,19 @@
         "puntos": 1,
         "unlocked": true,
         "commands": [
-                {
-                    "name": "P1",
-                    "key": "c"
-                },
-                {
-                    "name": "P2",
-                    "key": "d"
-                }
-            ],
+          {
+            "name": "#include <iostream>",
+            "key": "c"
+          },
+          {
+            "name": "using namespace std;",
+            "key": "d"
+          },
+          {
+            "name": "cout << endl",
+            "key": "e"
+          }
+        ],
         "key": "C"
       },
       {
@@ -24,31 +28,39 @@
         "unlocked": true,
         "commands": [
           {
-              "name": "P1",
-              "key": "p"
+            "name": "var jv",
+            "key": "p"
           },
           {
-              "name": "P2",
-              "key": "f"
+            "name": "function()",
+            "key": "f"
+          },
+          {
+            "name": "System.out.println(\"Hola mundo\");",
+            "key": "o"
           }
-      ],
+        ],
         "key": "J"
       },
       {
         "name": "MATLAB",
         "id": "MatLab",
         "puntos": 3,
-        "unlocked": false, 
+        "unlocked": false,
         "commands": [
           {
-              "name": "P1",
-              "key": "h"
+            "name": "quit",
+            "key": "h"
           },
           {
-              "name": "P2",
-              "key": "o"
+            "name": "ajsdhk",
+            "key": "o"
+          },
+          {
+            "name": "multiply",
+            "key": "m"
           }
-      ],
+        ],
         "key": "M"
       },
       {
@@ -58,14 +70,18 @@
         "unlocked": false,
         "commands": [
           {
-              "name": "P1",
-              "key": "+"
+            "name": "+",
+            "key": "+"
           },
           {
-              "name": "P2",
-              "key": "-"
+            "name": "---",
+            "key": "-"
+          },
+          {
+            "name": ".,.,.,,.",
+            "key": "."
           }
-      ],
+        ],
         "key": "B"
       },
       {
@@ -75,15 +91,15 @@
         "unlocked": false,
         "commands": [
           {
-              "name": "P1",
+              "name": "<head>",
               "key": "<"
           },
           {
-              "name": "P2",
+              "name": "<body>",
               "key": "b"
           },
           {
-            "name": "P2",
+            "name": "<script>",
             "key": "h"
           }
 
@@ -97,15 +113,15 @@
         "unlocked": false,
         "commands": [
           {
-              "name": "P1",
+              "name": "import",
               "key": "j"
           },
           {
-              "name": "P2",
+              "name": "function()",
               "key": "s"
           },
           {
-            "name": "P2",
+            "name": "var js",
             "key": "."
           }
 
@@ -119,15 +135,15 @@
         "unlocked": true,
         "commands": [
           {
-              "name": "P1",
+              "name": "using System",
               "key": "u"
           },
           {
-              "name": "P2",
+              "name": "namespace Programm",
               "key": "s"
           },
           {
-            "name": "P2",
+            "name": "Console.WriteLine()",
             "key": "q"
           }
 

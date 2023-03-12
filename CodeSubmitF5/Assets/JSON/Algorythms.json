@@ -4,48 +4,60 @@
             "name": "BackTracking",
             "puntos": 2,
             "unlocked": true,
-            "commands": [
-                {
-                    "name": "P1",
-                    "key": "q"
-                },
-                {
-                    "name": "P2",
-                    "key": "e"
-                }
-            ],
+          "commands": [
+            {
+              "name": "loop",
+              "key": "q"
+            },
+            {
+              "name": "recursion",
+              "key": "r"
+            },
+            {
+              "name": "estimate",
+              "key": "e"
+            }
+          ],
             "key": "B"
         },
         {
             "name": "BubbleSort",
             "unlocked": true,
             "puntos": 1,
-            "commands": [
-                {
-                    "name": "P1",
-                    "key": "q"
-                },
-                {
-                    "name": "P2",
-                    "key": "g"
-                }
-            ],
+          "commands": [
+            {
+              "name": "compare",
+              "key": "q"
+            },
+            {
+              "name": "sort",
+              "key": "s"
+            },
+            {
+              "name": "avance",
+              "key": "g"
+            }
+          ],
             "key": "S"
         },
         {
             "name": "DivideAndConquer",
             "unlocked": true,
             "puntos": 1,
-            "commands": [
-                {
-                    "name": "P1",
-                    "key": "v"
-                },
-                {
-                    "name": "P2",
-                    "key": "r"
-                }
-            ],
+          "commands": [
+            {
+              "name": "left",
+              "key": "v"
+            },
+            {
+              "name": "right",
+              "key": "r"
+            },
+            {
+              "name": "log(n)",
+              "key": "d"
+            }
+          ],
             "key": "C"
         },
         {
