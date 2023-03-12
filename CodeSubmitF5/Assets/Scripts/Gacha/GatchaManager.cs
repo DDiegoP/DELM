@@ -40,6 +40,7 @@ public class GatchaManager : MonoBehaviour
             if(!proc.getRandElem()) return; //Si devuelve fales, no quedan.
             cnvMngr.PlayVideo();
             // cuando el video termine te sale lo conseguido
+            cnvMngr.SetFeedbackText("Has desbloqueado:\n" + proc.GetUnlockedElement());
         }
         else
         {
@@ -49,12 +50,16 @@ public class GatchaManager : MonoBehaviour
 
     public void Tirar10(){
         if(text.GetComponent<CreditsGetter>().UseCredits(COST10)){
+            string unlockedText = "Has desbloqueado:\n";
             for(int i = 0; i < 10; i++){
                 if(!proc.getRandElem()) return; //Si devuelve false es que no quedan
                 cnvMngr.PlayVideo();
                 // cuando el video termine te sale lo conseguido
+                unlockedText += proc.GetUnlockedElement() + "\n";
             }
-        }else{
+            cnvMngr.SetFeedbackText(unlockedText);
+        }
+        else{
             //No tiene suficiente para tirar
         }
     }
