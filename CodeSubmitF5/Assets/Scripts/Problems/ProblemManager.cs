@@ -185,8 +185,8 @@ public class ProblemManager : MonoBehaviour
         this.score.GetComponent<ScoreScript>().AddScore(score);
     }
 
-    private void ShowComboTab(Language l)
+    public void ShowComboTab(Language l)
     {
-        throw new System.NotImplementedException();
+
     }
 }

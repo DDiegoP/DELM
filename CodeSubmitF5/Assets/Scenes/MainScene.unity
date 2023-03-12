@@ -775,6 +775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabPrefab: {fileID: 6955592756050808357, guid: a95cebba1bc9e5e4886962a8fd2cd691, type: 3}
+  problemManager: {fileID: 0}
 --- !u!114 &366019288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1887,6 +1888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc70da803498a0a4981792921137a9f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VSCanvas: {fileID: 1101317674}
   gameOver: {fileID: 819876691}
   canvas: {fileID: 107749327}
   score: {fileID: 800680989}
@@ -4093,7 +4095,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: acfa09c751d1e254aa9ef5ed480686e0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
