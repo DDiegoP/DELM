@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,15 +14,20 @@ public class CommandsHolder : MonoBehaviour
 
     [SerializeField]
     private ProblemManager problemManager;
+    [SerializeField]
+    AudioSource wrongSound;
+    [SerializeField]
+    AudioSource rightSound;
     Code code;
     string commandString;
     int actualKey = 0;
     Command[] commands;
     private List<GameObject> commandObjects = new List<GameObject>();
     VisualMode mode;
+    
 
     string[] route = new string[3];
-   
+
     public void SetCode(Language c)
     {
         mode = VisualMode.Language;
@@ -101,6 +107,9 @@ public class CommandsHolder : MonoBehaviour
         {
             if (c == commands[actualKey].key[0])
             {
+                rightSound.Stop();
+                wrongSound.Stop();
+                rightSound.Play();
                 Destroy(commandObjects[0]);
                 commandObjects.RemoveAt(0);
                 if(mode == VisualMode.Algorythm)
@@ -113,6 +122,9 @@ public class CommandsHolder : MonoBehaviour
             }
             else
             {
+                rightSound.Stop();
+                wrongSound.Stop();
+                wrongSound.Play();
                 Debug.Log("Fallo");
             }
         }
