@@ -8,6 +8,9 @@ public class HealthScript : MonoBehaviour
     [SerializeField]
     public Slider healthBar;
 
+    [SerializeField]
+    GameObject gameOver;
+
     static public int MAX_HEALTH = 100;
     public int curHealth = MAX_HEALTH;
 
@@ -21,7 +24,7 @@ public class HealthScript : MonoBehaviour
     public void TakeDamage(int damage){
         if(curHealth - damage <= 0){
             curHealth = 0;
-            //Hacer que pierda el juego
+            gameOver.SetActive(true);
         }else if(curHealth - damage >= MAX_HEALTH){
             curHealth = MAX_HEALTH;
         }else{
