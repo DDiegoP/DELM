@@ -19,6 +19,12 @@ public class GameManager : MonoBehaviour
     }
     
     [SerializeField]
+    private GameObject gameOver;
+
+    [SerializeField]
+    private GameObject canvas;
+
+    [SerializeField]
     private TMP_Text score;
 
     [SerializeField]
@@ -93,7 +99,8 @@ public class GameManager : MonoBehaviour
         if(HealthBar == null) return;
         HealthBar.GetComponent<HealthScript>().TakeDamage(damage);
         if(HealthBar.GetComponent<HealthScript>().curHealth <= 0){
-            //Game over
+            Instantiate(this.gameOver, this.canvas.transform);
+            Time.timeScale = 0;
         }
     }
 

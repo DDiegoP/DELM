@@ -5,6 +5,42 @@
             "commands": "cd",
             "unlocked": true,
             "key": "B"
+        },
+        {
+            "name": "Queue",
+            "commands": "hr",
+            "unlocked": true,
+            "key": "Q"
+        },
+        {
+            "name": "Stack",
+            "commands": "me",
+            "unlocked": false,
+            "key": "S"
+        },
+        {
+            "name": "List",
+            "commands": "lr",
+            "unlocked": true,
+            "key": "L"
+        },
+        {
+            "name": "Map",
+            "commands": "cp",
+            "unlocked": false,
+            "key": "M"
+        },
+        {
+            "name": "Arbol_avl",
+            "commands": "qw",
+            "unlocked": false,
+            "key": "A"
+        },
+        {
+            "name": "DiGraph",
+            "commands": "mt",
+            "unlocked": false,
+            "key": "D"
         }
     ]
 }

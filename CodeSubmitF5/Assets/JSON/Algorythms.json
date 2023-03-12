@@ -5,6 +5,42 @@
             "unlocked": true,
             "commands": "qe",
             "key": "B"
+        },
+        {
+            "name": "BubbleSort",
+            "unlocked": true,
+            "commands": "ag",
+            "key": "S"
+        },
+        {
+            "name": "DivideAndConquer",
+            "unlocked": true,
+            "commands": "vr",
+            "key": "C"
+        },
+        {
+            "name": "DynamicProgramming",
+            "unlocked": false,
+            "commands": "nw",
+            "key": "D"
+        },
+        {
+            "name": "GreedyAlgorythm",
+            "unlocked": false,
+            "commands": "py",
+            "key": "G"
+        },
+        {
+            "name": "PancakeSort",
+            "unlocked": false,
+            "commands": "mu",
+            "key": "P"
+        },
+        {
+            "name": "RandomSort",
+            "unlocked": false,
+            "commands": "zl",
+            "key": "R"
         }
     ]   
 }
