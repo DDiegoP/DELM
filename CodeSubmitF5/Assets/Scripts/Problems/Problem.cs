@@ -48,7 +48,7 @@ public class Problem : MonoBehaviour
     // Constructora que recibe el lenguaje, algorimo y estructura de datos necesarios para resolverlo
     public void Set(Proffessor p, Language l, Algorythm a, Structure s, float tMaximo)
     {
-        this.proffessor= p;
+        this.proffessor = p;
         List<string> tasks = this.proffessor.GetAvailableTasks();
         this.name = tasks[Random.Range(0, tasks.Count)];
         this.askedLanguage = l;
@@ -62,17 +62,11 @@ public class Problem : MonoBehaviour
         this.submittedStructure = null;
         this.correct = true;
         this.tMaximo = tMaximo;
-
-    }
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        cdCntrl = slot.gameObject.GetComponent<CountdownController>();
-
-        cdCntrl.setMaxValue(tMaximo);
+        this.timeLimit = 0;
+        this.slot.SetTask(this);
+        this.cdCntrl = slot.gameObject.GetComponent<CountdownController>();
+        this.cdCntrl.setMaxValue(this.tMaximo);
+        //this.cdCntrl.setValue(this.tMaximo);
     }
 
     // Update is called once per frame

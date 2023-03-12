@@ -25,7 +25,7 @@ public class ProblemHolder : MonoBehaviour
     }
 
     
-    public ProblemSlot SetFirstAvailableSlot(Problem p)
+    public ProblemSlot GetFirstAvailableSlot()
     {
         ProblemSlot slot = slots[0];
         int i = 0;
@@ -38,19 +38,12 @@ public class ProblemHolder : MonoBehaviour
         if (slot.gameObject.activeInHierarchy) return null;
 
         slot.gameObject.SetActive(true);
-        slot.SetTask(p);
+        //slot.SetTask(p);
         slotsActive++;
         return slot;
     }
 
-    public  Problem SetProblem(ProblemSlot slot)
-    {
-        slot.gameObject.SetActive(true);
-
-        Problem p = GM.GenerateRandomProblem();
-        slot.SetTask(p);
-        return p;
-    }
+    
 
    public bool SlotsAvailable()
     {

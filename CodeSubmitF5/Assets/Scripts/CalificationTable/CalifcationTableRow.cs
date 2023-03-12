@@ -54,6 +54,11 @@ public class CalifcationTableRow : MonoBehaviour
                 CalifText.color = new Color(100, 0, 0);
                 wrongSound.SetActive(true);
                 break;
+            case Calification.Time_Limit:
+                CalifText.text = "TIME_LIMIT";
+                CalifText.color = new Color(100, 0, 0);
+                wrongSound.SetActive(true);
+                break;
             default:
                 break;
         }

@@ -73,12 +73,13 @@ public class LevelManager : MonoBehaviour
         if (!holder.SlotsAvailable()) return;
         if(p == null) return;
 
-        p.SetSlot(holder.SetFirstAvailableSlot(p));
+        
         Language l = this.languages[Random.Range(0,this.languages.Count)];
         Algorythm a = this.algorithms[Random.Range(0, this.algorithms.Count)];
         Structure s = this.structures[Random.Range(0, this.structures.Count)];
         Proffessor pr = this.proffessors[Random.Range(0,this.proffessors.Count)];
-        p.Set(pr, l, a, s, Random.Range(30, 60));
+        p.SetSlot(holder.GetFirstAvailableSlot());
+        p.Set(pr, l, a, s, Random.Range(10, 20));
         p.gameObject.SetActive(true);
         ++activePrograms;
     }

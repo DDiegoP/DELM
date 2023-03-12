@@ -65,16 +65,17 @@ public class GameManager : MonoBehaviour
         }else{
             Destroy(this.gameObject);
         }
-
+        
         LoadJSON();
         problems = new List<Problem>();
-        problemConstructor= new ProblemConstructor();
-        
+        //problemConstructor = new ProblemConstructor();
+        InitializeUnlocked();
+
     }
 
     void Start()
     {
-        InitializeUnlocked();
+        
         //unlockedAlgorythms.Add(AlgorythmList[0]);
         //unlockedLanguages = new List<Language>();
         //unlockedLanguages.Add(LangList[0]);

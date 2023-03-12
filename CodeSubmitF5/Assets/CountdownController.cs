@@ -10,11 +10,6 @@ public class CountdownController : MonoBehaviour
     [SerializeField] private Slider slider;
 
 
-    private void Start() {
-        slider.value = 0;
-        slider.maxValue = 100;
-        fill.color = Color.blue;
-    }
 
     public void setColor(Color toWhat)
     {
