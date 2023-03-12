@@ -64,64 +64,80 @@
             "name": "DynamicProgramming",
             "unlocked": false,
             "puntos": 3,
-            "commands": [
-                {
-                    "name": "P1",
-                    "key": "n"
-                },
-                {
-                    "name": "P2",
-                    "key": "w"
-                }
-            ],
+          "commands": [
+            {
+              "name": "create table",
+              "key": "n"
+            },
+            {
+              "name": "fill table",
+              "key": "w"
+            },
+            {
+              "name": "results",
+              "key": "e"
+            }
+          ],
             "key": "D"
         },
         {
             "name": "GreedyAlgorythm",
             "unlocked": false,
             "puntos": 3,
-            "commands": [
+              "commands": [
                 {
-                    "name": "P1",
-                    "key": "p"
+                  "name": "process data",
+                  "key": "p"
                 },
                 {
-                    "name": "P2",
-                    "key": "y"
+                  "name": "decide",
+                  "key": "y"
+                },
+                {
+                  "name": "you're wrong'",
+                  "key": "w"
                 }
-            ],
+              ],
             "key": "G"
         },
         {
             "name": "PancakeSort",
             "unlocked": false,
             "puntos": 5,
-            "commands": [
-                {
-                    "name": "P1",
-                    "key": "m"
-                },
-                {
-                    "name": "P2",
-                    "key": "u"
-                }
-            ],
+          "commands": [
+            {
+              "name": "flour",
+              "key": "m"
+            },
+            {
+              "name": "egg",
+              "key": "u"
+            },
+            {
+              "name": "oven",
+              "key": "o"
+            }
+          ],
             "key": "P"
         },
         {
             "name": "RandomSort",
             "unlocked": false,
             "puntos": 1,
-            "commands": [
-                {
-                    "name": "P1",
-                    "key": "z"
-                },
-                {
-                    "name": "P2",
-                    "key": "l"
-                }
-            ],
+          "commands": [
+            {
+              "name": "idk",
+              "key": "z"
+            },
+            {
+              "name": "xD",
+              "key": "l"
+            },
+            {
+              "name": "check",
+              "key": "c"
+            }
+          ],
             "key": "R"
         }
     ]   
