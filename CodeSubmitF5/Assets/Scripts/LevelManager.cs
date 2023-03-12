@@ -53,6 +53,7 @@ public class LevelManager : MonoBehaviour
             if (p.gameObject.activeInHierarchy && p.IsTimedOut())
             {
                 SolveProblem(p, Calification.Time_Limit);
+                gm.TakeDamage(10);
             }
         }
         if (activePrograms >= Problems.Length) return;
@@ -103,7 +104,7 @@ public class LevelManager : MonoBehaviour
         cTable.CreateEntry(p.GetProffessor().GetName(), p.name, cal);
         p.gameObject.SetActive(false);
         holder.DeactivateSlot(p.GetSlot());
-        //gm.AddScore((int)cal);
+        gm.AddScore((int)cal);
         activePrograms--;
     }
 }
