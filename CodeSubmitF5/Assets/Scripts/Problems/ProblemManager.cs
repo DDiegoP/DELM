@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using TMPro;
-using UnityEditor.U2D.Path.GUIFramework;
+
 
 public class ProblemManager : MonoBehaviour
 {
@@ -57,7 +57,7 @@ public class ProblemManager : MonoBehaviour
     List<Structure> structures;
     List<Language> languages;
 
-    float GenerationTimer = 0;
+    float GenerationTimer = -10;
     float NextGeneration = 0;
     float timeToPlay = 0;
 
@@ -102,10 +102,16 @@ public class ProblemManager : MonoBehaviour
             {
                 SolveProblem(p, Calification.Time_Limit);
                 this.TakeDamage(20); //Daño al TimeLimit
+               
             }
         }
 
-        for(int i = 0; i < problemsToSubmit.Count; i++)
+        if (activeProblem!=null && activeProblem.IsTimedOut())
+        {
+            VSCanvas.SetActive(false);
+        }
+
+        for (int i = 0; i < problemsToSubmit.Count; i++)
         {
             if (submissionTimers[i] > submissionTimersExpire[i])
             {
