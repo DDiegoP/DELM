@@ -13,7 +13,7 @@ public class LevelManager : MonoBehaviour
     Problem[] Problems = new Problem[4];
 
     [SerializeField]
-    CalificationTable calficationsTable;
+    CalificationTable cTable;
 
     [SerializeField]
     float MinGenerationTime;
@@ -21,12 +21,6 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField]
     float MaxGenerationTime;
-
-    [SerializeField]
-    float maxProblemDuration;
-
-    [SerializeField]
-    float minProblemDuration;
 
     GameManager gm;
 
@@ -86,7 +80,7 @@ public class LevelManager : MonoBehaviour
         Structure s = this.structures[Random.Range(0, this.structures.Count)];
         Proffessor pr = this.proffessors[Random.Range(0,this.proffessors.Count)];
         p.SetSlot(holder.GetFirstAvailableSlot());
-        p.Set(pr, l, a, s, Random.Range(minProblemDuration, maxProblemDuration));
+        p.Set(pr, l, a, s, Random.Range(10, 20));
         p.gameObject.SetActive(true);
         ++activePrograms;
     }
@@ -107,7 +101,7 @@ public class LevelManager : MonoBehaviour
 
     public void SolveProblem(Problem p, Calification cal)
     {
-        calficationsTable.CreateEntry(p.GetProffessor().GetName(), p.name, cal);
+        cTable.CreateEntry(p.GetProffessor().GetName(), p.name, cal);
         p.gameObject.SetActive(false);
         holder.DeactivateSlot(p.GetSlot());
         gm.AddScore((int)cal);

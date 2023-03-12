@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class Problem : MonoBehaviour
 {
-    private ProblemSlot slot = null;
+    private ProblemSlot slot;
     
     private Language askedLanguage;
     public Language AskedLanguage
@@ -29,8 +29,6 @@ public class Problem : MonoBehaviour
         get { return askedStructure; }
     }
     private char[] askedStructCommands;
-
-    private Task task;
     
     private Proffessor proffessor;
     private float tMaximo;
@@ -42,7 +40,7 @@ public class Problem : MonoBehaviour
     private Structure submittedStructure;
     private char[] submittedStructCommands;
 
-    private CountdownController cdCntrl = null;
+    private CountdownController cdCntrl;
     private bool correct;
 
     private float timeLimit = 0;
@@ -51,12 +49,8 @@ public class Problem : MonoBehaviour
     public void Set(Proffessor p, Language l, Algorythm a, Structure s, float tMaximo)
     {
         this.proffessor = p;
-        List<Task> tasks = this.proffessor.GetAvailableTasks();
-        if (tasks.Count > 0)
-        {
-            task = tasks[Random.Range(0, tasks.Count)];
-            this.name = task.title;
-        }
+        List<string> tasks = this.proffessor.GetAvailableTasks();
+        this.name = tasks[Random.Range(0, tasks.Count)];
         this.askedLanguage = l;
         this.askedAlgorythm = a;
         this.askedStructure = s;
@@ -69,13 +63,9 @@ public class Problem : MonoBehaviour
         this.correct = true;
         this.tMaximo = tMaximo;
         this.timeLimit = 0;
-
-        if (slot != null)
-        {
-            this.slot.SetTask(this);
-            this.cdCntrl = slot.gameObject.GetComponent<CountdownController>();
-            this.cdCntrl.setMaxValue(this.tMaximo);
-        }
+        this.slot.SetTask(this);
+        this.cdCntrl = slot.gameObject.GetComponent<CountdownController>();
+        this.cdCntrl.setMaxValue(this.tMaximo);
         //this.cdCntrl.setValue(this.tMaximo);
     }
 
@@ -85,14 +75,11 @@ public class Problem : MonoBehaviour
         if(timeLimit < tMaximo)
             timeLimit += Time.deltaTime;
 
-        if (cdCntrl != null)
-        {
-            float t = timeLimit / tMaximo;
-            float r = Mathf.Lerp(0, 1, t);
-            float g = Mathf.Lerp(1, 0, t);
-            cdCntrl.setColor(new Color(r, g, 0, 1));
-            cdCntrl.setValue(tMaximo - timeLimit);
-        }
+        float t = timeLimit / tMaximo;
+        float r = Mathf.Lerp(0, 1, t);
+        float g = Mathf.Lerp(1, 0, t);
+        cdCntrl.setColor(new Color(r, g, 0, 1));
+        cdCntrl.setValue(tMaximo - timeLimit);
         
     }
 
@@ -136,7 +123,9 @@ public class Problem : MonoBehaviour
     {
 
     }
-    
+    //public float TiempoRestante(float tActual){
+    //    return (tIni + tMaximo) - tActual;
+    //}
     public ProblemSlot GetSlot()
     {
         return slot;
