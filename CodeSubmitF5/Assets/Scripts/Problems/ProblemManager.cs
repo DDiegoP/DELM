@@ -121,6 +121,7 @@ public class ProblemManager : MonoBehaviour
                 if (c == Calification.Correct) {this.AddScore(p.GetPoints()); this.reduceTime();}
                 else if(c == Calification.Wrong_Answer) this.TakeDamage(10); //Daño al equivocarse
                 submittedRows[i].SetParameters(p.name, p.GetProffessor().GetName(), c);
+                submittedRows.RemoveAt(i);
                 problemsToSubmit.RemoveAt(i);
                 submissionTimers.RemoveAt(i);
                 submissionTimersExpire.RemoveAt(i);
